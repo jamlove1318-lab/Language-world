@@ -124,3 +124,12 @@ Use local-first domain repositories and versioned schemas. Separate learner prog
 ## 10. First vertical slice
 
 The first playable slice should be small but representative: one explorable home-world location, a controllable character, one human Cassidy presence or validated placeholder pipeline, a few interactive objects, one meaningful contextual learning activity, a small living-environment loop, save/restore, and a measured Android build. Its purpose is to validate the runtime and architecture before content scale expands.
+
+## Fresh visual-production foundation
+
+The visual and 3D production workflow must be designed from zero for this project. The previously tried GoPAL-AI 3D pipeline is rejected and must not be reused or adapted—not its models, rigs, renderers, asset factories, Blender/export automation, validators, manifests, registries, or runtime integration.
+
+Cassidy's approved character design and identity information remain creative references only. Her new model, rig, animation set, expressions, and in-world implementation must be produced through a new workflow.
+
+Before scaling production, prove the new workflow on Android hardware with a deliberately small vertical slice: create a fresh placeholder asset, import and place it in a scene, animate and interact with it, replace the asset without rewriting gameplay logic, and measure frame time, memory, build size, loading, thermal behaviour, and battery impact. Document the new conventions and repeatable process in this repository. Do not commit to a production asset pipeline until this proof succeeds.
+
