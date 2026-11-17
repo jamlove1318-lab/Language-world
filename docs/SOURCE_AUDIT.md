@@ -95,3 +95,12 @@ Earlier static analysis identified potential duplication across AI, XP, streak, 
 - **Not adopted:** deliberately excluded from Language-world, with a recorded reason.
 
 No source feature should be discarded merely because it is disconnected from one app entry point. Preserve useful ideas in the audit until their value is understood.
+
+## Explicit exclusion: legacy 3D pipeline
+
+The user has explicitly rejected the existing GoPAL-AI 3D pipeline based on prior hands-on testing. It is not a candidate foundation and must not be reused, ported, adapted, or treated as a starting point. This exclusion covers its models/rigs/exports, renderers and runtime integration, asset factories and Blender automation, import/export/validation scripts, manifests, registries, and production contracts.
+
+Cassidy's approved design and character identity information may still be used as creative reference material. No legacy 3D production artifact or pipeline implementation may be used to create her new in-world representation. The new project's visual-production workflow is a fresh design task and must pass an Android device proof of concept before production adoption.
+
+This decision supersedes any earlier audit note that described the old Cassidy/world 3D pipeline as a possible production foundation. Further audit work may identify product ideas worth rethinking, but must not turn the rejected 3D implementation into a reuse candidate.
+
