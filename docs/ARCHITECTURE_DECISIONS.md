@@ -81,3 +81,24 @@ Prove the engine, asset pipeline, camera, interaction, character animation, scen
 **Status:** Accepted
 
 The primary navigation experience should be an explorable world. Conventional interface patterns remain appropriate for settings, account, accessibility, forms, and focused utility screens, but not as the main world presentation.
+
+## ADR-010: Reject the Existing GoPAL-AI 3D Production Pipeline
+
+**Status:** Accepted
+
+**Decision:** The existing GoPAL-AI 3D pipeline is explicitly excluded from the new project's implementation foundation. The user has already tested that pipeline and does not consider it suitable.
+
+The new project must not reuse, port, adapt, or depend on any part of that pipeline, including:
+- 3D models, meshes, rigs, skeletons, animation assets, or generated character/world exports produced by it.
+- Renderer implementations, scene/runtime integration, visual resolvers, or rendering controllers from it.
+- Asset-generation/factory scripts, Blender automation, export/conversion steps, validation scripts, or production tooling from it.
+- Pipeline-specific manifests, renderer contracts, asset contracts, registries, package layouts, or assumptions that couple content to that workflow.
+
+**Fresh-start requirement:** Design a new asset-production and runtime pipeline independently. Evaluate the target engine and the production workflow together, with Android device proof-of-concept tests before committing to a production approach. Establish new conventions for source assets, scale/units, origins, skeletons, animation naming, materials, textures, collision, LODs, import settings, validation, packaging, runtime loading, and replaceable asset references.
+
+**Permitted reference boundary:** Cassidy's approved character design and character/identity information remain canonical creative references. They do not authorize reuse of the old 3D model, rig, generated outputs, or production pipeline. Recreate her new in-world representation from the approved design using the new workflow. If a design reference is embedded in an old pipeline document, extract only the character-design information—not the pipeline method or technical artifacts.
+
+**Verification gate:** Before any 3D production investment, demonstrate a minimal new pipeline end to end on target Android hardware: create a fresh placeholder asset, import it, place it in a scene, animate and interact with it, replace it with a revised asset without changing gameplay code, and measure performance/resource use. Record the workflow and test results in this repository.
+
+**Reason:** Repeating a previously tried and rejected pipeline would carry forward known weaknesses and undermine the fresh technical foundation this project requires.
+
