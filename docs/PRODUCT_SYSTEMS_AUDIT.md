@@ -642,3 +642,42 @@ But the inspected `LivingPropInteractionLayer` is visual-only (`pointerEvents="n
 7. Time, weather, and season must be world-authored and deterministic where appropriate, with bounded offline simulation and explicit timezone/device-clock policies.
 
 No old source, asset, renderer, or runtime was changed or copied. These are static inspection findings only; no microphone, audio hardware, Android build, or persistence restart test was performed.
+
+
+## 30. GoPAL-AI archive review: cinematic experience, travel, and replaceable assets
+
+**Source:** read-only review of `jamlove1318-lab/GoPAL-AI`, including its 608-file tree, master product specification, project overview, Cassidy bible/checklist, Emerald Valley world specification, mini-game catalogue, audio/animation/asset strategy documents, and representative source systems.
+
+### Product requirements recovered
+
+1. The first meeting is a dedicated staged experience, not a conventional onboarding form. Cassidy should introduce herself, guide the learner through Emerald Valley as the home world, show what can be explored and done there, and explain how travel to other language worlds works.
+2. The opening sequence must be versioned, skippable, replay/re-entry safe, accessible, and persisted exactly once. It should leave a meaningful shared memory without trapping the learner in a long unskippable movie.
+3. Language-world travel is a journey: station/terminal approach, departure preparation, boarding, vehicle interior/exterior, route montage, world-boundary transition, arrival, environmental reveal, and handoff into the playable destination.
+4. Transport is a world experience, not only a route icon. Train and plane travel can connect worlds; buses, cars, boats, bicycles, and walking can serve appropriate in-world journeys.
+5. Resident introductions can use anticipation, environmental clues, sound, silhouettes, camera reveal, character entrance, first interaction, and persistent follow-up.
+6. Cassidy can invite the learner into secret places and her own stories/adventures, but the wider universe must also support stories, games, mysteries, creatures, and exploration independent of her or any resident.
+7. Cinematic sequences need authored shot/timeline data, camera choreography, actor blocking, animation and expression cues, dialogue/subtitles/voice, audio/lighting/environment cues, preloading, skip/replay, checkpoints, interruption recovery, and reduced-motion alternatives.
+
+### Existing GoPAL evidence (not reusable implementation)
+
+- `cassidyWelcomeEngine.ts` contains a versioned welcome script and persistent first-meeting memory.
+- `CassidyFirstMeetingCinematic.tsx` provides an animated dialogue presentation. The inspected script does not stage the complete Emerald Valley tour or demonstrate world travel.
+- `destinationDepartureSceneEngine.ts` and `destinationArrivalSceneEngine.ts` define scene beats/shots, but these contracts do not prove a full vehicle journey.
+- `WorldEntranceTransition.tsx` is a short title/fade transition, not a train or plane cinematic.
+- `livingWorldTransport.ts` and `livingWorldVehicles.ts` define transport/network and vehicle data; the inspected render layers rely on an existing runtime and do not establish a complete boarding-to-arrival cinematic.
+- `worldAnimationContract.ts` and the old animation-pipeline document describe semantic animation intent and layered motion. Their implementation and toolchain are explicitly excluded.
+- The old audio architecture describes semantic location/transport/event layers, spatial attenuation, cooldowns, and crossfades. Its Expo playback runtime is excluded.
+
+### New project decisions
+
+- Add a dedicated Cinematic Director and reusable sequence authoring format; do not scatter cinematic timing across individual screens.
+- Add a Travel Director that coordinates route state, vehicle state, boarding, departure, journey beats, arrival, destination reveal, and restart-safe handoff.
+- Keep world simulation and durable state authoritative. Cinematic presentation may temporarily direct camera/actor performance but must not own persistent world progression.
+- Design every sequence to work with temporary assets first and later designer-made assets through stable semantic asset IDs.
+- Define asset binding for character rigs, skeleton compatibility, animation names/actions, camera framing, pivots, scale, collision/interaction targets, LODs, variants, audio, and fallbacks.
+- Require placeholder-to-final replacement tests for Cassidy, a resident, a building, a train/vehicle, a prop, an environment asset, and an animation without gameplay-code rewrites.
+- Engine selection remains open. No GoPAL production pipeline, renderer, model, rig, animation export, asset factory, validator, manifest contract, or Expo runtime may be adapted.
+
+### Verification status
+
+Product requirements recovered from source documents: high confidence. Existing first-meeting and transport foundations inspected: static source only. Full cinematic execution, actual train/plane journey, scene interruption/recovery, designer asset replacement, and Android performance remain unverified and are new-project acceptance requirements.
