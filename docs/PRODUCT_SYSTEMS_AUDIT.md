@@ -369,3 +369,51 @@ Do not implement the entire feature catalogue at once. The first vertical slice 
 
 This is a product and architecture proof, not a commitment to a specific engine or final art style. All visual assets and production tooling must come from the new pipeline; the old GoPAL-AI 3D pipeline remains explicitly excluded.
 
+
+
+## 24. Product identity correction: a whole universe, not a Cassidy-and-residents simulator
+
+The new product must be understood as a broad, living language-learning universe. Cassidy is its heart and emotional anchor, but she is not the entire experience. Residents are one important part of the world, not the sole source of activity, story, learning, or discovery. The universe must remain interesting and meaningful when Cassidy is elsewhere, when the learner is alone, and when no resident encounter is taking place.
+
+This distinction is a core product constraint. Do not let the first vertical slice, the easiest systems to prototype, or the character architecture accidentally narrow the product into a companion simulator.
+
+### Experience pillars to develop as first-class systems
+
+1. **World exploration and discovery** — landscapes, settlements, interiors, hidden places, landmarks, routes, natural wonders, objects, collections, secrets, and discoveries that reward curiosity.
+2. **Stories and narrative** — authored story arcs, local tales, mysteries, character-led stories, environmental storytelling, optional side stories, episodic events, branching choices where meaningful, and long-running narrative threads. Stories should exist beyond resident dialogue and should not all revolve around Cassidy.
+3. **Games and playful challenges** — substantial game experiences across listening, speaking, reading, writing, observation, memory, puzzles, rhythm, movement, creativity, cooperation, and adventure. Games should be varied in format and purpose, not a large pile of shallow quiz reskins. They can be discovered in the world, arise from stories, or be played as standalone in-world activities.
+4. **Learning through many forms** — conversations, exploration, stories, games, making, collecting, performance, problem-solving, cultural discovery, reading, listening, writing, pronunciation, and everyday world interactions. No single activity format should dominate.
+5. **Characters and residents** — residents have their own lives, relationships, work, interests, stories, and knowledge. They contribute to the universe, but are not merely quest dispensers or language exercise interfaces.
+6. **Cassidy and the learner's relationship** — Cassidy is the heart of the experience: a fully realized human character, trusted companion, guide, participant, and continuing presence. Her importance comes from authentic personality, agency, shared history, care, humour, growth, and meaningful participation—not from appearing in every activity or monopolizing every story.
+7. **Culture, creativity, and personal expression** — festivals, music, crafts, food, art, performances, local customs, learner-made creations, journals, postcards, collections, and personal keepsakes.
+8. **Living-world systems** — time, weather, seasons, ecology, sound, ambient events, routines, world changes, and consequences that make places feel coherent and worth revisiting.
+9. **Personal journeys and memory** — the learner's own discoveries, stories experienced, games played, creations, skills demonstrated, meaningful choices, and relationships. Preserve this history honestly and privately.
+
+### Story system requirements
+
+Treat narrative as a dedicated product system, not merely a set of dialogue prompts attached to residents. It should support:
+- World-level mysteries and long-form arcs that unfold over time.
+- Local stories rooted in particular places, cultures, histories, and events.
+- Main stories, optional side stories, spontaneous encounters, seasonal stories, and replayable story experiences.
+- Story delivery through scenes, exploration, objects, letters, audio, environmental clues, performances, games, and character interactions.
+- Clear separation between authored narrative canon, learner-specific choices, runtime state, and generated dialogue.
+- Continuity checks so a story does not contradict established events, character knowledge, or the learner's prior choices.
+- Language-learning goals integrated naturally into story participation without turning every narrative beat into a compulsory test.
+
+### Games system requirements
+
+Treat games as a broad, authored catalogue with reusable interaction patterns and clear learning intent. Each game should specify its purpose, language skills, input modes, feedback, difficulty adaptation, accessibility alternatives, replay value, save behaviour, and relationship to the world. Include both short spontaneous play and deeper multi-stage experiences. Avoid making XP, streaks, leaderboards, or unlock grinding the reason to play.
+
+### Product balance and acceptance tests
+
+The product should pass these qualitative checks as it grows:
+- A learner can have a meaningful session exploring, discovering, creating, or playing without needing a resident conversation.
+- A learner can follow a story whose central mystery or events are not simply about Cassidy.
+- Cassidy remains emotionally central without being forced into every scene or every activity.
+- Residents are not the only characters; the universe can also contain travelers, visitors, groups, creatures, historical figures in stories, and other forms of life appropriate to each world.
+- A game is worthwhile because its play and learning experience are satisfying, not because it awards points.
+- The world has things to discover and stories to tell even when the learner has already met its main residents.
+- Different language worlds have distinct story traditions, game forms, places, cultures, and learning opportunities rather than sharing one template with translated labels.
+
+The first vertical slice remains deliberately small, but its architecture must leave room for all these pillars. It must not hard-code the product around Cassidy conversations and resident routines.
+
