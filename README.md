@@ -45,3 +45,6 @@ See [Foundation](docs/FOUNDATION.md), [Architecture Decisions](docs/ARCHITECTURE
 - [Architecture decisions](docs/ARCHITECTURE_DECISIONS.md)
 - [Project roadmap](docs/ROADMAP.md)
 - [Android-first engine evaluation](docs/ENGINE_EVALUATION.md)
+- [Cinematic experience blueprint](docs/CINEMATIC_EXPERIENCE_BLUEPRINT.md)
+- [Graphics and asset handoff standard](docs/ASSET_HANDOFF_STANDARD.md)
+- [Replaceable assets and cinematic pipeline](docs/ASSET_AND_CINEMATIC_PIPELINE.md)
