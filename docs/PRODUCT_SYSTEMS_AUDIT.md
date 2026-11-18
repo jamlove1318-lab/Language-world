@@ -459,3 +459,41 @@ Before adopting any old feature as a proven implementation, trace:
 - Whether each interaction has accessibility, non-timed, and low-confidence learner paths.
 
 All source inspection above was read-only. No GoPAL-AI files, assets, pipelines, or runtime code were changed or adopted.
+
+
+## 26. Integration checks: visible components do not yet prove complete gameplay or narrative continuity
+
+A second source pass inspected the root app, world presentation components, story UI, and mini-game runtime registry.
+
+### Concrete findings
+
+- `App.tsx` mounts the old app's Explore, Travel, Cassidy, and Study Room primary surfaces, with Museum, Characters, and Settings as secondary destinations. This reinforces that the old product was a multi-surface application, not a single resident-chat loop. The new product should make the universe itself the primary experience.
+- `LivingGameWorld.tsx` composes a visual world layer with a gameplay layer, but the inspected component alone does not prove that every gameplay definition is reachable or interactive.
+- `LivingGameplayLayer.tsx` explicitly sets `pointerEvents="none"`; it renders marker graphics rather than handling player interaction. It also returns no gameplay markers for `emerald-village`. These markers must not be mistaken for a functioning interaction system.
+- `WorldStoryChoiceBoard.tsx` creates its story state with component-local React state. The inspected component does not itself persist choices or restore a story after restart. A caller may add other persistence, but that must be verified at the call site before continuity is claimed.
+- `WorldStoryTraceLayer.tsx` is wired to the resident-story engine and has fixed screen positions for three named resident threads. This is a narrow resident-story presentation, not a general world narrative layer.
+- `worldMiniGameRuntimeRegistry.ts` maps catalogue entries to named mechanic categories and currently sets the registry binding's `implemented` field to true when creating each binding. This is a declaration/registry assertion, not independent test evidence that each game has a complete, accessible, correctly persisted runtime. The registry's claim must be checked against actual mechanic dispatch, screen entry points, tests, and successful play paths.
+
+### Revised implementation-confidence judgement
+
+| Area | Evidence from inspected source | Confidence in complete end-to-end experience |
+|---|---|---|
+| Game catalogue | Broad catalogue with multiple families and skill tags | High that catalogue concepts exist; low that every entry is a finished game |
+| Game selection | Skill/family/time/novelty/recent-history selection logic | Medium for selection logic; runtime integration still needs tracing |
+| Game runtime registry | Many catalogue-to-mechanic bindings declared | Low until each mechanic and entry path is tested |
+| World gameplay markers | Marker definitions and visual rendering | Low; inspected layer is non-interactive and hidden in Emerald Village |
+| Branching story primitive | Local node/choice/flag state transition | High that a primitive exists; low for durable narrative continuity |
+| Resident story threads | Three fixed templates and timed stages | High that this narrow prototype exists; low for a broad story universe |
+| General narrative platform | Story components and traces exist | Not established by inspected evidence |
+
+### Language-world consequence
+
+Do not reproduce these limitations. The new project needs distinct, testable subsystems for:
+- Authored story content and story-canon validation.
+- Narrative runtime state, choice history, branching, and recovery.
+- World events and story triggers.
+- Game catalogue, actual playable mechanic implementations, and game progression.
+- Shared learning evidence and accessibility services that games and stories can use without becoming dependent on one another.
+- A world interaction layer that is genuinely interactive, not only decorative markers.
+
+The systems should connect through explicit events and stable contracts, while remaining independently usable. For example, a learner might discover a mystery through exploration, solve part of it in a game, learn more from an old recording, and later discuss it with Cassidy or a resident. No single character or UI surface should own that entire experience.
