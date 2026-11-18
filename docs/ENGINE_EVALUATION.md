@@ -108,7 +108,9 @@ The prototype must include:
 5. One small game mechanic with keyboard/editor test controls and Android touch controls.
 6. Layered ambience, one positional cue, dialogue playback, mute/quiet mode, and audio interruption recovery.
 7. A data-driven content/asset replacement test: replace a placeholder model, animation, sound, or interaction definition without changing gameplay code.
-8. Save, close, relaunch, and verify world/story/game state recovery.
+8. One directed cinematic sequence with camera cuts, actor staging, animation events, dialogue/subtitles, music/ambience, and a learner-controlled skip.
+9. One transport journey with station/boarding, vehicle interior or travel shot, destination arrival, and correct world-state handoff.
+10. Save, close, relaunch, and verify world/story/game/travel state recovery.
 
 Do not build the entire universe in this prototype. It exists to test the engine's ability to support the universe.
 
@@ -141,4 +143,4 @@ An engine may be selected only when:
 
 **Do not commit to an engine yet.** Keep Godot and Unity as the first practical comparison candidates, with Unreal retained as a high-fidelity reference candidate until the actual target device and visual budget are known. This is a testing order, not a final ranking.
 
-The next engineering task is to define the device/performance envelope and prepare the identical prototype specification. The engine decision follows measured results—not brand preference, feature-list size, or assumptions about performance.
+The next engineering task is to define the device/performance envelope and prepare the identical prototype specification. The engine decision follows measured results—not brand preference, feature-list size, or assumptions about performance. The same prototype must also prove that cinematic authoring is practical and that a designer's later production assets can replace prototype assets through stable contracts.
