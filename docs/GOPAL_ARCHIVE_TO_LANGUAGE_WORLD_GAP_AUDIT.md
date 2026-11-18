@@ -361,3 +361,16 @@ The next source-review passes should continue through:
 For each feature, record: source files, actual caller/reachability, owner, state model, persistence, happy path, interruption/restart behavior, accessibility, tests, status, and new-project decision.
 
 **No claim of complete repository audit is made yet.** The tree inventory is complete for the fetched branch snapshot; the product-specification review is deep; the code-level trace and end-to-end verification remain ongoing.
+
+
+## 10. Follow-up source trace: Cassidy and language-world integration
+
+A deeper source pass confirms that Cassidy's old implementation contains valuable independent-life concepts but also multiple overlapping owners. Her activity selection, presence director, life-moment generator, narrative list, interaction lifecycle, personality, runtime snapshot, world presence, scene anchors, and UI are separate modules. The new project should consolidate these into one coherent domain with clear boundaries between identity, motives/plans, perception, memory, relationship, physical performance, dialogue, and presentation. Do not equate numeric personality traits or generated template moments with a complete evolving character.
+
+The old life-state and narrative history are locally persisted under user keys, but interaction writes span memory, relationship, personality, and deduplication in sequence rather than a single recoverable transaction. Some APIs default to a shared-looking local user ID. Language-world must use explicit learner identity, durable idempotency, transaction/outbox recovery, and no shared fallback profile.
+
+A concrete language-world registry mismatch was found: the primary physical world registry lists Emerald Valley, Japanese World, and French World, while a separate language-world engine describes Japanese, Spanish, French, and Korean. The two registries use different IDs and are not unified. Physical location data also generates generic guides, teachers, and city-local residents. This confirms that world identity and resident content need one canonical registry and fully authored world packages.
+
+The old transport data contains useful rail/road/runway geometry and vehicle waypoint loops. It still does not establish the requested cinematic journey, vehicle boarding/alighting, route progression, departure/arrival reveal, or restart-safe handoff.
+
+See sections 32–33 of `PRODUCT_SYSTEMS_AUDIT.md` for detailed source-level evidence and the resulting new-project requirements.
