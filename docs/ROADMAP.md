@@ -47,7 +47,9 @@ This roadmap is evidence-led. Each phase has an exit gate; do not skip the engin
 - [ ] Establish replaceable asset manifests and import/validation pipeline using lightweight prototype assets first.
 - [ ] Define asset tiers, provenance/licensing, semantic IDs, rig/animation contracts, and designer handoff requirements.
 - [ ] Prove that a higher-quality asset can replace a prototype without gameplay/story code changes.
+- [ ] Prototype Cassidy's first-launch welcome and Emerald Valley introduction with proxy assets.
 - [ ] Prototype a directed cinematic sequence with camera, character staging, animation, dialogue/captions, audio, skip/replay, and interruption recovery.
+- [ ] Run a graphics-designer handoff exercise: replace a proxy character/prop with an upgraded asset without gameplay/story code changes.
 - [ ] Prototype a complete transport journey with departure, vehicle boarding, journey, arrival, and durable world transition.
 - [ ] Create one small explorable Emerald Valley location.
 - [ ] Add player movement and a small set of world interactions.
