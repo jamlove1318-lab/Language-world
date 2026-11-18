@@ -417,3 +417,45 @@ The product should pass these qualitative checks as it grows:
 
 The first vertical slice remains deliberately small, but its architecture must leave room for all these pillars. It must not hard-code the product around Cassidy conversations and resident routines.
 
+
+
+## 25. Source audit: stories and games are present as separate product concerns, but maturity varies
+
+A targeted read-only inspection of the GoPAL-AI source tree found a substantial game catalogue and several story-related modules. This supports carrying stories and games forward as first-class pillars, while also showing why source presence must not be mistaken for a finished, integrated experience.
+
+### Games: broad catalogue, incomplete proof of depth
+
+Inspected files include:
+- `src/engines/world/worldMiniGameEngine.ts` — defines game kinds, families, skills, difficulty labels, and game definitions. Its families include discovery, puzzle, arcade, social, listening, adventure, and creative.
+- `src/engines/world/worldMiniGameCatalog.ts` — provides a catalogue of named concepts such as word hunts, sign spotting, phrase puzzles, listening challenges, dialogue scenarios, mystery/adventure formats, and creative activities.
+- `src/engines/world/worldMiniGameSelectionEngine.ts` — selects games using skills, preferred family/game, estimated time, recent play history, cooldowns, and novelty. It also currently restricts this mini-game selection path to fictional locations.
+- `src/features/world/data/livingWorldGameplay.ts` and `livingWorldEvents.ts` — define gameplay objects and event types for triggers, puzzles, collectibles, portals, checkpoints, game starts/completions, and related interactions.
+
+**Audit interpretation:** the old project contains more than a simple quiz list. It has the beginnings of a multi-family game system and a world-gameplay vocabulary. But catalogue entries and type definitions do not prove that every listed game has a complete playable loop, polished interaction, accessible alternatives, balanced difficulty, persistence, or meaningful learning evaluation. Those must be traced game by game before calling them implemented.
+
+For Language-world, design a curated game portfolio with a smaller number of genuinely satisfying, reusable interaction systems first. The catalogue can grow over time. Each game should be independently valuable, contextually placed where appropriate, and capable of supporting different languages and input modes without becoming a reskinned multiple-choice quiz.
+
+### Stories: more than resident dialogue, but not yet a complete narrative platform
+
+Inspected files include:
+- `src/engines/world/worldStoryChoiceEngine.ts` — a small branching-choice state model with node IDs, choice history, numeric flags, and completion state.
+- `src/engines/world/residentStoryEngine.ts` — three fixed resident-linked story threads in the inspected source, with seeded/waiting/ready/resolved stages and a simple elapsed-time follow-up.
+- `src/engines/world/worldEventDirectorEngine.ts` — coordinates ambient world events and opportunities; its own comment explicitly leaves quests, festivals, inventory, and rewards to separate systems.
+- `src/engines/quest/questEngine.ts` — includes story as one quest category, alongside daily, cultural, conversation, exploration, and personal categories.
+- `src/features/learning/components/WorldStoryChoiceBoard.tsx` and `src/features/world/components/WorldStoryTraceLayer.tsx` — indicate story-choice and environmental story presentation surfaces exist in the source tree.
+
+**Audit interpretation:** there are story fragments, resident threads, branching-choice primitives, quest hooks, and world-story presentation components. The inspected story-choice engine is deliberately small; the resident-story engine is a fixed template set tied to particular residents. These are useful prototypes and evidence of intent, not proof of a robust world-scale narrative system with long arcs, canon management, branching continuity, independent stories, or reliable save/recovery.
+
+For Language-world, narrative must be a dedicated system that can run through places, mysteries, objects, exploration, games, letters, performances, environmental clues, and characters. Cassidy may be involved in many important stories, but she must not be a mandatory gateway to all stories. Some stories should be about the world, its history, cultures, conflicts, creatures, and other characters; some should be personal; some can be playful or self-contained.
+
+### Required next verification
+
+Before adopting any old feature as a proven implementation, trace:
+- Which game definitions have actual runtime implementations and reachable entry points.
+- Which gameplay events are emitted, consumed, persisted, and restored.
+- Whether story traces and choice boards connect to durable story state.
+- Whether story progress survives app restart and is scoped to the learner.
+- Whether world events, quests, games, and stories can create consistent consequences without duplicate rewards or contradictory state.
+- Whether each interaction has accessibility, non-timed, and low-confidence learner paths.
+
+All source inspection above was read-only. No GoPAL-AI files, assets, pipelines, or runtime code were changed or adopted.
