@@ -296,3 +296,32 @@ This is a content registry, not proof of complete distinct worlds. It currently 
 
 The new project must not copy the old location list as its world design. Use it only as evidence of the kinds of place and learning contexts previously considered. Build each world from researched, internally consistent world bibles and modular content packs. Real-world cultural material should be reviewed for accuracy and nuance; fictional locations should belong plausibly to their region rather than act as generic quiz rooms.
 
+## 20. Reachable app experience and product-surface audit
+
+The inspected root `App.tsx` mounts four primary tabs: Explore (Emerald Valley), Travel, Cassidy, and Study Room. A secondary menu opens Memory Museum, People/Characters, and Settings. The root also starts a living-world reactor, hydrates world presence, restores a Cassidy snapshot, handles travel/return events, and opens learning scenario overlays.
+
+This confirms that the existing project has a connected experience path beyond isolated source modules. It also shows where the new project should improve the product structure:
+
+- The current experience is still organized around a bottom tab bar and separate screen surfaces. The new project's primary experience should be the explorable world itself, with contextual interactions and discreet world-native navigation.
+- Study, Travel, Cassidy, archive, and people should feel like activities, places, conversations, or in-world tools where appropriate—not separate app destinations that repeatedly pull the learner out of the world.
+- Utility surfaces such as account, accessibility, settings, privacy, and data controls may remain conventional UI.
+- A scenario overlay can be useful for focused learning, but the new project should avoid making every interaction a modal mini-game detached from the scene.
+- Root-level runtime startup and hydration show that persistent systems need clear lifecycle ownership. Avoid starting duplicate reactors or timers when screens mount/unmount or the app resumes.
+- The current app seeds local identity and sample history. New onboarding must create a clean learner state and explicitly distinguish demo data from personal data.
+
+The product blueprint's strongest north-star principles remain valuable: continuity over resets, curiosity over obligation, relationship over score, context over disconnected drills, small meaningful surprises, agency over rigid paths, and honest memory over simulated intimacy. These principles are carried forward as design intent, not as an instruction to copy the old UI or code.
+
+## 21. Feature audit status and evidence boundary
+
+This audit now covers representative source modules for Cassidy autonomy/personality/memory/runtime, world simulation and residents, contextual learning, discovery and quests, crafting/inventory, audio/environment, world catalogues, persistence, and the root navigation experience.
+
+It is still not a complete repository-wide verification. Remaining work includes:
+- Trace every root-mounted screen and each user-visible route to its data and event handlers.
+- Inventory all features documented in the master blueprint and compare them with actual reachable implementation.
+- Verify which systems are imported and invoked, which are prototypes, and which are disconnected or superseded.
+- Inspect all data migrations, account switching, Supabase policies, privacy/export/deletion flows, and offline recovery.
+- Inspect asset licences and source provenance separately from the rejected 3D production pipeline. No old pipeline artifact becomes eligible for reuse through this audit.
+- Run no claim of runtime correctness without a successful build and device-level test.
+
+The audit should continue to classify findings as product intent, implemented/reachable, implemented but unverified, prototype, disconnected/legacy, duplicated, broken/incomplete, or explicitly excluded. A source file's presence alone is never enough to assign the "working" classification.
+
