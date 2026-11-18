@@ -162,3 +162,31 @@ This suggests a valuable continuity loop: leave a place, allow time to pass, ret
 
 The findings above are based on direct inspection of the named source modules and registry/specification files, not on a complete execution or device test of the old app. They describe code structure and apparent behaviour, not proof that every path is currently reachable or functioning in production. The complete audit still needs call-site tracing, data-flow verification, and feature-level tests.
 
+## 13. Contextual learning and mini-game audit
+
+The inspected learning engine supports six broad skills (vocabulary, listening, speaking, reading, grammar, writing) and builds a learning moment from the active language world, place, scenario, and skill. Scenario records can include a scene, goal, target phrase, translation, vocabulary, response options, cultural note, follow-up, and a described world change.
+
+A completion flow attempts to connect a learning turn to several consequences: capability tracking, learning integration, resident relationship changes, Cassidy's reaction and interaction memory, and a world consequence. Successful outcomes can update a location story layer and create a world echo. This is the right product ambition: learning should change what happens and what the place remembers.
+
+The mini-game catalogue spans discovery, puzzle, arcade, social, listening, adventure, and creative families. Examples include sign reading, word hunts, phrase building, listening navigation, market/café interactions, investigation, story choices, crafting, and creative world-building.
+
+### Risks and limitations observed
+
+- The catalogue is broad, but a large number of named mini-games can become content volume without meaningful differences in learning mechanics. The new project should prefer a smaller set of deeply contextual interaction patterns that can be recombined intelligently.
+- Some scenario flows are fixed multiple-choice experiences. They can support beginners, but cannot be the only route to genuine comprehension, listening, speaking, free response, and transfer to new situations.
+- The inspected mini-game component contains generic fallback vocabulary and generated rounds when scenario content is missing. This is a development convenience, not acceptable authored learning content.
+- A completion flow performs multiple side effects across capability, integration, relationship, Cassidy, and world systems. Its idempotency marker is stored separately from those effects; interruption between writes could leave a partially applied outcome. The new project needs a transactional event/outbox or recoverable workflow.
+- A failed or incomplete attempt should be treated as useful learning evidence, not as a negative relationship event or punishment. The learner should be able to pause and return.
+- Learning consequences should be specific and observable. Avoid a generic message that a location changed when nothing visible or meaningful actually changed.
+
+### New learning design
+
+- Start with the situation and the learner's intention, not with a mini-game category.
+- Give the learner a reason to listen, read, speak, choose, write, negotiate, ask, repair a misunderstanding, or help someone.
+- Use scaffolded hints and optional translations; fade support as competence grows.
+- Accept multiple valid responses where appropriate, and distinguish communicative success from exact-string matching.
+- Include accessible, untimed alternatives and input modes that work for different abilities and environments.
+- Record evidence of what the learner understood and could do, with uncertainty and context—not just XP, streaks, or a binary correct/incorrect value.
+- Make consequences concrete: a resident understands, a route becomes familiar, a clue is interpreted, a craft is completed, a local story advances, or a new conversation becomes possible.
+- Design content per world and region. Cultural material must be researched, reviewed, respectful, and not reduced to stereotypes.
+
