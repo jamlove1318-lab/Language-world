@@ -190,3 +190,73 @@ The mini-game catalogue spans discovery, puzzle, arcade, social, listening, adve
 - Make consequences concrete: a resident understands, a route becomes familiar, a clue is interpreted, a craft is completed, a local story advances, or a new conversation becomes possible.
 - Design content per world and region. Cultural material must be researched, reviewed, respectful, and not reduced to stereotypes.
 
+## 14. World activities, discovery, quests, and exploration
+
+The repository contains several distinct progression and interaction concepts:
+
+- **Place discovery:** a world discovery graph links places to learning scenarios, landmarks, and hidden-gem flags. The inspected builder currently assigns each place a prerequisite based on the immediately previous place, producing a mostly linear unlock chain.
+- **Quests:** quest categories include daily, cultural, conversation, exploration, story, and personal goals. The sample seed data includes already-completed quests, suggesting demonstration state rather than a clean first-run learner experience.
+- **Inventory and crafting:** small domain helpers represent items/materials, recipes, quantities, and crafted outputs. These are useful mechanics for world activities, but the new project should decide which objects have lasting meaning rather than adding inventory management for its own sake.
+- **World opportunities:** a catalogue can surface resident, weather, discovery, and Cassidy-led moments. Examples include noticing an unusual café guest, investigating a misplaced book page, helping with a market lantern, or following Cassidy to a night-time viewpoint. Some follow-ups depend on previously stored world flags.
+- **Memory Museum:** the archive combines postcards, learner creations, cultural artifacts, and memory exhibits. This is a strong emotional idea: the learner should be able to revisit tangible traces of their own journey.
+
+### Limitations and design implications
+
+- A sequential place prerequisite can make exploration feel like a locked checklist. The new world should support multiple routes, optional discoveries, revisits, and curiosity-driven access, with gates used only when they make narrative or learning sense.
+- A quest/reward layer can accidentally turn every meaningful moment into a task. Many opportunities should remain invitations, observations, or stories that can be declined without penalty.
+- Seeded completed quest state is not a valid first-run experience. New profiles need intentional onboarding and clean state.
+- The inspected audio waypoint helper contains a no-op selection function; the actual route check is in a separate function. This is a reminder that exported helpers and named features need behaviour-level tests, not just presence checks.
+- The inspected opportunity catalogue uses a small fixed set of authored scenarios and time/weather filters. It is a promising narrative seed system, not yet a dynamic world director.
+- Inventory and crafting helpers are intentionally simple and do not by themselves provide durable world consequences, provenance, or recovery after interrupted writes.
+- The Memory Museum's current screen is a tabbed archive surface. The new product can retain the idea of a personal living archive, but it should feel connected to places and experiences rather than becoming another detached dashboard.
+
+### New project direction
+
+Make exploration intrinsically rewarding. Let discoveries emerge from observation, conversation, revisiting, environmental change, resident routines, and personal curiosity. Use quests sparingly as optional narrative framing. Allow the learner to keep meaningful objects, postcards, notes, photographs, recordings, sketches, and shared memories, but only when each has a clear story or personal purpose.
+
+## 15. Atmosphere, sound, and time
+
+The old project includes a world audio mixer with categories for music, ambience, location, activity, interaction, transport, voice, and events. It models location profiles, priority, gain, distance attenuation, quiet mode, and cooldowns. This is a useful design inventory for a layered soundscape.
+
+The environment engine derives time-of-day and season from the device date and selects weather deterministically from the day/hour and season. This avoids random render-state changes, but it is not a meteorological simulation and can repeat in visibly patterned ways. The new project should distinguish ambient presentation from authoritative world climate and authored weather events.
+
+Design implications:
+
+- Build a soundscape from layers that respond to location, distance, weather, time, activity, and narrative importance.
+- Respect user volume controls, quiet mode, audio focus, headphone/speaker context, data use, and accessibility captions.
+- Use authored seasonal and weather patterns appropriate to each world's geography and climate; avoid arbitrary weather chosen only for visual variety.
+- Time and weather should create opportunities and atmosphere, but should not make essential learning or progression inaccessible.
+- Establish bounded offline time advancement and deterministic simulation rules, rather than relying on device clock values throughout unrelated systems.
+
+## 16. World content and persistence quality risks
+
+The inspected world systems show several separate stores and key-value persistence paths, including AsyncStorage and a generic local store. There are canonical ID aliases in discovery progression, and different modules maintain their own flags or snapshots.
+
+This creates a migration and consistency risk: a single place or event can be represented by more than one ID or written through more than one persistence path. The new project should establish stable domain IDs, schema versions, explicit ownership, event provenance, and migration tests before significant content is authored.
+
+A world consequence should be applied once, recover safely after interruption, and be observable on the next visit. The system should distinguish:
+- transient presentation state (camera, animation, temporary sound cue);
+- session state (current interaction and temporary choices);
+- durable personal state (memories, preferences, creations);
+- durable world state (discovered places, resident story changes, repaired objects);
+- derived state (what can be recomputed from authoritative records).
+
+Avoid persisting every animation or frame-level detail. Persist meaningful facts and reconstruct presentation.
+
+## 17. Feature disposition snapshot
+
+| Area | Product disposition | Implementation disposition |
+|---|---|---|
+| Cassidy autonomous presence | Preserve ambition | Replace old decision/runtime implementation |
+| Cassidy memory and relationship | Preserve and deepen | Rebuild with event provenance and explicit privacy |
+| Resident routines and continuity | Preserve ambition | Rework schedules, needs, simulation and persistence |
+| Place discovery | Preserve curiosity | Replace linear checklist-first progression |
+| Quests | Optional supporting tool | Rework; do not make every experience a task |
+| Inventory and crafting | Use where meaningful | Rebuild only around meaningful world objects |
+| World opportunities | Preserve authored surprise | Rework into contextual, non-coercive event director |
+| Memory Museum | Preserve personal archive idea | Reimagine as integrated living archive |
+| Audio and atmosphere | Preserve layered soundscape | Design fresh per-world systems |
+| Old GoPAL-AI 3D pipeline | Exclude | No reuse, port, adaptation, or dependency |
+
+This disposition is provisional and will be refined as the remaining call sites, screens, stores, and feature flows are traced.
+
