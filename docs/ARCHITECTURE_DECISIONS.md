@@ -115,3 +115,10 @@ Start with the best suitable lightweight prototype assets available, including o
 **Status:** Accepted
 
 The experience includes authored cinematic sequences: Cassidy's first-launch welcome and home-world introduction, resident reveal sequences, story/adventure moments, and transport journeys between and within worlds. Sequences may orchestrate cameras, character performance, animation, dialogue, subtitles/captions, sound, environmental cues, vehicles, and learner choices. They are data/content-driven where practical, accessible, skippable, replayable according to policy, and recoverable after interruption. Durable travel, character, and world state remains owned by domain systems; cinematic presentation cannot become the source of truth.
+
+
+## Implementation references
+
+- [Replaceable assets and cinematic pipeline](ASSET_AND_CINEMATIC_PIPELINE.md)
+- [Cinematic experience blueprint](CINEMATIC_EXPERIENCE_BLUEPRINT.md)
+- [Graphics and asset handoff standard](ASSET_HANDOFF_STANDARD.md)
