@@ -728,3 +728,96 @@ Creatures should be introduced gradually through world clues and stories before 
 7. Add a first-class creature/ecology domain rather than hiding wildlife inside generic NPC records.
 
 These are design requirements recovered from the archive and the user's wider universe direction; none of the old implementations or runtime code is being reused.
+
+
+## 32. Cassidy: life, autonomy, memory, and the actual character experience
+
+### Source systems inspected
+
+- `cassidyLifeEngine.ts` — chooses one of a fixed set of activities using learner state, weather, hour, personality thresholds, and a seed.
+- `cassidyLifeStateEngine.ts` — persists current activity, mood, world/place/anchor, visit count, invitation/interaction timestamps, and dream/story/adventure seeds in LocalStore under a user key.
+- `cassidyPersonalityEngine.ts` — persists six numeric traits, favorite worlds/activities, shared moment count, and a bounded list of processed event IDs.
+- `cassidyPerceptionEngine.ts` and `cassidyAutonomyEngine.ts` — turn a small context snapshot into prioritized cues and an action decision.
+- `cassidyActionEngine.ts` and `cassidyPresentationEngine.ts` — map the decision into fixed text, a visual action, and presentation mode; action execution writes life state and emits an event.
+- `cassidyPresenceDirectorEngine.ts` — chooses activities with a 15-minute minimum stay and 30-minute invitation cooldown; may create a dream/story/adventure moment when activity changes.
+- `cassidyLifeDirectorEngine.ts` — stores up to 20 recent moments and uses small fixed dream/story/adventure template arrays. It adds up to three recent memory facts to the prompt and records a memory/personality update.
+- `cassidyNarrativeExperienceEngine.ts` — separate user-keyed narrative list with fixed templates.
+- `cassidyInteractionLifecycleEngine.ts` — records memory, updates relationship, evolves personality, then marks the interaction processed.
+- `cassidyExperienceCoordinator.ts` — filters meaningful activities and routes them to interaction recording.
+- `cassidyCharacterRuntimeEngine.ts` — in-memory snapshot for world presence, expression, animation, outfit, visibility, and transition counter.
+- `cassidyRuntimeSessionEngine.ts` — restores/enters/returns a session from life state.
+- `cassidyWorldPresenceEngine.ts` and `cassidySceneAnchorEngine.ts` — produce world/context-specific lines and presentation anchors.
+- `CassidyHomeScreen.tsx` and `CassidyVisualPresence.tsx` — a separate room experience and visual component; the visual component routes through old 2D/3D presentation code.
+
+### Strengths worth preserving as requirements
+
+- Cassidy has a life outside direct learner interaction: wandering, reading, visiting a café, watching rain, stargazing, dreaming, storytelling, resting, discovering, helping, and celebrating.
+- Her presence is context-sensitive and includes explicit quiet/space-giving behavior.
+- Invitations have a cooldown; a minimum stay reduces rapid activity switching.
+- The archive distinguishes meaningful experiences from ordinary ambience.
+- There are user-keyed life state, narrative history, interaction memory, and some deduplication.
+- Her current world/location and scene anchor are represented separately from her visual animation/expression.
+
+### Important weaknesses and gaps
+
+1. Activity choice is still a small deterministic/template-driven selector, not a rich model of motives, plans, commitments, needs, relationships, or evolving personal goals.
+2. Dream/story/adventure content comes from short fixed arrays. Memory is appended as a few facts, not woven through a validated long-form story with authored canon and causal continuity.
+3. Personality is expressed as numeric traits with small fixed increments. This is not sufficient as the authoritative definition of a nuanced character and can create artificial score-like behavior.
+4. Multiple overlapping systems exist for life, autonomy, presence, narrative, action, presentation, runtime, session, world presence, and interaction lifecycle. Their ownership and call graph must be unified.
+5. `cassidyCharacterRuntimeEngine` is in-memory presentation state. It does not provide a complete physical character controller, locomotion, pathfinding, animation graph, gaze, interaction targeting, or cinematic performance.
+6. The inspected `CassidyHomeScreen` is a separate themed room with local state and a visual presence; it is not evidence of a continuous embodied Cassidy moving through all world scenes.
+7. Interaction processing writes memory, relationship, personality, and dedupe state in sequence. These writes are not one atomic transaction; a failure between steps can leave partial side effects.
+8. Dedupe state is bounded and some in-flight coordination is process-local. Recovery after process death and long-term idempotency need a durable event/outbox design.
+9. The fallback identity `local-explorer-user` appears in multiple Cassidy paths. New user identity must be explicit and strictly scoped; no shared fallback profile may leak data between learners.
+10. The current invitation and presence timing relies on device wall-clock time. The new world simulation must define clock/timezone/offline progression and prevent clock changes from creating arbitrary life events.
+
+### New Cassidy architecture requirement
+
+Design Cassidy as one coherent character domain with separate, explicit layers:
+- canonical identity, values, boundaries, voice, history, and authored character canon;
+- perception of world, learner context, other characters, and events;
+- motives, needs, commitments, plans, and restrained autonomy;
+- physical presence, navigation, locomotion, gaze, gestures, expression, and animation requests;
+- conversation/dialogue generation and localization;
+- personal memory and shared memory with provenance, confidence, privacy, and retention;
+- relationship expressed through accumulated shared experiences rather than a visible score;
+- life simulation that can continue when the learner is away, within bounded and deterministic rules;
+- cinematic performance interface that can direct Cassidy without owning her identity or persistent state.
+
+Cassidy must remain recognizably herself across scenes, worlds, stories, and time. She should sometimes initiate an adventure, sometimes be occupied with her own life, sometimes accompany the learner, and sometimes leave the learner to explore independently.
+
+**Do not reuse the old Cassidy runtime, renderer, model, rig, animation exports, visual resolver, production factory, or pipeline.** Her approved character bible is a creative reference only; the new physical model, rig, animation library, and runtime are produced independently.
+
+## 33. Language-world identity and travel: archive evidence versus actual distinct worlds
+
+### Source systems inspected
+
+- `livingLanguageWorlds.ts` registers Emerald Valley, Japanese World, and French World. The inspected registry does not register Spanish World.
+- `livingLanguageWorldLocations.ts` contains Japanese and French real/fictional location entries with experience tags and unlock order.
+- `livingLanguageWorldPhysical.ts` generates a small generic set of physical features and characters for each location. Resident identities are generated from a city label (for example, a generic city local), with generic guide/teacher roles and shared schedule IDs.
+- `languageWorldEngine.ts` has a separate language-world model for Japanese, Spanish, French, and Korean. Spanish has named cities such as Seville, Barcelona, Mexico City, Medellín, and Buenos Aires, but this model is not the same registry as the physical-world registry.
+- `languageWorldStateEngine.ts` persists a selected language-world ID in a single AsyncStorage key, defaulting to Japanese.
+- `LanguageWorldPhysicalScreen.tsx` displays a place/discovery map and uses a short `WorldEntranceTransition`; it does not itself demonstrate a complete 3D physical world or cinematic journey.
+- Transport network and vehicle catalogues contain railways, roads, runways, terminals, buses, boats, trains, cars, and aircraft across several location IDs. These are authored route/feature records and moving-vehicle data, not evidence of a complete world-to-world travel experience.
+
+### Findings
+
+1. The archive has the beginnings of a multi-language destination catalogue, but world identity is split across two registries with different IDs and supported languages.
+2. Spanish and Korean exist in one engine model, but the inspected primary world registry only lists Japanese and French alongside Emerald Valley. This is a concrete integration gap.
+3. Several location physical elements and residents are generated through generic templates. The data does not yet establish a distinct ecology, climate, architecture, culture, soundscape, settlement history, creature life, and activity design for each language world.
+4. A location list with real-world place names is not a complete explorable world. It needs connected geography, scale, traversal, interiors, authored landmarks, world-specific object interactions, resident identities, and world-state consequences.
+5. Transport network geometry and vehicle waypoint loops are useful prototyping data, but not equivalent to a route-aware travel director, boarding/alighting interaction, animated journey, departure/arrival cinematic, or restart-safe travel transaction.
+6. The current location screen's discovery/entrance treatment is primarily a map/panel/short transition interaction. It is not the user's desired cinematic journey from Emerald Valley to a Spanish-speaking world by train.
+
+### New project requirements
+
+- Create one canonical world registry and stable world IDs across content, travel, save data, learning, localization, and asset bindings.
+- Every world must have a complete world bible and a world identity acceptance test. A Spanish world must not be treated as a single generic Spanish aesthetic: regional cultures and geography should be represented thoughtfully and accurately.
+- Distinguish world, region, settlement, location, building/interior, route, and activity as separate concepts.
+- Build travel as a multi-stage experience with route/vehicle state, boarding, departure, journey, arrival, reveal, and safe playable handoff.
+- Keep route and vehicle data engine-neutral; the selected engine's presentation layer animates it.
+- Add creature/ecology and resident content as world-owned packages, not generic generated placeholders.
+- Use world-specific music, ambience, voice, environmental audio, weather, and day/night behavior.
+- Allow the learner to explore without being forced down a linear unlock path; unknown places can be discoverable through clues, travel, stories, and curiosity.
+
+This section records static source findings only. The new project's world registry, physical worlds, and cinematic travel remain to be designed and tested.
