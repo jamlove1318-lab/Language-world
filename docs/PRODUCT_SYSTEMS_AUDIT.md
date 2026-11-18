@@ -543,3 +543,45 @@ The old master blueprint explicitly states that every feature should have a reac
 - Each world should author its own festival calendar, story traditions, games, creative forms, and cultural material; Emerald Valley's Japanese-inspired motifs must not become the template for every language world.
 
 No GoPAL-AI files were changed. This remains static source inspection; no runtime, persistence restart, device, or build test was performed.
+
+
+## 28. Learning loop, evaluation, creation storage, and personal archive
+
+A targeted read of the learning session UI, evaluation engine, world-learning completion flow, creation service, and Memory Museum reveals both a meaningful end-to-end ambition and important limitations.
+
+### Contextual learning session
+
+`src/features/learning/screens/LearningScenarioModal.tsx` uses a learning-session hook and tutor engine. The inspected UI starts a scenario when opened, accepts typed learner responses, supports hints and translation visibility, shows feedback and cultural insight, and allows the learner to continue through dialogue turns. This is a real interaction surface rather than only a design document.
+
+The contextual moment builder in `src/engines/learning/contextualLanguageLearningEngine.ts` can create place- and skill-specific moments for vocabulary, listening, speaking, reading, grammar, and writing. It uses authored world scenarios when a matching skill exists and otherwise falls back to generated prompt templates.
+
+### Evaluation limitations
+
+`src/engines/learning/learningEvaluationEngine.ts` evaluates input using normalized strings, a finite hard-coded set of concept variants, expected-concept matching, and sample-response matching. It also derives partial-understanding, confidence, difficulty, and hint-dependency fields.
+
+This is a useful deterministic prototype, but it is not proof of robust semantic understanding or speech/pronunciation assessment. The inspected variants include Japanese-specific terms and transliterations. Language-world needs language-specific evaluation strategies, explicit accepted-answer variants, morphology/orthography handling, context-sensitive alternatives, transparent confidence, and human-reviewed quality tests. Do not mark a valid learner response wrong merely because it differs from one memorized string.
+
+### Completion flow and cross-domain effects
+
+`src/engines/learning/worldLearningFlowEngine.ts` connects a completed scenario to capability evidence, learning integration, resident relationship effects, Cassidy interaction/reaction, and a world consequence. It uses a persisted completed-key list and an in-memory in-flight set to reduce duplicate processing.
+
+This is strong evidence of the intended product loop: learning should affect more than a score. But the operations span several services and are not one atomic transaction. A process interruption after some side effects but before the completed key is saved can leave a partial outcome that may be retried. The in-memory in-flight set does not survive restart. Language-world should use a durable, idempotent workflow/outbox with per-step status and recovery, and separate learner skill evidence from relationship or world-event side effects.
+
+### Creation service and Museum
+
+`src/engines/creation/creationStudio.ts` saves an artifact through `LocalStore.addCreation` and then writes a Journey event. It exposes a method to retrieve creations. The Memory Museum reads postcards, creations, cultural artifacts, and memories on mount, then presents category tabs.
+
+This demonstrates a connected creation-to-archive path at source level. It does not yet establish edit/reopen/export/delete workflows, asset-backed artwork, robust error handling, account scoping, or refresh when the Museum is revisited while still mounted. The new project should treat learner creations as owned personal works with versioning, attribution choices, privacy, export, and durable access—not just text records in a collection.
+
+### Learning product requirements carried into Language-world
+
+- Support typed, spoken, listened, read, written, visual, spatial, and creative responses as appropriate to each activity.
+- Separate a learner's attempt, evidence of understanding, confidence, hint use, and final mastery estimate.
+- Treat errors as useful evidence, never as a reason to punish Cassidy's relationship or remove world access.
+- Accept multiple natural answers and dialect/register variation where appropriate.
+- Make evaluation uncertainty visible; do not claim pronunciation precision unless validated against appropriate audio data and tests.
+- Persist transcripts and learner-owned creations with consent, clear retention, account isolation, and recovery.
+- Make world consequences and personal-history updates recoverable and idempotent.
+- Build each language world's learning and evaluation content with language-specific expertise rather than translating a single Japanese-first template.
+
+Static inspection only. These files were read from GoPAL-AI; no source code was copied or modified there.
