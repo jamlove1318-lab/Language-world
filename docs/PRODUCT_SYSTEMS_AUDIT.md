@@ -115,3 +115,17 @@ Do not turn the living world into a grid of generic quiz doors or a sequence of 
 | Verify | Evidence is incomplete; inspect before deciding |
 
 This is a working audit, not a claim that the entire GoPAL-AI repository has been reviewed.
+
+## 9. Language-world registry and identity audit
+
+The inspected GoPAL-AI language-world registry currently defines Japanese, Spanish, French, and Korean worlds. Its metadata includes language identity, world naming, a visual-identity description, cultural categories, and place records. The Spanish and Korean entries contain explicit city/region examples; Japanese and French places are materialized from a separate location catalogue. This is a useful start for content organization, but not yet a full world-design system.
+
+Risks and design implications:
+
+- A language label is not a world identity. Spanish-speaking regions, for example, contain distinct countries, climates, accents, architecture, food, social customs, and everyday rhythms. A single generic Spanish environment would flatten those differences.
+- The registry mixes broad world metadata with place records and learning purposes. The new project should separate world identity, regions, settlements, locations, resident populations, cultural references, language variants, and activity content.
+- World content should be authored as a coherent place: geography and climate first, then settlements and routes, daily life and inhabitants, stories and landmarks, and finally language activities that naturally belong there.
+- Emerald Valley should remain the home world and emotional point of return. It must not become the universal template reskinned for each language.
+
+The old Emerald Valley specification contains valuable creative direction about emotional atmosphere, geographic hierarchy, continuous settlement composition, visual readability, weather, and the feeling of returning home. These may be reconsidered as product/world-design principles. Its old coordinate anchors, asset transforms, runtime assumptions, renderer choices, and 3D implementation instructions are not a technical foundation for the new project.
+
