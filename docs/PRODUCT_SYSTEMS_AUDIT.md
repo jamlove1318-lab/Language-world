@@ -260,3 +260,39 @@ Avoid persisting every animation or frame-level detail. Persist meaningful facts
 
 This disposition is provisional and will be refined as the remaining call sites, screens, stores, and feature flows are traced.
 
+## 18. Persistence, identity, and event architecture audit
+
+The inspected GoPAL-AI persistence layer combines a large AsyncStorage-backed local store, a learner-memory store with user-scoped keys, a separate memory engine with optional Supabase persistence, world-state snapshots serialized into a generic memory record, and additional world flags/opportunities stored through other key-value paths.
+
+Useful product requirements visible in this work:
+
+- Keep the experience usable locally and across sessions.
+- Scope personal memories to the correct learner.
+- Preserve world visits, discoveries, creations, relationships, and meaningful events.
+- Migrate older local data rather than silently losing it.
+- Allow optional cloud persistence.
+
+However, the current patterns reveal important risks:
+
+- There are multiple memory write/read paths with different fallback behaviour. One path can fall back to a generic local memory list that is not obviously scoped to the requested user.
+- The generic local store contains a very broad collection of unrelated seed data and domain types. This makes it easy for unrelated systems to share keys or become coupled to one storage module.
+- The seed data initializes a returning learner with high Cassidy trust/friendship/familiarity, pre-existing memories, unlocked locations, and completed activities. This may be useful for a demo, but it is not a neutral new-player state.
+- Persistent world state is serialized as a large JSON string inside a world-layer memory fact. That is difficult to query, migrate, validate, partially update, or reconcile.
+- The event bus keeps a short in-memory history and synchronously notifies handlers. That is useful for runtime coordination, but it is not a durable event log and does not guarantee that asynchronous side effects complete.
+- Some reactors use an in-memory deduplication set. A process restart clears it, while the bounded set eventually evicts old IDs. It cannot provide durable exactly-once processing on its own.
+- Local and cloud writes may fall back independently. The project needs explicit offline-first semantics, sync cursors, retry queues, conflict resolution, account switching, export, and deletion behaviour.
+
+### New project persistence design requirements
+
+Use domain-owned repositories rather than one giant generic store. Define stable IDs and versioned schemas for learner profile, Cassidy identity/state, relationship history, world locations, residents, discoveries, learning evidence, creations, and narrative threads. Use a durable event/outbox pattern for cross-domain consequences, with idempotency keys and recoverable processing. Separate event facts from derived summaries. Define user consent and retention for conversation/memory data. Support local-first operation and explicit cloud sync without making cloud availability a prerequisite for entering the world.
+
+No persistence architecture should be selected solely because it is familiar from the old React Native implementation. Choose storage based on the new engine/runtime, offline requirements, Android constraints, and testable recovery behaviour.
+
+## 19. World catalogue maturity and expansion limits
+
+The inspected world catalogue currently exposes Emerald Valley as the home world and Japanese and French as language worlds. The canonical language-location data includes real and fictional places in Japan and France, with descriptions, tags, experience categories, unlock order, and illustrative 2D coordinates.
+
+This is a content registry, not proof of complete distinct worlds. It currently lacks the full authored depth required for each world: coherent geography, regional climate, ecology, architecture, settlement layout, resident population, daily routines, transport, local soundscape, cultural calendar, story arcs, and region-specific learning progression.
+
+The new project must not copy the old location list as its world design. Use it only as evidence of the kinds of place and learning contexts previously considered. Build each world from researched, internally consistent world bibles and modular content packs. Real-world cultural material should be reviewed for accuracy and nuance; fictional locations should belong plausibly to their region rather than act as generic quiz rooms.
+
