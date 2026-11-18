@@ -821,3 +821,55 @@ Cassidy must remain recognizably herself across scenes, worlds, stories, and tim
 - Allow the learner to explore without being forced down a linear unlock path; unknown places can be discoverable through clues, travel, stories, and curiosity.
 
 This section records static source findings only. The new project's world registry, physical worlds, and cinematic travel remain to be designed and tested.
+
+
+## 34. Learning, capability evidence, investigation, and personal archive: further source trace
+
+### Learning foundations inspected
+
+- `adaptiveConversationEngine.ts` — selects guided/supported/natural/authentic conversation support from a single mastery value and place scenario.
+- `learningNeedEngine.ts` — ranks place scenarios using scenario and skill capability states.
+- `languageCapabilityEngine.ts` — stores attempts/successes for scenarios and skills, plus word/phrase counts, in one AsyncStorage key.
+- `worldLearningOutcomeEngine.ts` — maps a scenario result to skill, place, language, world change, memory candidate, and follow-up.
+- `worldLearningIntegrationEngine.ts` — records a learning memory and emits memory/world events.
+- `worldLearningFlowEngine.ts` — coordinates capability, learning integration, relationship bridge, Cassidy reaction/interaction, and world consequence.
+- `wordBankAnswerEngine.ts` — composes an answer from selected word indexes.
+- `WorldInvestigationBoard.tsx` — a clue UI whose investigation state is held in component-local React state.
+- `MemoryEngine` — uses Supabase when configured and LocalStore fallback otherwise.
+- `CreationStudio` — provides postcard, phrase-card, memory-board, and comic-strip templates and saves learner artifacts through LocalStore.
+- `JourneyBookScreen.tsx` — assembles a timeline, milestones, then-vs-now, cultural artifacts, and mastered knowledge nodes.
+- `TimeCapsuleModal.tsx` — stores user messages with a target unlock date; the inspected demo unlock action can explicitly unlock a capsule before the target date.
+
+### What is worth preserving
+
+- Conversation support should adapt to capability, but should not force every interaction into a test.
+- Learning needs can be selected from place, skill, scenario history, and what the learner is ready for.
+- Learning outcomes can produce more than a score: they can change a world moment, create a memory, affect a character response, and suggest a meaningful next step.
+- The personal archive should preserve creations, cultural artifacts, conversations, memories, discoveries, and then-vs-now growth.
+- Learners should be able to create things independently, not only co-create with Cassidy.
+- Investigation clues should be discoverable and reveal other clues, but the evidence trail must survive leaving the scene and reopening the app.
+
+### Gaps confirmed or requiring further verification
+
+1. Capability state uses attempts/success thresholds. This is useful as a lightweight prototype but is not a complete model of recall, receptive/productive ability, confidence, hint dependence, latency, context transfer, or durable mastery.
+2. Capability storage is a single global key in the inspected engine, not visibly scoped by authenticated learner ID. That is a serious account-isolation requirement for the new project.
+3. The learning flow coordinates multiple side effects. The previously documented completed-key list and in-flight set do not make the whole multi-service operation atomic; interruption/retry may leave partial writes.
+4. The investigation board stores clue progress only in local component state. Closing/unmounting the board loses the in-progress state unless another caller persists it.
+5. Memory fallback paths need careful account isolation: the inspected memory engine's LocalStore fallback APIs do not pass the user ID, and list fallback can return the generic local memory collection.
+6. Creation Studio shows a useful start but the inspected API focuses on create/list-style artifact persistence. Full edit, version history, delete, export, embedded media lifecycle, account transfer, and sync conflict behavior remain unverified.
+7. Journey Book loads personal records from multiple storage domains. It is a useful product concept but does not prove a unified archive with stable provenance and complete privacy/export/delete behavior.
+8. Time capsule's demo unlock path allows early unlock. The production policy must distinguish testing/admin overrides from the learner-facing date/consent contract.
+9. Language capability and learning evidence should not silently reset, leak across accounts, or become a single opaque mastery percentage.
+
+### New-project requirements
+
+- Use an explicit learner ID for every capability, memory, creation, investigation, journey, and capsule record.
+- Separate attempts, responses, hints, confidence, evidence, skill dimensions, recall scheduling, and mastery estimates.
+- Keep assessment transparent: accept valid natural responses, handle dialect/variant answers, show uncertainty, and distinguish unassessed speech from measured pronunciation.
+- Persist clue/evidence progress with stable IDs and event provenance; support interrupted investigations and story re-entry.
+- Use a durable event/outbox or transactional workflow for learning side effects, with idempotency and recovery.
+- Treat learner creations and personal records as first-class user-owned data with edit/reopen/delete/export and media lifecycle.
+- Build a single coherent personal archive that can present learning history, memories, creations, discoveries, cultural experiences, and meaningful world moments without turning the experience into a progress dashboard.
+- Make time-based content rules explicit and testable; production users cannot bypass an unlock policy through a demo handler.
+
+This is static source inspection. No production-quality learning assessment, account isolation, export/delete, or interrupted-flow recovery has been proven by this review.
