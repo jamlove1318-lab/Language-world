@@ -585,3 +585,60 @@ This demonstrates a connected creation-to-archive path at source level. It does 
 - Build each language world's learning and evaluation content with language-specific expertise rather than translating a single Japanese-first template.
 
 Static inspection only. These files were read from GoPAL-AI; no source code was copied or modified there.
+
+
+## 29. Speech, audio, navigation games, object interaction, and world simulation
+
+This pass inspected the old audio contracts/runtime, pitch-shadow trainer, audio-navigation activity, object interaction layer, event bus, quest runtime, discovery progression, and environment resolver.
+
+### Speech and pronunciation: concept exists; assessment is not established
+
+- `PitchShadowTrainerModal.tsx` contains three Japanese minimal-pair examples (雨/飴, 箸/橋, 今/居間) and pitch-pattern labels. Its practice action immediately displays a positive feedback sentence and increments a local counter. Every second tap awards Sparkles.
+- The inspected practice handler does not record microphone input, analyse a waveform, compare learner speech, or calculate pitch accuracy. It is a guided concept demonstration, not a verified pronunciation assessment.
+- The world experience interaction panel supports typed answers and guided choices. Its copy mentions speaking as an option, but the inspected component itself only implements text entry and choice buttons.
+
+**Language-world requirement:** distinguish listening/repetition practice from actual speech recognition and validated pronunciation feedback. Start with reliable listen, replay, shadow, syllable/phoneme visualisation, and learner self-comparison where appropriate. Add microphone assessment only after a real audio capture/analysis pipeline is selected, tested across devices, accents, noise conditions, and accessibility needs. Never award a correctness claim based only on a button press.
+
+### World audio: thoughtful mixing design, playback adapter, and a legacy platform dependency
+
+The old world-audio contract models music, ambience, location, activity, interaction, transport, voice, and event categories; priorities, spatial positions, attenuation, quiet mode, and per-location profiles are present. The resolver applies category gains, distance attenuation, priority, and cooldowns. A separate runtime adapter owns player lifecycle.
+
+However:
+- The inspected playback adapter imports `expo-audio`, which is not eligible for the new no-Expo project.
+- The simpler `AudioEngine.playSoundEffect` only logs a message; it does not play an audio asset.
+- Audio cue resolution can return a request, but a successful audible experience still depends on a valid asset resolver, actual assets, platform player behaviour, lifecycle cleanup, focus/interruption handling, and device testing.
+- Profiles are authored for several generic location types, but their presence does not establish a complete soundscape for every language world.
+
+Carry forward the product concepts—layered sound, spatial cues, location identity, quiet mode, category controls, and audio accessibility—but design a fresh engine-agnostic audio service and native playback adapter after engine selection.
+
+### Audio navigation: useful game idea, logic needs correction
+
+The audio-navigation activity presents a spoken-clue route between landmarks, but the inspected `chooseWaypoint` function is effectively a no-op. In the board, the expected next waypoint is inferred from array order; when no next waypoint exists, the selection handler falls back to the selected ID as the expected ID, so a final choice can be accepted without a meaningful final-target check. The activity also renders text clues; the inspected board does not itself play spoken audio.
+
+This is a good example of why a visible game screen and a runtime registry's `implemented: true` flag are not acceptance evidence. Language-world games need explicit route graphs, valid transitions, audio playback verification, retry/skip/accessibility paths, and unit tests for wrong, repeated, branching, and terminal choices.
+
+### Object interactions and environmental props
+
+The old source has a typed world-object interaction model with target kinds and available actions, plus a nearest-object lookup based on distance and interaction radius. This is a useful interaction contract concept.
+
+But the inspected `LivingPropInteractionLayer` is visual-only (`pointerEvents="none"`) and creates four resident-linked decorative props (tea station, book clue, lantern hook, garden water) based on resident activity. It is not itself an interactive object system. The separate world interaction model is a stronger foundation concept, but its actual caller, action dispatch, persistence, and visible consequences need end-to-end tracing.
+
+### World events, quests, discovery, and time
+
+- The living-world event bus has a broad event vocabulary for discovery, collection, dialogue, quests, travel, object activation, activities, games, and learning. It is synchronous and in-memory; it is not a durable event log.
+- `LivingWorldQuestEngine` stores quest states in a private in-memory Map. It emits start/completion events, but the inspected class has no persistence adapter of its own. A caller may serialize state, which remains to be verified.
+- The separate `QuestEngine` stores quests through LocalStore and has a durable reward-claim key, but its seed data begins with several quests already completed. This is unsuitable as a clean first-time learner state without a seed-state redesign.
+- Discovery progression persists completed/discovered IDs locally and maps canonical place IDs, but the inspected resolver explicitly has a Japanese/French special path while other worlds use a different fallback path. Language-world needs a consistent world-independent discovery contract and per-world authored content.
+- The old environment resolver derives season and time from the device date and picks deterministic weather from a small season list and day/hour bucket. This is a lightweight atmosphere selector, not a climate or ecological simulation.
+
+### New-project acceptance requirements
+
+1. Audio must produce verified sound on target Android hardware, respond correctly to interruptions/focus changes, support per-category controls and quiet mode, and release resources safely.
+2. Every speech feature must state whether it is playback, self-practice, transcription, speech recognition, or measured pronunciation; do not blur these categories.
+3. Navigation and puzzle games need tested state transitions, explicit graph rules, restart recovery, and non-audio alternatives.
+4. Decorative props and tappable objects must be separate concepts. Interactive objects need action dispatch and observable, persistent outcomes.
+5. Durable world/quest state must not depend solely on an in-memory event bus or private Map.
+6. First-run state must be genuinely new; demo completion, rewards, memories, and unlocks must not leak into a new learner's journey.
+7. Time, weather, and season must be world-authored and deterministic where appropriate, with bounded offline simulation and explicit timezone/device-clock policies.
+
+No old source, asset, renderer, or runtime was changed or copied. These are static inspection findings only; no microphone, audio hardware, Android build, or persistence restart test was performed.
