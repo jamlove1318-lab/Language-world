@@ -64,7 +64,7 @@ Cassidy's character intelligence and relationship state must never be owned by t
 
 Use 2D, 2.5D, and 3D intentionally. A location may use layered 2D composition, 2.5D depth, or full 3D depending on interaction and performance needs. The project does not require every object to be 3D.
 
-Begin with simple, replaceable assets. Before large-scale asset production, establish:
+Begin with attractive, lightweight, replaceable prototype assets; high-quality production art can be supplied later by the graphics designer. Do not delay core product development while waiting for final models. Build the asset contracts and cinematic capabilities first. Before large-scale asset production, establish:
 - World coordinate conventions and scale.
 - Camera projection, framing, and movement.
 - Scene composition, depth ordering, and occlusion.
@@ -75,7 +75,13 @@ Begin with simple, replaceable assets. Before large-scale asset production, esta
 - Asset manifests, versioning, validation, and replacement rules.
 - Scene loading, transitions, pooling, and resource disposal.
 
-A later high-quality tree, building, prop, or character should replace an early placeholder through its manifest/asset contract, not through rewrites of gameplay logic.
+A later high-quality tree, building, prop, vehicle, creature, or character should replace an early placeholder through its manifest/asset contract, not through rewrites of gameplay logic. Asset IDs and gameplay-facing interfaces must remain stable across quality tiers.
+
+### Cinematic storytelling and travel
+
+Cinematic sequences are a first-class experience system. The first launch should introduce Cassidy and let her guide the learner through Emerald Valley as home, explain the wider universe, and demonstrate exploration and travel. Later sequences can introduce residents through anticipation and reveal, stage secret discoveries and adventures, and tell personal or world stories. Inter-world travel can include fully staged trains, planes, and other journeys; local travel can use cars, buses, boats, or walking experiences. Each sequence needs authored camera, character performance, animation, dialogue, captions, sound, environment cues, state checkpoints, and skip/replay/interruption behaviour. Cinematics must return agency to the learner and must not own durable domain state.
+
+The first versions use lightweight proxy assets, but the staging, timing, accessibility, and state transitions should be real. A designer must later be able to replace the model, rig, animation, environment, vehicle, or sound package through validated contracts without rewriting gameplay or story logic.
 
 ## 6. Living-world simulation
 
