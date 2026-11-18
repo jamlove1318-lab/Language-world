@@ -44,7 +44,11 @@ This roadmap is evidence-led. Each phase has an exit gate; do not skip the engin
 
 - [ ] Establish project structure and automated build/test pipeline.
 - [ ] Establish coordinate, camera, scene, collision, navigation, and interaction conventions.
-- [ ] Establish replaceable asset manifests and import/validation pipeline.
+- [ ] Establish replaceable asset manifests and import/validation pipeline using lightweight prototype assets first.
+- [ ] Define asset tiers, provenance/licensing, semantic IDs, rig/animation contracts, and designer handoff requirements.
+- [ ] Prove that a higher-quality asset can replace a prototype without gameplay/story code changes.
+- [ ] Prototype a directed cinematic sequence with camera, character staging, animation, dialogue/captions, audio, skip/replay, and interruption recovery.
+- [ ] Prototype a complete transport journey with departure, vehicle boarding, journey, arrival, and durable world transition.
 - [ ] Create one small explorable Emerald Valley location.
 - [ ] Add player movement and a small set of world interactions.
 - [ ] Add one environmental loop (time/weather/ambient motion).
@@ -52,7 +56,7 @@ This roadmap is evidence-led. Each phase has an exit gate; do not skip the engin
 - [ ] Add save/restore and background/resume behavior.
 - [ ] Measure on target Android tiers and implement fallbacks.
 
-**Exit gate:** a stable, measurable, playable slice with replaceable assets and no architectural dependency on a polished content library.
+**Exit gate:** a stable, measurable, playable slice with replaceable assets, one working cinematic, one complete travel sequence, and no architectural dependency on a polished content library.
 
 ## Phase 4 — Cassidy foundation
 
