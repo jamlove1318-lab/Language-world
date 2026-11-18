@@ -374,3 +374,16 @@ A concrete language-world registry mismatch was found: the primary physical worl
 The old transport data contains useful rail/road/runway geometry and vehicle waypoint loops. It still does not establish the requested cinematic journey, vehicle boarding/alighting, route progression, departure/arrival reveal, or restart-safe handoff.
 
 See sections 32–33 of `PRODUCT_SYSTEMS_AUDIT.md` for detailed source-level evidence and the resulting new-project requirements.
+
+
+## 11. Follow-up source trace: learning evidence and personal archive
+
+The deeper source pass found learning capability records in a single AsyncStorage key in the inspected engine, without an explicit authenticated learner ID in that storage contract. Memory fallback paths also use generic LocalStore methods that do not visibly preserve the Supabase user scope. This is an important account-isolation and privacy risk to avoid in the clean rebuild.
+
+Learning completion is a multi-service flow: capability, memory, relationship, Cassidy, and world consequence can all be updated. A local completed-key list and in-flight set are not a transaction. The new project needs a durable idempotent workflow with recovery, while keeping learning evidence separate from optional relationship and world effects.
+
+Investigation clue state is local to the inspected board component, so leaving/unmounting can lose the active investigation unless a caller saves it. The new story/evidence system must persist clue provenance and support interruption/re-entry.
+
+The archive also contains strong personal-archive ideas: learner-created postcards, phrase cards, memory boards and comics; a Journey Book with timeline, milestones, then-vs-now; a Memory Museum; and time capsules. Preserve the ideas, but require explicit account ownership, edit/reopen/delete/export, media lifecycle, and honest time-lock behavior.
+
+See section 34 of `PRODUCT_SYSTEMS_AUDIT.md` for source-level evidence and detailed acceptance requirements.
