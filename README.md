@@ -48,3 +48,8 @@ See [Foundation](docs/FOUNDATION.md), [Architecture Decisions](docs/ARCHITECTURE
 - [Cinematic experience blueprint](docs/CINEMATIC_EXPERIENCE_BLUEPRINT.md)
 - [Graphics and asset handoff standard](docs/ASSET_HANDOFF_STANDARD.md)
 - [Replaceable assets and cinematic pipeline](docs/ASSET_AND_CINEMATIC_PIPELINE.md)
+
+
+## GoPAL-AI source archive review
+
+The new build preserves the valuable product ideas from the original repository while rejecting its old implementation and 3D production pipeline. See the [GoPAL-AI Archive → Language-world Product Gap Audit](docs/GOPAL_ARCHIVE_TO_LANGUAGE_WORLD_GAP_AUDIT.md) for recovered requirements, evidence boundaries, missing systems, cinematic travel, and the placeholder-to-final asset strategy.
