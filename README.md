@@ -4,7 +4,7 @@ A living, explorable universe where people learn languages by inhabiting distinc
 
 ## Core vision
 
-This is not a conventional language-learning dashboard with a world map attached. The world is the primary experience. Learning happens naturally through exploration, conversations, relationships, stories, creative activities, and everyday life.
+This is not a conventional language-learning dashboard with a world map attached. The world is the primary experience. Learning happens through exploration, stories and mysteries, games, conversations, creative work, cultural experiences, discovery, and everyday life. Cassidy is the heart of this universe; residents are one part of its much larger cast and world—not the whole experience.
 
 ## World structure
 
@@ -44,3 +44,4 @@ See [Foundation](docs/FOUNDATION.md), [Architecture Decisions](docs/ARCHITECTURE
 - [Product systems audit — Cassidy, living world, relationships, and learning](docs/PRODUCT_SYSTEMS_AUDIT.md)
 - [Architecture decisions](docs/ARCHITECTURE_DECISIONS.md)
 - [Project roadmap](docs/ROADMAP.md)
+- [Android-first engine evaluation](docs/ENGINE_EVALUATION.md)
