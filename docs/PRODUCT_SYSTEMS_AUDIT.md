@@ -497,3 +497,49 @@ Do not reproduce these limitations. The new project needs distinct, testable sub
 - A world interaction layer that is genuinely interactive, not only decorative markers.
 
 The systems should connect through explicit events and stable contracts, while remaining independently usable. For example, a learner might discover a mystery through exploration, solve part of it in a game, learn more from an old recording, and later discuss it with Cassidy or a resident. No single character or UI surface should own that entire experience.
+
+
+## 27. Learning, creativity, festivals, and activity surfaces: second-pass evidence
+
+The master blueprint's wider experience inventory is not limited to Cassidy and residents. A targeted source pass inspected the Study Room, creative studio, festival experience, world screens, and the blueprint's own acceptance gates.
+
+### Study Room and focused practice
+
+`src/features/study/screens/StudyScreen.tsx` is a real screen component with:
+- Matcha Workshop, Calligraphy Studio, Pitch Trainer, and Soundscape Mixer entry controls.
+- Cassidy's study-room presence and study objects.
+- A short set of quick-practice prompts.
+
+Important limitation: the inspected quick-practice completion state is component-local React state. Toggling an item changes its visual state, but this file does not persist that practice evidence. The four workshop controls open separate modals, which must be audited independently for complete learning, accessibility, and persistence. Therefore the Study Room is a connected surface, but not every item displayed there is a durable learning system.
+
+### Creative Studio
+
+`src/features/learning/components/CreativeStudioModal.tsx` supports choosing a creation template, visual theme, title, content, and tags, then calls `CreationStudio.createArtifact`. It is stronger evidence than a static mock-up: a save operation is wired to a creation domain service and returns a created artifact to its caller.
+
+Still to verify: the creation service's storage guarantees, schema/versioning, reopen/edit/delete/export flows, asset handling, learner ownership, and the Memory Museum's ability to display the same artifact after restart. The inspected UI also writes a subtitle saying the work was created with Cassidy; Language-world should allow learner-led creation without making Cassidy a required co-author.
+
+### Seasonal festivals
+
+`src/features/world/components/SeasonalFestivalModal.tsx` presents a seasonal festival catalogue and a celebrate action. That action claims a reward through the economy service, then writes a postcard creation and a world memory when the claim is new.
+
+This demonstrates a multi-system activity concept (festival → reward claim → creation → memory), but the component's `celebrated` display state is local. The durable claim key appears to be the duplicate-reward guard; the actual festival state, event history, and return-visit consequences need separate verification. The current memory text explicitly frames the festival as celebrated with Cassidy and residents. The new product should also support festivals and events that the learner can enjoy independently, with Cassidy present when it is natural—not forced into every activity.
+
+### Emerald Valley screen and interaction boundary
+
+`src/features/world/screens/LivingValleyScreen.tsx` mounts a world viewport, world runtime, environment resolution, continuity return, and opportunity panel. It builds a place-selection panel when a building is pressed. In the inspected component, however, the building panel only displays an ID and generic description, with a "Keep wandering" close action. This is not evidence that each building has a meaningful interior, activity, story, game, or object interaction.
+
+The world screen is a useful structural starting point in the old implementation, but Language-world must define a genuine interaction contract: object identity, available actions, preconditions, feedback, consequences, persistence, and accessibility—not merely tappable scenery.
+
+### Master blueprint acceptance gates
+
+The old master blueprint explicitly states that every feature should have a reachable route, successful happy path, loading/error/empty states, persisted outcome, restart/re-entry behaviour, accessibility, offline policy, automated test, and documented owner. Its broader principles—privacy controls, data minimization, screen-reader support, scalable text, reduced motion, captions/transcripts, adjustable audio, and alternatives to timed gestures—remain valid acceptance requirements for Language-world.
+
+### New-project product implications
+
+- A feature inventory is not a release checklist. Each experience needs an end-to-end evidence record.
+- Games, stories, workshops, creative tools, festivals, exploration, and conversations should all be able to produce meaningful learner-owned outcomes.
+- Activities should be discoverable from the world and also accessible through appropriate focused spaces; neither a dashboard nor a single world scene should become the only interaction pattern.
+- Cassidy can encourage, join, teach, react, or simply share the moment. The learner must retain agency to explore, play, create, and learn without requiring her presence in every loop.
+- Each world should author its own festival calendar, story traditions, games, creative forms, and cultural material; Emerald Valley's Japanese-inspired motifs must not become the template for every language world.
+
+No GoPAL-AI files were changed. This remains static source inspection; no runtime, persistence restart, device, or build test was performed.
