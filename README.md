@@ -37,3 +37,10 @@ GoPAL-AI is a **read-only reference** for research: ideas, specifications, chara
 The project is in foundation and source-audit stage. No engine has been selected yet. The first implementation milestone is a measured Android vertical slice, not a large speculative scaffold.
 
 See [Foundation](docs/FOUNDATION.md), [Architecture Decisions](docs/ARCHITECTURE_DECISIONS.md), [Source Audit](docs/SOURCE_AUDIT.md), and [Roadmap](docs/ROADMAP.md).
+
+## Audit documents
+
+- [Source repository audit](docs/SOURCE_AUDIT.md)
+- [Product systems audit — Cassidy, living world, relationships, and learning](docs/PRODUCT_SYSTEMS_AUDIT.md)
+- [Architecture decisions](docs/ARCHITECTURE_DECISIONS.md)
+- [Project roadmap](docs/ROADMAP.md)
