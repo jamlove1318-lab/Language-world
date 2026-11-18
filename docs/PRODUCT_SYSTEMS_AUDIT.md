@@ -129,3 +129,36 @@ Risks and design implications:
 
 The old Emerald Valley specification contains valuable creative direction about emotional atmosphere, geographic hierarchy, continuous settlement composition, visual readability, weather, and the feeling of returning home. These may be reconsidered as product/world-design principles. Its old coordinate anchors, asset transforms, runtime assumptions, renderer choices, and 3D implementation instructions are not a technical foundation for the new project.
 
+## 10. Cassidy runtime event-path audit
+
+The inspected runtime bridge currently runs an autonomous decision on a fixed 90-second interval. It restores the user session, reads current world presence, life state, and personality, makes a decision, executes an action, and may create a narrative or record a meaningful experience. It also listens for world-location changes, returns home, and completed conversations.
+
+This is a useful end-to-end prototype, but several limitations matter for the new design:
+
+- The autonomous tick currently supplies a narrow snapshot: the learner is marked as not exploring, not needing help, and not recently successful. The decision therefore cannot reliably respond to the full live scene unless other pathways update it.
+- A fixed 90-second interval is not a substitute for event-driven awareness. Some events need immediate response; other periods should remain quiet for much longer.
+- The action executor writes life state asynchronously and emits an event, while meaningful experiences may be persisted through a separate coordinator. These responsibilities need one explicit transaction/event policy to avoid partial or duplicate outcomes.
+- The interaction lifecycle deduplicates some events in process memory and local storage, but it coordinates character relationship changes, memory writes, and personality evolution across separate operations. The new design must define idempotency and recovery across the whole experience, not just one step.
+- The character runtime snapshot currently stores presentation-oriented state such as world/location, expression, animation, outfit, visibility, and transition ID. It should remain separate from Cassidy's authoritative identity, motives, memory, and relationship state.
+- Fixed action text and fixed visual-action mappings are useful fallbacks, but they should not become the character's full behaviour or dialogue system.
+
+**New architecture implication:** separate (a) perception/event ingestion, (b) intent and priority selection, (c) action planning, (d) world interaction execution, (e) dialogue generation, (f) memory/relationship transaction, and (g) visual animation requests. Give every meaningful event a stable ID, causal links, timestamps, and a clear retry/deduplication policy. The presentation layer must never be the source of truth for Cassidy's internal state.
+
+## 11. World runtime and simulation audit
+
+The inspected world runtime loads persisted location state, calculates elapsed time since the last visit, advances a simulation snapshot, writes the resulting time/season/weather back into world state, and produces a revisit recap. Location changes are validated against the active world's location catalogue and emit a world-location event.
+
+This suggests a valuable continuity loop: leave a place, allow time to pass, return, and notice what changed. However, the inspected simulation snapshot is currently quite shallow:
+
+- Day phase is derived from the device clock.
+- The inspected snapshot constructor initializes weather to clear with a fixed baseline temperature and derives broad ambient activity from time-of-day.
+- Resident routine prototypes use coarse hour bands and fixed short transitions rather than a complete schedule/needs model.
+- Some runtime surfaces describe simulation/weather/environment as running, but that flag alone does not prove a persistent, evolving simulation.
+- Revisit recaps currently derive mainly from date/season and stored visit differences, not a rich causal history of world events.
+
+**New architecture implication:** define simulation time explicitly (including offline elapsed time, time-zone changes, clock tampering, and pause rules); represent weather and world events as deterministic, testable state; use schedules and event-driven state transitions for residents; and persist only meaningful state changes. Render frames must not drive simulation truth. The world should be able to advance while the app is closed according to bounded, battery-conscious rules.
+
+## 12. Audit confidence
+
+The findings above are based on direct inspection of the named source modules and registry/specification files, not on a complete execution or device test of the old app. They describe code structure and apparent behaviour, not proof that every path is currently reachable or functioning in production. The complete audit still needs call-site tracing, data-flow verification, and feature-level tests.
+
