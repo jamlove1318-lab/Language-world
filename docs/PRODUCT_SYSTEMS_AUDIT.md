@@ -325,3 +325,47 @@ It is still not a complete repository-wide verification. Remaining work includes
 
 The audit should continue to classify findings as product intent, implemented/reachable, implemented but unverified, prototype, disconnected/legacy, duplicated, broken/incomplete, or explicitly excluded. A source file's presence alone is never enough to assign the "working" classification.
 
+## 22. Remaining product-surface inventory from the master blueprint
+
+The master blueprint describes these additional surfaces and capabilities. They are included in the audit scope so that important ideas are not lost simply because they are not part of the first vertical slice.
+
+| Product area | Ideas to evaluate for the new project | New-project stance |
+|---|---|---|
+| Arrival and re-entry | Time-aware welcome, meaningful away recap, gentle invitations, unfinished activity recovery | Preserve; no guilt or streak pressure |
+| Home / sanctuary | A place to return to, festivals, world DJ, continuity and calm choices | Reimagine as the living world, not a dashboard |
+| Adaptive conversation | Level-aware roleplay, intent, recent difficulty, confidence, adjustable correction | Preserve and deepen |
+| Socratic learning | Questions and hints before revealing answers; optional model answer/translation | Preserve with learner-controlled scaffolding |
+| Residents | Distinct roles, preferences, routines, conversations and continuity | Preserve; residents must be people, not quiz terminals |
+| Pronunciation/listening | Pitch and prosody, shadowing, replay, slower audio, syllable highlighting | Evaluate feasibility and accuracy on Android |
+| Writing/calligraphy | Guided writing, stroke order, saved creations and retries | Preserve as contextual creative activities |
+| Vocabulary recall | Context capture, spaced revisits, retention rather than tap counts | Preserve with evidence-based scheduling |
+| Learning evaluation | Comprehension, productive use, recall, fluency and confidence | Rework into transparent evidence, not opaque scoring |
+| Journey/transcripts | Milestones, chapter reviews, transcripts, replay, learner-controlled progress comparison | Preserve with privacy and export controls |
+| Living objects | Plant care, radio, wish plaques, meaningful physical-world traces | Preserve selectively; never punish missed care |
+| Cultural discovery | Artifacts, wonder prompts, stories, researched cultural context | Preserve with expert/cultural review |
+| Creative studio | Postcards, phrase cards, memory boards, comic strips and other learner creations | Preserve if creation can be saved, reopened and exported |
+| Time capsules and wishes | Private intentions, delayed revisits, personal notes | Optional, private by default |
+| Soundscape | World radio, layered ambience, per-category volume and quiet mode | Preserve with accessibility and audio-focus handling |
+| Quests and rewards | Optional narrative goals, souvenirs and artifacts | Rework; avoid grinding and coercive reward loops |
+| Museum/archive | Postcards, creations, artifacts, exhibits and shared memories | Integrate into world places and personal history |
+| People/characters | Resident profiles, introductions and relationships | Make accessible through in-world encounters |
+| Settings and diagnostics | Privacy, accessibility, account, audio, data and diagnostics | Conventional utility UI is appropriate |
+
+The master blueprint also describes privacy, accessibility, and trust as foundational requirements: learner control over memory, honest claims about what Cassidy remembers, adjustable hints/corrections, reduced-motion support, readable typography, audio controls, and no guilt for absence. These are acceptance requirements, not optional polish.
+
+## 23. First-vertical-slice candidates from the audit
+
+Do not implement the entire feature catalogue at once. The first vertical slice should prove the core emotional and technical loop with a very small, coherent area:
+
+1. Enter Emerald Valley and understand where the learner is.
+2. Move through a small, authored place with meaningful environmental depth and interaction.
+3. Meet Cassidy as a human character with the approved identity, presence, movement, expressions, and a short natural conversation.
+4. Meet one resident whose own activity continues independently.
+5. Complete one contextual language interaction using at least two response modes (for example, typed response and guided support).
+6. Have the interaction create a concrete, visible world consequence.
+7. Have Cassidy and the resident remember the meaningful event in a later encounter.
+8. Leave the app, return, and verify continuity and safe recovery.
+9. Provide quiet mode, readable UI, reduced motion, and an accessible alternative to any time-sensitive interaction.
+
+This is a product and architecture proof, not a commitment to a specific engine or final art style. All visual assets and production tooling must come from the new pipeline; the old GoPAL-AI 3D pipeline remains explicitly excluded.
+
