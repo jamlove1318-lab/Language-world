@@ -681,3 +681,50 @@ No old source, asset, renderer, or runtime was changed or copied. These are stat
 ### Verification status
 
 Product requirements recovered from source documents: high confidence. Existing first-meeting and transport foundations inspected: static source only. Full cinematic execution, actual train/plane journey, scene interruption/recovery, designer asset replacement, and Android performance remain unverified and are new-project acceptance requirements.
+
+
+## 31. Narrative, quest, world-event, and creature foundations in the archive
+
+### Source systems inspected
+
+- `npcCharacterRegistry.ts` — generic NPC identity templates and world/role registration. Roles include residents, teachers, guides, merchants, quest-givers, travelers, guards, farmers, sailors, pilots, engineers, scientists, royals, villagers, and tourists.
+- `livingWorldBehavior.ts` — generic idle, wander, patrol, follow-route, schedule, traffic, orbit, animate, spawn, and despawn behavior declarations, with daily schedule examples.
+- `livingWorldEvents.ts` — typed event vocabulary for interaction, discovery, collection, learning, dialogue, quest, travel, boarding/riding, object activation, actor lifecycle, activities, mini-games, checkpoints, and language practice.
+- `worldEventDirectorEngine.ts` — combines a contextual ambient event with world opportunities; explicitly leaves quests, festivals, inventory, and rewards to other owners.
+- `residentStoryOpportunityEngine.ts` — maps resident relationship tone to a meeting, recognition, shared moment, or personal invitation beat.
+- `livingWorldQuestEngine.ts` — objective types include discover, collect, talk, learn, travel, play, activate, and enter. Its inspected implementation keeps quest state in a private in-memory `Map`.
+- `worldStoryChoiceEngine.ts` — small branching state helper with node ID, choice history, numeric flags, and completion.
+- `worldInvestigationEngine.ts` — small clue collection/prerequisite/reveal state helper.
+
+### What this reveals
+
+GoPAL anticipated a much wider world than the implemented story UI alone suggests: characters with different roles, schedules and behaviors; contextual world events; clues and investigations; story choices; quests that react to many kinds of actions; and resident invitations that change with familiarity.
+
+However, these pieces are separate primitives, not proof of one complete narrative/event simulation. The inspected world event bus is synchronous and in-memory; generated event IDs are runtime-random/time-based; the local quest class has private in-memory state; the story and investigation helpers are pure state transforms without durable storage or authored-canon validation. They need a new durable event and narrative architecture rather than direct reuse.
+
+### Additional gap: creatures and wildlife
+
+The inspected repository inventory contains general NPC/character systems and nature/environment assets, but no clearly established, dedicated creature/wildlife ecology system was identified in the source areas reviewed. A few generic character roles do not amount to a creature system.
+
+Language-world should explicitly plan:
+- species and individual creature identities;
+- habitat, diet/needs, activity rhythms, social behavior, migration/seasonality where relevant;
+- discovery, rumor, tracks/calls/silhouettes, reveal and safe observation;
+- creature movement, locomotion/animation, sound, interaction, and relationship rules;
+- hostile, neutral, helpful, guardian, and rare roles with age-appropriate boundaries;
+- world-specific ecology and causal effects on plants, places, weather, and resident stories;
+- speaking creatures only where authored fiction supports it, not as a universal default.
+
+Creatures should be introduced gradually through world clues and stories before every creature is openly visible. They should not be reduced to collectible skins or generic enemies.
+
+### New-project requirements
+
+1. Make narrative canon and event history durable, versioned, idempotent, causally linked, and recoverable after interruption or process death.
+2. Distinguish authored story truth, generated presentation, player choice, derived state, and temporary scene state.
+3. Keep resident-linked stories, Cassidy stories, independent place/object mysteries, creature stories, and world-scale arcs as separate supported content categories.
+4. Provide clue/evidence provenance and planned resolution for every major mystery.
+5. Ensure a quest can be paused, resumed, abandoned where appropriate, and restored without duplicated rewards or lost objectives.
+6. Use schedules and ambient behavior as inputs to world simulation, not as an excuse for arbitrary background state mutation.
+7. Add a first-class creature/ecology domain rather than hiding wildlife inside generic NPC records.
+
+These are design requirements recovered from the archive and the user's wider universe direction; none of the old implementations or runtime code is being reused.
