@@ -1397,3 +1397,58 @@ Created `docs/EXPERIENCE_CATALOGUE.md`, a working specification containing the t
 Created `docs/LEARNING_DESIGN.md`, a working specification covering learning philosophy, capability/evidence, adaptive support, evaluation limits, listening and speech honesty, reading/writing, vocabulary/grammar, cultural pragmatics, learner control, persistence/privacy, accessibility, and open decisions. It is linked from Master Blueprint Section 37.
 
 **Audit status remains ongoing.** This section records selected source evidence and design implications; it does not claim full verification of all legacy learning behaviour or validated learning outcomes.
+
+
+## 47. Living-world time, weather, routines, and simulation
+
+### GoPAL-AI references inspected
+
+- `src/engines/world/environmentEngine.ts` resolves season and time of day from a supplied/current Date and selects weather from deterministic day/hour buckets.
+- `src/engines/world/livingWorldClock.ts` uses device local time with fixed day-phase boundaries.
+- `src/engines/world/livingWorldSimulation.ts` stores a per-user snapshot in AsyncStorage, but recomputes phase/weather/season from current wall-clock time; elapsed minutes are mainly carried into a location-shift event.
+- `src/engines/world/worldSimulationSnapshot.ts` supplies a lightweight snapshot with default clear weather and simple activity/light values.
+- `src/engines/world/residentRoutineEngine.ts` uses a small hour-based activity switch and short runtime transitions.
+- `src/engines/world/contextualWorldEventEngine.ts` selects lightweight ambient events from weather, routine, learner activity, and a seeded rare-event condition.
+- `src/engines/world/worldEventDirectorEngine.ts` coordinates ambient events and opportunities while leaving festivals, quests, inventory, and rewards to other owners.
+- `src/engines/world/npcCharacterRuntimeEngine.ts` maintains an in-memory NPC expression/animation/outfit/presence snapshot.
+- `src/features/world/data/livingWorldSimulation.ts` includes local actor/vehicle simulation, seeded spawn positions, movement/navigation, and schedule/behaviour hooks.
+- `src/engines/world/livingWorldRuntime.ts` bridges persisted user world state with simulation and revisit continuity.
+
+### Recovered strengths
+
+- Time, weather, season, ambience, and world events are recognized as part of the world experience.
+- Some weather selection is deterministic rather than random on each render.
+- Residents have routine/activity concepts.
+- Ambient events are separated from some higher-level product systems.
+- The larger world runtime includes actor movement, routes, navigation, and spawn points.
+- Return visits and continuity are considered product concerns.
+
+### Limitations and cautions
+
+- Several clocks and snapshots use device local wall time directly.
+- Weather and season logic are lightweight deterministic buckets, not an authored climate model.
+- The inspected world snapshot defaults to clear weather and simple ambient values.
+- Resident routine logic is highly simplified and does not establish a durable society or long-term commitments.
+- NPC presentation state is in-memory; it is not a full persistent character-life model.
+- The inspected sources do not establish a complete creature/ecology simulation or species/habitat system.
+- The inspected sources do not establish a robust plant lifecycle, care, and habitat model.
+- Offline elapsed time, device clock changes, daylight-saving/time-zone behaviour, event recovery, and cross-device determinism are not fully proven.
+
+### New Language-world requirements
+
+1. Define one canonical world clock and an explicit time-zone/calendar policy; no subsystem may independently infer time from device wall clock.
+2. Define day/night, seasonal, and weather profiles separately for each authored world.
+3. Use deterministic, bounded weather and event transitions with accessible presentation fallbacks.
+4. Author resident routines as flexible plans with commitments, exceptions, weather/season adjustments, and limited attention.
+5. Define creatures as ecological participants with habitats, needs, rhythms, signs, population bounds, and world-specific behaviour.
+6. Define plant/garden lifecycles and reversible care states without punitive absence mechanics.
+7. Give every durable event a stable identity, causal source, scope, version, and idempotent recovery policy.
+8. Define bounded offline catch-up and clock-tampering/daylight-saving/time-zone behaviour.
+9. Separate persistent world truth from transient presentation and use simulation fidelity tiers for Android performance.
+10. Ensure important events and story content are recoverable after absence rather than expiring through FOMO.
+
+### Language-world document created
+
+Created `docs/WORLD_SIMULATION_SPEC.md`, a working specification covering simulation ownership, canonical clock options, offline progression, day/night, climate/weather, residents, creatures/ecology, plants/gardens, world events, environmental storytelling, performance tiers, persistence, authoring validation, and open decisions. It is linked from Master Blueprint Section 38.
+
+**Audit status remains ongoing.** This section records selected source evidence and design implications; it does not claim all old simulation systems were exhaustively audited or that the reference simulation works end-to-end.
