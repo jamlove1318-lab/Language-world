@@ -261,3 +261,18 @@ Further GoPAL-AI research is justified only when a concrete unresolved Language-
 - [ ] Product owner explicitly approves the complete blueprint for implementation.
 
 **Current decision:** design and research only. No implementation, engine prototype, asset production, or GoPAL-AI asset transfer is authorized.
+
+
+## 10. New product-owner clarifications — learning path, buildable home, mobile map, Cassidy residence
+
+The product owner has explicitly added requirements that were not sufficiently represented in the prior document set:
+
+- A fixed, deliberately varied learning progression, alternating new-character meetings, stories, audio lessons, quizzes, puzzles, games, and renewed resident interactions in repeating cycles with new content. This curriculum path is distinct from open-ended home-world life.
+- Intentional empty plots in Emerald Valley for learners to acquire and place houses, buildings, decorations, furniture, gardens, and other items.
+- A two-axis scrollable/pannable Emerald Valley map on mobile; each location has a horizontal/landscape-oriented presentation and may scroll horizontally.
+- Cassidy's own residence, including personal rooms such as bedroom, library/study, and kitchen, separate from learner-owned property and shared buildings.
+- Product-wide animation expectations, bounded by purposeful motion, accessibility, reduced-motion options, interruption safety, and device performance.
+
+Supporting documents updated: Product Scope and Release Definition, Experience Catalogue, World Objects and Spaces, UX and Accessibility, Cassidy Character Bible, and World & Universe Bible. The Master Blueprint and Product Systems Audit record the additions.
+
+Remaining decisions include the exact curriculum cycle and first learning sequence, map/camera scale, buildable plot and item rules, point costs and ownership, Cassidy's room canon and access, mobile orientation policy, and animation/performance budgets. These must be resolved during design and testing; they are not silently assumed.
