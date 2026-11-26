@@ -1345,3 +1345,55 @@ A new independent working draft, `docs/WORLD_UNIVERSE_BIBLE.md`, records the uni
 Created `docs/EXPERIENCE_CATALOGUE.md`, a working specification containing the taxonomy, all 60 research seeds, authoring contract, learning integration model, variety principles, persistence boundaries, accessibility/safety standards, quality gates, and candidate portfolio. It is linked from Master Blueprint Section 36.
 
 **Audit status remains ongoing.** This section records selected source evidence and design implications; it does not claim complete verification of every old experience or runtime behaviour.
+
+
+## 46. Learning design, capability evidence, and evaluation limits
+
+### GoPAL-AI references inspected
+
+- `docs/world-learning-variety-blueprint.md` and `world-learning-variety-implementation.md` describe contextual learning in real locations, fictional learning spaces, and reusable mechanics rather than one fixed lesson format.
+- `src/engines/learning/contextualLanguageLearningEngine.ts` builds place-based prompts across vocabulary, listening, speaking, reading, grammar, and writing.
+- `adaptiveConversationEngine.ts` selects conversation support using a single numeric mastery value. This is a useful adaptation concept but too coarse to represent separate language skills and evidence.
+- `languageCapabilityEngine.ts` records scenario/skill attempts and successes plus word/phrase counters. The inspected implementation stores data under one global AsyncStorage key rather than explicit learner scope; this is a serious account-isolation requirement for the new product.
+- `learningEvaluationEngine.ts` uses expected-concept and sample-response matching heuristics. This can support narrow constrained text checks but does not establish robust semantic understanding, naturalness, spoken ability, or pronunciation.
+- `learningNeedEngine.ts` ranks scenarios from scenario and skill capability states.
+- `worldLearningScenarioEngine.ts` contains authored place-specific scenarios with target language, vocabulary, response options, cultural notes, follow-ups, and possible world changes.
+- `worldLearningResponseEngine.ts` uses exact/approximate string matching; `wordBankAnswerEngine.ts` composes responses from selected word indexes.
+- `worldLearningFlowEngine.ts` and `worldLearningOutcomeEngine.ts` connect capability, integration/memory, relationship, Cassidy, and world consequences. The inspected flow performs sequential side effects and uses local completion/in-flight guards; this does not prove transactional recovery across interrupted operations.
+
+### Recovered strengths
+
+- Language learning is connected to believable places and meaningful interactions.
+- The learning model recognises multiple skills beyond vocabulary recall.
+- Scenarios can include context, target language, vocabulary, cultural notes, follow-ups, and world consequences.
+- Adaptive support and prioritisation of learning needs are represented.
+- Learning outcomes can connect to narrative and world continuity.
+
+### Limitations and risks
+
+- A single mastery scalar is too coarse for multidimensional language ability.
+- Attempt/success counts and fixed thresholds do not prove transfer or long-term retention.
+- A global capability key risks cross-learner leakage on shared devices.
+- String and sample-response matching are not robust semantic assessment.
+- Microphone capture, shadowing, speech transcription, semantic speech evaluation, and pronunciation analysis are distinct capabilities; the inspected code does not establish the latter capabilities.
+- Sequential multi-service side effects can leave partial outcomes if interrupted.
+- The inspected files do not establish a complete spaced-repetition system, robust speech evaluation, dialect coverage, account isolation, or validated learning gains.
+
+### New Language-world requirements
+
+1. Define separate capability dimensions and retain raw evidence separately from derived progress summaries.
+2. Track exposure, recognition, retrieval, guided production, independent production, transfer, retention, confidence, and support dependence without collapsing them into one score.
+3. Adapt support using multidimensional evidence, recency, context variety, hints, and learner-controlled preferences.
+4. Define valid evaluation methods and explicit limitations for multiple choice, text matching, typed responses, audio playback, recording, ASR transcripts, and pronunciation analysis.
+5. Never claim speech/pronunciation assessment without an appropriate validated capability and evidence.
+6. Support contextual listening, speaking, reading, writing, vocabulary, grammar, pragmatics, and cultural interpretation.
+7. Require qualified language/cultural review and support valid regional, register, and dialect variation.
+8. Scope every learner record to an explicit stable learner/account identity; prevent cross-account data exposure.
+9. Define consent, minimised audio retention, export, correction, deletion, offline/sync, idempotency, and recovery requirements.
+10. Keep practice optional and motivating without streak pressure, punitive lives, or fabricated mastery.
+
+### Language-world document created
+
+Created `docs/LEARNING_DESIGN.md`, a working specification covering learning philosophy, capability/evidence, adaptive support, evaluation limits, listening and speech honesty, reading/writing, vocabulary/grammar, cultural pragmatics, learner control, persistence/privacy, accessibility, and open decisions. It is linked from Master Blueprint Section 37.
+
+**Audit status remains ongoing.** This section records selected source evidence and design implications; it does not claim full verification of all legacy learning behaviour or validated learning outcomes.
