@@ -274,3 +274,18 @@ The user's established example—travelling from Emerald Valley to a Spanish-lan
 - [ ] Complete cultural, language, ecological, accessibility, and production reviews.
 
 **This document is a framework and a research-backed starting point, not a finished universe canon. No implementation is authorized by this draft.**
+
+
+## 14. Emerald Valley's spatial and residential structure
+
+Emerald Valley must be authored as a place with coherent geography and room for growth, not a fixed small hub. Its main map is intended to pan in both horizontal and vertical directions on mobile. Districts, roads, paths, public locations, nature, water, and building plots should form a legible spatial whole.
+
+Include intentional open plots and spaces that learners can acquire and develop with houses, buildings, gardens, decorations, furniture, and other items, subject to the product's ownership and placement rules. These spaces are a deliberate part of the home-world design and should be visually legible as opportunities, not unfinished gaps. Public routes, shared landmarks, ecological areas, and accessibility must remain protected.
+
+The world must distinguish public/shared buildings, learner-owned property, and Cassidy's own residence. Cassidy's home is part of her character canon and includes personal rooms such as a bedroom, library/study, and kitchen, with final details subject to canon approval. It should support her independent daily life and environmental storytelling; it is not a purchasable learner asset.
+
+Each authored location should support a horizontal, landscape-oriented mobile presentation. The valley map pans on both axes; a location scene may scroll horizontally where its spatial composition extends beyond the viewport. Device orientation policy remains open pending UX and device testing.
+
+## 15. Learning route within the wider universe
+
+Emerald Valley remains home, not the curriculum destination. The language-learning journey is a separate, intentionally sequenced progression that can use experiences located in Emerald Valley and other worlds. The path should alternate social interaction, stories, audio, quizzes, puzzles, games, and renewed resident conversations in a deliberate rhythm, while home exploration and everyday life remain open and optional.
