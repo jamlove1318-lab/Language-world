@@ -19,9 +19,10 @@
 | Document | Role | Current state |
 |---|---|---|
 | [Master Blueprint](MASTER_BLUEPRINT.md) | Central product vision and system index | Working draft v0.3+; Cassidy canon added |
-| [Product Systems Audit](PRODUCT_SYSTEMS_AUDIT.md) | Evidence and limitations from selected reference files | Sections 1–43; ongoing |
+| [Product Systems Audit](PRODUCT_SYSTEMS_AUDIT.md) | Evidence and limitations from selected reference files | Sections 1–44; ongoing |
 | [Archive Gap Audit](GOPAL_ARCHIVE_TO_LANGUAGE_WORLD_GAP_AUDIT.md) | Recovered product concepts and new-product gaps | Working research document |
 | [Cassidy Character Bible](CASSIDY_CHARACTER_BIBLE.md) | Independent Language-world character canon and production direction | Working draft v0.1; review required |
+| [World & Universe Bible](WORLD_UNIVERSE_BIBLE.md) | Universe hierarchy, Emerald Valley, distinct world standards and registry | Working draft v0.1; world canon incomplete |
 | [Source Audit](SOURCE_AUDIT.md) | Reference repository inventory and audit scope | Ongoing |
 | [Foundation](FOUNDATION.md) | Initial product principles | Established foundation |
 | [Architecture Decisions](ARCHITECTURE_DECISIONS.md) | Accepted constraints and unresolved choices | Maintained |
@@ -41,6 +42,7 @@
 - [x] Record broad experiences beyond residents and dialogue: exploration, stories, mysteries, games, culture, creativity, and learning.
 - [x] Record first-open introduction, cinematic travel, resident reveals, and replaceable placeholder assets.
 - [x] Recover Cassidy's written visual canon, record conflicts, and create an independent character bible draft.
+- [x] Recover Emerald Valley geography and Japanese/French world seeds; create an independent universe bible draft.
 
 ### Reference recovery
 
@@ -56,12 +58,13 @@
 - [x] Create central Master Blueprint structure.
 - [x] Expand it with recovered requirements and supporting specification plan.
 - [x] Add Cassidy Character Bible as the first detailed character specification.
+- [x] Add World & Universe Bible as the universe/world authoring foundation.
 - [x] Link the Master Blueprint from README.
 - [ ] Complete product-owner review and approval.
 
 ## Current reference-audit status
 
-The Product Systems Audit currently contains 43 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
+The Product Systems Audit currently contains 44 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
 
 Remaining high-value review areas include:
 - Full source trace of transport and travel state, including interruption and re-entry.
@@ -75,7 +78,7 @@ Remaining high-value review areas include:
 
 Create and review in dependency order:
 
-1. [ ] `WORLD_UNIVERSE_BIBLE.md` — universe canon, world registry, Emerald Valley, distinct language-world bibles.
+1. [x] `WORLD_UNIVERSE_BIBLE.md` — first working draft created; Emerald Valley/world canon still needs product-owner review and completion.
 2. [x] `CASSIDY_CHARACTER_BIBLE.md` — first working draft created; canonical artwork and open questions require review.
 3. [ ] `EXPERIENCE_CATALOGUE.md` — all experience families, loops, dependencies, replay, accessibility, content costs.
 4. [ ] `LEARNING_DESIGN.md` — skills, evidence, practice, adaptive support, assessment, speech capability claims.
