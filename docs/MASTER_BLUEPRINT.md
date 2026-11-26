@@ -604,3 +604,9 @@ The actual canonical artwork remains authoritative over conflicting written outf
 
 The Cassidy Character Bible is a supporting draft and does not become final canon until reviewed and approved by the product owner.
 
+## 35. Universe and world bible
+
+The independent [World & Universe Bible](WORLD_UNIVERSE_BIBLE.md) defines the universe hierarchy, Emerald Valley as the home world, requirements for distinct language worlds, world identity standards, canonical registry requirements, and travel connections. It records recovered Emerald Valley landmarks and Japanese/French location seeds while clearly identifying the Spanish-world gap and other open decisions.
+
+No language world is approved as complete merely because it has a list of places or a visual theme. Each launch world requires a researched world bible covering geography, culture, society, ecology, stories, language experiences, sensory identity, transport, and production requirements.
+
