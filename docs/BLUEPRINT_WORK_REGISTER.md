@@ -19,7 +19,7 @@
 | Document | Role | Current state |
 |---|---|---|
 | [Master Blueprint](MASTER_BLUEPRINT.md) | Central product vision and system index | Working draft v0.3+; Cassidy canon added |
-| [Product Systems Audit](PRODUCT_SYSTEMS_AUDIT.md) | Evidence and limitations from selected reference files | Sections 1–44; ongoing |
+| [Product Systems Audit](PRODUCT_SYSTEMS_AUDIT.md) | Evidence and limitations from selected reference files | Sections 1–49; ongoing |
 | [Archive Gap Audit](GOPAL_ARCHIVE_TO_LANGUAGE_WORLD_GAP_AUDIT.md) | Recovered product concepts and new-product gaps | Working research document |
 | [Cassidy Character Bible](CASSIDY_CHARACTER_BIBLE.md) | Independent Language-world character canon and production direction | Working draft v0.1; review required |
 | [World & Universe Bible](WORLD_UNIVERSE_BIBLE.md) | Universe hierarchy, Emerald Valley, distinct world standards and registry | Working draft v0.1; world canon incomplete |
@@ -27,10 +27,14 @@
 | [Learning Design](LEARNING_DESIGN.md) | Capability/evidence model, adaptive support, evaluation, speech honesty, privacy and accessibility | Working draft v0.1; language scope and validation remain open |
 | [World Simulation Specification](WORLD_SIMULATION_SPEC.md) | Canonical time, climate/weather, residents, ecology, plants, events, offline and performance | Working draft v0.1; clock model and world profiles remain open |
 | [World Objects and Spaces](WORLD_OBJECTS_AND_SPACES.md) | Spatial hierarchy, buildings/interiors, objects, interactions, navigation, inventory and personal spaces | Working draft v0.1; launch scope and technical contracts remain open |
+| [Travel Experience Specification](TRAVEL_EXPERIENCE_SPEC.md) | Route graph, transport, journey state, cinematic staging, arrival and recovery | Working draft v0.1; first route remains to be authored |
 | [Source Audit](SOURCE_AUDIT.md) | Reference repository inventory and audit scope | Ongoing |
 | [Foundation](FOUNDATION.md) | Initial product principles | Established foundation |
 | [Architecture Decisions](ARCHITECTURE_DECISIONS.md) | Accepted constraints and unresolved choices | Maintained |
 | [Engine Evaluation](ENGINE_EVALUATION.md) | Engine comparison and Android proof plan | Preliminary; no engine selected |
+| [Cinematic Experience Blueprint](CINEMATIC_EXPERIENCE_BLUEPRINT.md) | First-open, travel, character reveals, and cinematic production | Existing working draft; detailed system review/consolidation required |
+| [Asset Handoff Standard](ASSET_HANDOFF_STANDARD.md) | Designer delivery, semantic IDs, animation and replacement rules | Existing working draft; review against final production contract required |
+| [Asset and Cinematic Pipeline](ASSET_AND_CINEMATIC_PIPELINE.md) | Replaceable asset contracts and engine-neutral cinematic pipeline | Existing working draft; review/consolidation required |
 | [Roadmap](ROADMAP.md) | High-level phases and exit gates | Pre-implementation |
 
 ## Work completed
@@ -72,12 +76,14 @@
 - [x] Create World Simulation working specification covering clock policy, climate, residents, ecology, plants, events, offline recovery, and performance tiers.
 - [x] Inspect object schemas/catalogues/factories, entrances, interactions, personal-object storage, inventory helpers, and location contracts.
 - [x] Create World Objects and Spaces working specification with explicit object lifecycle, state ownership, interior, and asset-replacement requirements.
+- [x] Inspect local transport networks, vehicle loops, destination arrival scenes, and arrival timeline sources.
+- [x] Create Travel Experience working specification with durable journey states, cinematic staging, arrival handoff, and recovery requirements.
 - [x] Link the Master Blueprint from README.
 - [ ] Complete product-owner review and approval.
 
 ## Current reference-audit status
 
-The Product Systems Audit currently contains 48 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
+The Product Systems Audit currently contains 49 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
 
 Remaining high-value review areas include:
 - Full source trace of transport and travel state, including interruption and re-entry.
@@ -97,9 +103,9 @@ Create and review in dependency order:
 4. [x] `LEARNING_DESIGN.md` — working draft created; capability/evidence, adaptive support, assessment limits, speech honesty, privacy and accessibility defined.
 5. [x] `WORLD_SIMULATION_SPEC.md` — working draft created; simulation domains and clock/offline decisions documented, world-specific profiles remain open.
 6. [x] `WORLD_OBJECTS_AND_SPACES.md` — working draft created; spatial hierarchy, object lifecycle, interaction, interiors, inventory, and replaceable assets defined.
-7. [ ] `CINEMATIC_EXPERIENCE_SYSTEM.md` — timelines, camera, actor direction, voice, sound, accessibility, preload and recovery.
-8. [ ] `TRAVEL_EXPERIENCE_SPEC.md` — routes, transport modes, staging, boarding, journeys, arrival, handoff and interruption.
-9. [ ] `ASSET_AND_CREATIVE_PIPELINE.md` — semantic IDs, manifests, versioning, replacement, rigs, animation, provenance and designer handoff.
+7. [~] `CINEMATIC_EXPERIENCE_BLUEPRINT.md` and `ASSET_AND_CINEMATIC_PIPELINE.md` already exist; review, consolidate, and complete their timeline/camera/actor/voice/audio/accessibility/preload/recovery contracts rather than creating a duplicate.
+8. [x] `TRAVEL_EXPERIENCE_SPEC.md` — working draft created; route graph, transport modes, durable journey states, arrival handoff, and interruption recovery defined.
+9. [~] `ASSET_HANDOFF_STANDARD.md` and `ASSET_AND_CINEMATIC_PIPELINE.md` already exist; reconcile semantic IDs, manifests, versioning, replacement, rigs, animation, provenance, and designer handoff into one approved production contract.
 10. [ ] `AUDIO_EXPERIENCE_SPEC.md` — acoustic identity, mixing, spatial behaviour, playback boundary and accessibility.
 11. [ ] `PERSISTENCE_PRIVACY_AND_SYNC.md` — identity, local-first behaviour, sync, security, privacy, export, deletion and recovery.
 12. [ ] `TECHNICAL_ARCHITECTURE.md` — domain boundaries, runtime, data, engine evaluation and integration contracts.
