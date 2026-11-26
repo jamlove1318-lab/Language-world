@@ -69,3 +69,5 @@ The new build preserves the valuable product ideas from the original repository 
 - [Narrative and Story Continuity](docs/NARRATIVE_AND_STORY_CONTINUITY_SPEC.md) — world canon, mysteries, clues, meaningful choices, resident stories, and long-term continuity.
 
 - [Persistence, Privacy, and Synchronization](docs/PERSISTENCE_PRIVACY_AND_SYNC.md) — learner identity, offline-first data, sync/conflicts, memory provenance, privacy, security, export, deletion, and recovery.
+
+- [Creative Experiences and Personal Archive](docs/CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md) — journal, phrasebook, postcards, comics, collections, museum, time capsules, transcript archive, editable source, media lifecycle, privacy, and cultural integrity.
