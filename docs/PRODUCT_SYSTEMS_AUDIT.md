@@ -1657,3 +1657,60 @@ The existing `CINEMATIC_EXPERIENCE_BLUEPRINT.md` was strengthened with sequence 
 Created `docs/NARRATIVE_AND_STORY_CONTINUITY_SPEC.md`, a working specification for narrative scales, canon/knowledge, story authoring, fair mysteries, choices, resident autonomy, Cassidy boundaries, quests, journals, durable events, learning integration, and cultural/quality review. It is linked from Master Blueprint Section 42.
 
 **Audit status remains ongoing.** This section records selected-source observations and does not claim an exhaustive review of all story content or narrative assets.
+
+
+## 52. Persistence, privacy, identity, and synchronization audit
+
+### Selected GoPAL-AI sources inspected
+
+- `src/lib/localStore.ts` — local keys, seeded defaults, world/character/memory/journey/creation state, local mutations, reset behavior.
+- `src/lib/storage.ts` — prefixed cache helpers.
+- `src/lib/supabaseClient.ts` — Supabase configuration and auth persistence.
+- `src/services/auth.ts` — configured and local fallback identity behavior.
+- `src/engines/memory/memoryEngine.ts` — remote memory reads/writes and local fallback paths.
+- `supabase/schema.sql` — personal-data tables, row-level security enablement, and selected owner policies.
+
+### Recovered strengths
+
+- The project attempted both local persistence and remote persistence.
+- Its schema recognizes many useful personal-state domains: profile/preferences, world state, relationships, memories, learning sessions, stories, creations, progression, discoveries, inventory, and journey events.
+- Some tables use explicit owner checks through row-level security.
+- Memory categories and source-event references point toward a useful provenance model.
+- A separate cache prefix distinguishes some cached values from the main local store.
+
+### Concrete limitations observed
+
+- LocalStore keys share a global prefix and do not include a learner identity.
+- Several local defaults and writes use the hard-coded `local-explorer-user` identity.
+- Unconfigured auth returns a shared local demo identity rather than provisioning a distinct anonymous learner.
+- MemoryEngine's local fallback omits the supplied userId when calling LocalStore methods, so a remote failure can write/read shared local memory state.
+- A remote memory query returning no rows may fall back to local records, confusing an empty remote account with local fallback state.
+- Multiple LocalStore getters return pre-populated demo progress, memories, creations, bookmarks, artifacts, and revisit counts.
+- LocalStore writes catch and log errors without exposing a durable pending/failed status to the caller.
+- Read-then-write local mutations lack a transaction or recovery journal in the inspected implementation.
+- Local memory and journey-event IDs use Date.now(), which is not robust global identity or idempotency.
+- Memory records contain a fact and timestamp but not confidence, detailed provenance, visibility, retention, or correction metadata.
+- The SQL schema enables row-level security on many tables and defines policies for selected owner-scoped tables; enabling RLS does not establish complete policy coverage for every table.
+- The inspected files do not establish account migration, multi-device sync, conflict resolution, export, deletion propagation, backup, or crash recovery.
+- Auth persistence uses AsyncStorage; the new project must independently assess protected token storage and its threat model.
+
+### Language-world requirements added
+
+1. Give every learner a stable, isolated identity, including local anonymous learners; never use shared fallback identities.
+2. Scope every personal local key, remote row, cache, event, media object, and queued mutation to the learner.
+3. Define explicit account-linking migration with validation, idempotency, conflict handling, and recovery.
+4. Declare offline capability and distinguish local save, queued sync, and confirmed remote sync.
+5. Use durable outbox/saga semantics for cross-domain effects and recover interrupted operations.
+6. Define conflict policies by data type; never apply last-write-wins indiscriminately to stories, learning history, memory, or creations.
+7. Separate world-authored content from learner-owned state, transient session state, caches, and operational records.
+8. Define UTC, world-local, monotonic, and untrusted device-clock semantics; bound offline simulation.
+9. Give personal memories provenance, confidence, purpose, scope, retention, correction, and deletion semantics.
+10. Establish data minimization, explicit voice/AI consent, provider transparency, secure secret handling, and backend authorization tests.
+11. Support portable export, deletion across derived data/media, backup, restore, and corruption recovery.
+12. Test account switching, anonymous migration, offline replay, duplicate events, clock changes, and cross-learner authorization.
+
+### New Language-world document
+
+Created `docs/PERSISTENCE_PRIVACY_AND_SYNC.md`, a working specification for identity, local-first operation, sync/conflicts, durable events, memory, privacy, security, creation/media lifecycle, export/deletion, backup, recovery, and acceptance tests. It is linked from Master Blueprint Section 43.
+
+**Audit status remains ongoing.** These findings are limited to selected files and are not a complete security review or proof of end-to-end behavior.
