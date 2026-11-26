@@ -40,7 +40,9 @@ See [Foundation](docs/FOUNDATION.md), [Architecture Decisions](docs/ARCHITECTURE
 
 ## Audit documents
 
-- [Source repository audit](docs/SOURCE_AUDIT.md)\n- [GoPAL-AI Idea Recovery and Transfer Audit](docs/GOPAL_IDEA_RECOVERY_AUDIT.md) — recovered product ideas, experience patterns, evidence limits, failure lessons, and explicit no-assets transfer decisions.
+- [Source repository audit](docs/SOURCE_AUDIT.md)
+- [GoPAL-AI Idea Recovery and Transfer Audit](docs/GOPAL_IDEA_RECOVERY_AUDIT.md) — recovered product ideas, experience patterns, evidence limits, failure lessons, and explicit no-assets transfer decisions.
+- [Blueprint Reconciliation](docs/BLUEPRINT_RECONCILIATION.md) — missing product decisions, document inconsistencies, and the remaining approval path.
 - [Product systems audit — Cassidy, living world, relationships, and learning](docs/PRODUCT_SYSTEMS_AUDIT.md)
 - [Architecture decisions](docs/ARCHITECTURE_DECISIONS.md)
 - [Project roadmap](docs/ROADMAP.md)
