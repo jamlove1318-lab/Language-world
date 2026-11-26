@@ -89,13 +89,13 @@
 - [x] Strengthen artist handoff and asset/cinematic pipeline documents with validation, authoritative boundaries, versioning, and independent-production constraints.
 - [x] Inspect quest, resident story, clue investigation, story choice, event direction, and narrative trace sources.
 - [x] Create Narrative and Story Continuity working specification with canon/knowledge ownership, fair mystery, resident autonomy, durable re-entry, and ethical quest requirements.
-- [x] Create Creative Experiences and Personal Archive working specification with editable source, object lifecycle, privacy, media, AI boundaries, cultural integrity, and acceptance tests.
+- [x] Create Creative Experiences and Personal Archive working specification with editable source, object lifecycle, privacy, media, AI boundaries, cultural integrity, and acceptance tests.\n- [x] Consolidate GoPAL-AI product ideas, experience patterns, selected source evidence, limitations, and transfer decisions in `GOPAL_IDEA_RECOVERY_AUDIT.md`; establish explicit ideas-only/no-assets boundary.
 - [x] Link the Master Blueprint from README.
 - [ ] Complete product-owner review and approval.
 
 ## Current reference-audit status
 
-The Product Systems Audit currently contains 53 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
+The Product Systems Audit currently contains 54 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
 
 Remaining high-value review areas include:
 - Full source trace of transport and travel state, including interruption and re-entry.
@@ -103,7 +103,7 @@ Remaining high-value review areas include:
 - Detailed account lifecycle, anonymous mode, sign-out/account switching, sync and deletion behaviour.
 - RLS policy completeness and security boundaries (schema declarations alone are not a security audit).
 - Accessibility implementation evidence and reduced-motion/audio/subtitle behaviour.
-- Content authoring and asset validation workflows, while explicitly excluding the legacy 3D pipeline from reuse.
+- Remaining high-value product-content and navigation reachability checks. GoPAL-AI asset inspection and legacy pipeline review are explicitly out of scope under the user's ideas-only instruction.
 
 ## Supporting specification queue
 
@@ -171,3 +171,16 @@ These are intentionally unresolved; do not invent answers.
 - [ ] Product owner explicitly approves the blueprint for implementation.
 
 **Current state: Gate A is being designed. Gates B–D are not complete. No implementation work should begin.**
+
+
+## Ideas-only source recovery checkpoint
+
+- [x] Retrieve the GoPAL-AI main repository tree without truncation and inventory its files.
+- [x] Review the principal master vision, project overview, full feature audit, implementation tracker, world specification, game catalogue, learning-variety notes, and 173-concept product specification.
+- [x] Inspect selected high-value source domains: world/simulation, learning, Cassidy, residents, narrative, travel, objects, mini-games, audio, economy, memory, creation, journey, events, local storage, and database schema.
+- [x] Create the consolidated GoPAL-AI Idea Recovery and Transfer Audit.
+- [x] Record the user's explicit rule: ideas only; no GoPAL-AI assets, code, media, or production pipeline.
+- [ ] Continue targeted product-content and navigation research where it changes the Language-world blueprint.
+- [ ] Product-owner review of the recovered ideas and transfer matrix.
+
+This checkpoint is not a claim that every GoPAL-AI source line was inspected or every old feature was runtime-verified. It is a consolidated product-idea recovery with explicit evidence limits.
