@@ -628,3 +628,9 @@ It explicitly separates microphone capture, shadowing, transcription, semantic r
 The independent [World Simulation Specification](WORLD_SIMULATION_SPEC.md) defines canonical time, day/night, authored climate and weather, seasons/calendars, resident schedules and autonomy, creature ecology, plant/garden lifecycles, festivals and world events, environmental storytelling, offline catch-up, performance tiers, and durable event/recovery requirements.
 
 The specification explicitly leaves the canonical time model, world timezone/calendar policy, offline catch-up limits, and first-release ecology open for product decisions. It rejects treating device wall time, random ambient effects, or presentation state as the source of persistent world truth. This is a working specification; no implementation is authorized.
+
+## 39. World objects, spaces, and interaction contracts
+
+The independent [World Objects and Spaces](WORLD_OBJECTS_AND_SPACES.md) specification defines the spatial hierarchy from universe/world through regions, places, spaces, objects, and interactions. It establishes building/interior contracts, object identity and lifecycle, contextual interactions, navigation, inventory/collections, personal spaces, semantic world events, placeholder-to-final asset replacement, accessibility, and performance requirements.
+
+It distinguishes world-authored facts, learner-owned state, shared state, and temporary session state. It also records legacy global-state and in-memory inventory risks that must not be inherited. This is a working specification; launch scope and technical contracts remain open.
