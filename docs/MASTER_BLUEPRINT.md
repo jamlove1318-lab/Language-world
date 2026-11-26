@@ -553,7 +553,7 @@ The Master Blueprint remains the central index. These supporting documents will 
 | [`ASSET_AND_CINEMATIC_PIPELINE.md`](ASSET_AND_CINEMATIC_PIPELINE.md) | 21, 29 | Semantic asset IDs, manifests, replacement, rigs, animation, provenance and designer handoff |
 | [`AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md`](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) | 22, 29 | Audio identity, mixing, spatial behaviour, playback boundary and accessibility |
 | `PERSISTENCE_PRIVACY_AND_SYNC.md` | 23, 30 | Identity, storage, offline, sync, security, privacy, export, deletion and recovery |
-| `TECHNICAL_ARCHITECTURE.md` | 20 | Domain boundaries, engine evaluation, runtime, data and integration contracts |
+| [`TECHNICAL_ARCHITECTURE.md`](TECHNICAL_ARCHITECTURE.md) | 20 | Domain boundaries, engine evaluation, runtime, data and integration contracts |
 | `PRODUCTION_AND_QUALITY_PLAN.md` | 24–26 | Roles, pipelines, acceptance criteria, test strategy, milestones and release gates |
 
 Supporting specifications must link back to the relevant blueprint chapters, use the evidence labels defined in Section 0, and record open decisions. They must not silently turn a proposal into an accepted product decision.
@@ -689,3 +689,12 @@ The central finding is that the project has broad system coverage but still need
 The reconciliation also identifies stale work-order language, supporting-document filename mismatches, ambiguity about GoPAL-AI asset inspection, and duplicate architecture-decision numbering. The supporting-document table and work order have been corrected to reflect the current document set and the user's ideas-only boundary.
 
 This reconciliation does not approve features, select an engine/backend, or authorize implementation. The product owner must review the open decisions and approve the complete blueprint explicitly.
+
+
+## 47. Engine-neutral Technical Architecture
+
+The working [Technical Architecture](TECHNICAL_ARCHITECTURE.md) consolidates domain ownership, logical layers, state classes, commands/events, durable cross-domain operations, runtime lifecycle, time domains, offline/sync boundaries, content packs, semantic asset resolution, cinematic/travel integration, AI/voice boundaries, privacy/security, operations, and testing.
+
+It intentionally does not select an engine, backend, database, AI provider, or speech service. It translates the product requirements into architecture constraints while preserving the existing decisions: no Expo, no GoPAL-AI implementation or assets, renderer-independent domain truth, and Android evidence before engine selection.
+
+This is a working architecture draft. It must be reconciled with UX/accessibility, product scope, AI/voice governance, and production/quality specifications before the blueprint can be approved.
