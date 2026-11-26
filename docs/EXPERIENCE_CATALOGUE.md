@@ -194,3 +194,12 @@ Locations provide distinct contexts rather than all becoming classrooms. A marke
 The learner's home can also develop. Buildings and scenarios may be upgraded through the points progression system, with visible improvements and new optional variants. The Experience Catalogue defines the activities and scenario content; the World Objects and Spaces specification defines building/upgrade state and spatial contracts; the points domain owns earn/spend transactions. These responsibilities must remain separate.
 
 This is a product requirement and working direction. The first-release portfolio, language scope, exact location list, point economy, and upgrade trees remain open.
+
+
+## 16. Fixed learning progression and activity rhythm
+
+The product owner wants a fixed, intentionally ordered learning path, but with a varied sequence so the learner does not feel stuck in repetitive lessons. The path should alternate formats in a pedagogically meaningful rhythm. A representative sequence may be: meet a new character → story → audio lesson → quiz → puzzle → game → return to a resident interaction → begin a new cycle with different content and skills.
+
+This is a sequencing principle, not a rigid seven-step template. Curriculum design determines the actual order, prerequisites, review spacing, difficulty, and outcomes. Character interactions recur so learners apply language after encountering it in stories, listening, games, and puzzles. Review should use contextual variation rather than simply repeat the same exercise.
+
+The fixed path governs structured learning progression. It does not make Emerald Valley itself a course, and it does not remove the learner's freedom to explore home, talk casually with Cassidy/residents, enjoy stories, build, create, or choose optional activities. The learning path should make the next recommended step clear while allowing appropriate review, retry, accommodations, and breaks.
