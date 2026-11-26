@@ -227,8 +227,8 @@ The Experience Director may select an eligible experience and coordinate entry, 
 
 ## 7. Recommended order of work
 
-1. Reconcile the Master Blueprint and supporting-document links.
-2. Create the engine-neutral Technical Architecture and ownership matrix.
+1. [x] Reconcile the Master Blueprint and supporting-document links.
+2. [x] Create the engine-neutral Technical Architecture working draft and ownership model.
 3. Create UX/Accessibility and end-to-end navigation specification.
 4. Define audience, age policy, first-release promise, and excluded scope.
 5. Define AI/voice governance and Experience Director boundaries.
