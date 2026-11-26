@@ -177,7 +177,7 @@ These are intentionally unresolved; do not invent answers.
 
 - [x] Retrieve the GoPAL-AI main repository tree without truncation and inventory its files.
 - [x] Review the principal master vision, project overview, full feature audit, implementation tracker, world specification, game catalogue, learning-variety notes, and 173-concept product specification.
-- [x] Inspect selected high-value source domains: world/simulation, learning, Cassidy, residents, narrative, travel, objects, mini-games, audio, economy, memory, creation, journey, events, local storage, and database schema.
+- [x] Inspect selected high-value source domains: world/simulation, learning, Cassidy, residents, narrative, travel, objects, mini-games, audio, economy, memory, creation, journey, events, local storage, and database schema.\n- [x] Review early product-specification ideas (1–88), later cross-industry idea waves (89–173), and the current player-facing surface taxonomy/reachability lesson.
 - [x] Create the consolidated GoPAL-AI Idea Recovery and Transfer Audit.
 - [x] Record the user's explicit rule: ideas only; no GoPAL-AI assets, code, media, or production pipeline.
 - [ ] Continue targeted product-content and navigation research where it changes the Language-world blueprint.
