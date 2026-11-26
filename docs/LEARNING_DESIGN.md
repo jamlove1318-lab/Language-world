@@ -356,3 +356,20 @@ These findings are selected-source observations, not a full audit of every learn
 ---
 
 **Current status:** Learning philosophy, capability/evidence model, adaptation, evaluation, speech honesty, contextual learning, persistence/privacy, accessibility, and review requirements documented as a working specification. Language scope, assessment validation, and implementation remain open. No implementation is authorized.
+
+
+## 18. Fixed curriculum sequence with varied activity rhythm
+
+**Product-owner requirement:** the core language-learning progression follows a fixed, authored sequence. It should not be an unordered feed of interchangeable activities. Curriculum authors define the next core experience, prerequisites, review timing, learning outcomes, and evidence expected.
+
+The sequence must vary its format to sustain interest and support transfer. A representative cycle may introduce language through meeting a new character, develop context through a story, reinforce listening through an audio lesson, check understanding with a quiz, apply clues in a puzzle, practise through a game, and return to a resident interaction where the learner uses the language more naturally. A new cycle then introduces different characters, situations, language goals, and activity combinations. This is a rhythm example, not a fixed seven-item formula.
+
+The curriculum path is fixed; the learner's whole world is not. Learners may pause, leave, review, retry, take breaks, or choose optional world activities without losing progress or being shamed. Optional exploration does not silently reorder the core path. Placement, skip, remediation, and accessibility policies must be explicit, evidence-informed, and reviewed. The path should avoid monotony by varying social/narrative/audio/game/puzzle/assessment modalities, emotional tone, duration, context, and cognitive demand.
+
+**Acceptance checks:**
+- The next core learning experience is authored and explainable.
+- The sequence alternates formats intentionally and revisits characters/language in new contexts.
+- Review and spaced recall are built into the path rather than left to arbitrary repetition.
+- Optional world life remains available without becoming a hidden prerequisite.
+- Learners can pause, resume, review, and receive accommodations without losing their place.
+- Mistakes and retries do not create shame or punitive progression loss.
