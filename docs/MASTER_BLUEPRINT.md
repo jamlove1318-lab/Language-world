@@ -652,3 +652,9 @@ The specification distinguishes playback, shadowing, microphone capture, speech 
 The independent [Narrative, Stories, Mysteries, and Continuity Specification](NARRATIVE_AND_STORY_CONTINUITY_SPEC.md) defines story scales, canon and knowledge ownership, story authoring, fair mysteries and clue provenance, meaningful choices and consequences, resident autonomy, Cassidy's independent narrative role, ethical quest use, journals and re-entry, durable narrative events, learning integration, and cultural/quality review.
 
 It distinguishes world canon, learner knowledge, learner choices, character knowledge, and presentation. The specification explicitly rejects local UI state as authoritative story progress, pre-completed seed quests, and inactivity-driven story urgency. The first story portfolio and long-running universe mystery remain to be authored and approved.
+
+## 43. Persistence, privacy, identity, and synchronization
+
+The independent [Persistence, Privacy, and Synchronization Specification](PERSISTENCE_PRIVACY_AND_SYNC.md) defines learner identity and local-anonymous scope, account migration, offline capability classes, durable local operations, synchronization and conflict semantics, cross-domain outbox recovery, clock trust, schema/content migration, memory provenance and access, privacy, security, personal-creation media lifecycle, export, deletion, backup, and recovery.
+
+The specification records concrete GoPAL-AI reference limitations: shared unscoped local keys, a hard-coded local demo identity, user ID loss in local memory fallbacks, seeded personal demo data, non-transactional read/write mutations, weak timestamp-derived IDs, and incomplete memory provenance. It explicitly requires isolated learner scope and honest local-versus-synced status. Backend, identity model, offline promise, voice/AI processors, and retention policy remain open. This is a working specification; no implementation is authorized.
