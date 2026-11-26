@@ -19,7 +19,7 @@
 | Document | Role | Current state |
 |---|---|---|
 | [Master Blueprint](MASTER_BLUEPRINT.md) | Central product vision and system index | Working draft v0.3+; idea recovery, reconciliation and technical architecture linked; approval pending |
-| [Product Systems Audit](PRODUCT_SYSTEMS_AUDIT.md) | Evidence and limitations from selected reference files | Sections 1–54; ongoing |
+| [Product Systems Audit](PRODUCT_SYSTEMS_AUDIT.md) | Evidence and limitations from selected reference files | Sections 1–57; ongoing |
 | [Archive Gap Audit](GOPAL_ARCHIVE_TO_LANGUAGE_WORLD_GAP_AUDIT.md) | Recovered product concepts and new-product gaps | Working research document |
 | [Cassidy Character Bible](CASSIDY_CHARACTER_BIBLE.md) | Independent Language-world character canon and production direction | Working draft v0.1; review required |
 | [World & Universe Bible](WORLD_UNIVERSE_BIBLE.md) | Universe hierarchy, Emerald Valley, distinct world standards and registry | Working draft v0.1; world canon incomplete |
@@ -96,7 +96,7 @@
 
 ## Current reference-audit status
 
-The Product Systems Audit currently contains 54 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
+The Product Systems Audit currently contains 57 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
 
 Remaining high-value review areas include:
 - Full source trace of transport and travel state, including interruption and re-entry.
