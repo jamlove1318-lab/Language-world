@@ -554,6 +554,7 @@ The Master Blueprint remains the central index. These supporting documents will 
 | [`AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md`](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) | 22, 29 | Audio identity, mixing, spatial behaviour, playback boundary and accessibility |
 | `PERSISTENCE_PRIVACY_AND_SYNC.md` | 23, 30 | Identity, storage, offline, sync, security, privacy, export, deletion and recovery |
 | [`TECHNICAL_ARCHITECTURE.md`](TECHNICAL_ARCHITECTURE.md) | 20 | Domain boundaries, engine evaluation, runtime, data and integration contracts |
+| [`UX_AND_ACCESSIBILITY_SPEC.md`](UX_AND_ACCESSIBILITY_SPEC.md) | 19 | End-to-end journeys, navigation, activity lifecycle, accessibility, localization and recovery UX |
 | `PRODUCTION_AND_QUALITY_PLAN.md` | 24–26 | Roles, pipelines, acceptance criteria, test strategy, milestones and release gates |
 
 Supporting specifications must link back to the relevant blueprint chapters, use the evidence labels defined in Section 0, and record open decisions. They must not silently turn a proposal into an accepted product decision.
@@ -698,3 +699,10 @@ The working [Technical Architecture](TECHNICAL_ARCHITECTURE.md) consolidates dom
 It intentionally does not select an engine, backend, database, AI provider, or speech service. It translates the product requirements into architecture constraints while preserving the existing decisions: no Expo, no GoPAL-AI implementation or assets, renderer-independent domain truth, and Android evidence before engine selection.
 
 This is a working architecture draft. It must be reconciled with UX/accessibility, product scope, AI/voice governance, and production/quality specifications before the blueprint can be approved.
+
+
+## 48. UX, Navigation, and Accessibility Specification
+
+The working [UX, Navigation, and Accessibility Specification](UX_AND_ACCESSIBILITY_SPEC.md) defines the world-first experience promise, information architecture principles, candidate destination taxonomy, core learner journeys, activity lifecycle, minimal HUD, touch/spatial interaction, accessibility across vision/hearing/motion/motor/cognitive/sensory needs, localization, notification boundaries, and loading/error/recovery UX.
+
+It explicitly does not copy the GoPAL-AI tab layout or lock the final navigation model. Audience, age policy, input support, accessibility conformance target, and first-release journeys remain open. The specification must be reviewed alongside the Technical Architecture and Product Scope before approval.
