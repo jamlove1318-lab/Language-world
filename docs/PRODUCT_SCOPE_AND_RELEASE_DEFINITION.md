@@ -275,3 +275,57 @@ Do not invent answers to these questions:
 This document records the product owner's explicit additions about Emerald Valley as home, broad learning choice, and point-funded building/scenario upgrades. The examples and proposed first-release slice are design proposals, not final commitments.
 
 **No implementation, engine prototype, economy balancing experiment, or asset production is authorized by this document.** The complete blueprint and supporting specifications must be reviewed and explicitly approved first.
+
+
+## 11. Structured learning path with varied activity rhythm
+
+**Product-owner requirement:** Language learning follows a deliberately designed, fixed progression path. The sequence is curated so learners encounter a changing rhythm of activity types rather than repeating the same lesson format until it becomes dull or discouraging.
+
+A representative rhythm (illustrative, not the final curriculum) is:
+1. Meet a new character and use language in a first social interaction.
+2. Experience a short story that gives context and emotional meaning to the new language.
+3. Complete an audio/listening experience.
+4. Try a quiz that checks understanding without making mistakes feel punitive.
+5. Solve a puzzle using recently introduced language or clues.
+6. Play a game that practises recognition, recall, listening, construction, or communication.
+7. Return to a resident/character interaction where the learner uses language in a more natural situation.
+8. Continue with a fresh cycle, changing characters, story context, skill emphasis, activity format, and challenge.
+
+This is a design pattern for varied sequencing, not a promise that every cycle must use exactly seven steps. Curriculum authors define the actual sequence, pacing, prerequisite logic, review intervals, and learning outcomes.
+
+### 11.1 Fixed progression, varied experience
+- The core learning path has an intentional order and clear next steps; it is not an unordered activity catalogue.
+- Each sequence deliberately alternates social, narrative, audio, assessment, puzzle, game, and applied-use formats where pedagogically appropriate.
+- Reintroduce characters and residents at meaningful intervals so learners use language again after encountering it in different formats.
+- Revisit vocabulary and structures through spaced, contextual variation rather than identical repetition.
+- Vary emotional tone, setting, character, activity duration, cognitive demand, and interaction style.
+- Explain progress and what comes next; do not use opaque locks or surprise prerequisites.
+- Support reasonable review, retry, accessibility accommodations, and recovery without shame.
+- Optional free exploration and home-life activities remain available alongside the structured learning path. The open world does not replace or scramble the curriculum sequence, and the curriculum does not turn every home-world activity into a compulsory lesson.
+
+## 12. Emerald Valley spatial experience, plots, and ownership
+
+Emerald Valley is a large, explorable home map rather than a static hub menu. The intended mobile world-map experience is scrollable/pannable in both horizontal and vertical directions so the learner can move around the valley and discover separated districts, paths, buildings, natural areas, and open spaces.
+
+The learner should also encounter deliberately empty plots and available spaces. These are intentional opportunities for personal development, not unfinished scenery. Subject to authored plot rules, learners may acquire and place houses, buildings, decorations, furniture, useful objects, gardens, and other items. A placement/building system should make ownership, footprint, orientation, access, cost, and placement validity clear. The valley must retain coherent paths, sightlines, public spaces, and world identity; personal building must not block essential routes or other learners' core experiences.
+
+The personal build/ownership system is separate from upgrades to shared/public buildings. It needs stable ownership records, a catalogue, placement/relocation rules, inventory or storage, upgrade/repair/migration rules, point transaction integration, and recovery from interrupted purchases. The exact plot count, item catalogue, prices, grid/free placement, building limits, and whether any items are earned rather than purchased remain open.
+
+### 12.1 Mobile location presentation
+Each location/scene should be authored for a horizontal, landscape-oriented mobile presentation with a readable spatial composition and room for characters, environmental storytelling, interaction, and camera movement. Horizontal scrolling within a location should be supported where the location extends beyond the viewport. This is distinct from the Emerald Valley world map, which pans in both axes.
+
+The exact device-orientation policy remains open: a landscape-oriented scene may use a dedicated landscape viewport, a device-orientation transition, or another tested layout. Do not silently assume the entire app must be hard-locked to landscape before UX and device testing.
+
+## 13. Animation as a product-wide presentation principle
+
+The intended experience is animated throughout, not a set of static screens. Animation should support characters, resident life, environmental motion, world transitions, entering/exiting locations, travel, building construction/upgrades, object interactions, learning activities, games, puzzles, story beats, feedback, and interface transitions.
+
+This means a coherent animation direction and semantic animation coverage plan across the product—not that every element must move constantly. Motion should communicate intention, state, cause and effect, and emotional tone. Avoid distracting idle motion, excessive transitions, and animation that delays learning or interaction.
+
+Every animated experience needs interruption-safe state, deterministic or recoverable timing where progress matters, performance budgets, replaceable animation bindings, and fallback behaviour. Reduced-motion settings, pause/skip controls for nonessential cinematics, captions, clear non-motion state cues, and accessible alternatives are required. Animation must never be the only way to communicate important information.
+
+## 14. First-release implications and open decisions
+
+The candidate first-release slice should demonstrate at least one short varied learning sequence, a two-axis scrollable home map, a small number of meaningful empty/buildable plots, a first personal purchase/placement or equivalent ownership experience, Cassidy's distinct home with a small set of enterable rooms, and representative animation across the core experience. These are proposed proof points; exact quantities and release inclusion remain subject to scope and performance review.
+
+Open decisions include the learning path's exact cadence and assessment model; the mobile orientation strategy; map scale and camera model; plot ownership and limits; points/currency and item pricing; whether houses are fully enterable/customizable; and which Cassidy rooms are accessible in the first release.
