@@ -9,7 +9,7 @@
 
 The current Language-world document set captures most major GoPAL-AI idea families and has improved them in important ways: distinct worlds, contextual learning, Cassidy's independent agency, stories and mysteries, ecology, durable travel, world audio, personal creative archives, persistence/privacy, and replaceable production assets.
 
-The central risk is no longer a lack of ideas. It is **blueprint coherence and decision closure**.
+The central risk is no longer a lack of ideas. It is **blueprint coherence and decision closure**. The product owner has now explicitly clarified that Emerald Valley is a home for everyday life rather than the singular learning goal, that learning must offer many formats across the universe, and that buildings and scenarios should be upgradeable through points earned by meaningful participation.
 
 The project has many strong system specifications. The Master Blueprint and supporting links have now been reconciled, and engine-neutral Technical Architecture and UX/Accessibility working drafts have been added. Product-level decisions remain open, while AI/voice governance, product scope, and production/quality/operations still need dedicated treatment.
 
