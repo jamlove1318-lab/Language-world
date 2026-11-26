@@ -418,13 +418,15 @@ Changes that affect canon, user experience, architecture, privacy, or scope must
 
 # Work still required before this blueprint can be approved
 
-1. Complete the remaining read-only reference review, especially objects/interiors/inventory, environment and festivals, audio/animation/cinematics/accessibility, and persistence/account/sync/privacy/offline behaviour.
-2. Expand every chapter into specific requirements, flows, examples, acceptance criteria, and supporting specifications.
-3. Resolve product questions that materially affect scope, safety, privacy, and architecture.
-4. Create individual World Bibles and the Cassidy Character Bible.
-5. Create detailed specifications for experiences, learning, world simulation, narrative, cinematics, travel, asset contracts, persistence, and technical architecture.
-6. Cross-check all specifications for contradictions, missing dependencies, feasibility, and scope.
-7. Review the complete blueprint with the product owner and record explicit approval.
+1. Reconcile the existing Master Blueprint and supporting specifications; see BLUEPRINT_RECONCILIATION.md.
+2. Complete the engine-neutral Technical Architecture, UX/accessibility/navigation, AI/voice governance, product scope, and production/quality specifications.
+3. Resolve or explicitly defer audience/age policy, first-release scope, language/world scope, account/offline promise, engine/backend/service choices, progression/monetization, and operational model.
+4. Complete and approve the Emerald Valley and first destination world bibles; approve Cassidy canon and performance boundaries.
+5. Author a small, coherent first-release experience portfolio with complete user journeys and acceptance criteria.
+6. Cross-check domain ownership, persistence, events, time, content, accessibility, privacy, security, performance, and failure recovery across all documents.
+7. Present the complete blueprint package for product-owner review and explicit approval.
+
+GoPAL-AI idea recovery is now sufficiently broad for product-idea transfer. Further source checks should answer specific unresolved questions; no legacy assets or production pipeline need to be inspected.
 
 **Current approval state: NOT APPROVED FOR IMPLEMENTATION.** This is the foundation draft. Its purpose is to make the next design work structured and traceable, not to pretend the universe is already fully specified.
 
@@ -546,10 +548,10 @@ The Master Blueprint remains the central index. These supporting documents will 
 | `LEARNING_DESIGN.md` | 10 | Capability model, skill evidence, practice, feedback, assessment and honest speech claims |
 | `WORLD_SIMULATION_SPEC.md` | 13–14, 28 | Clock, weather, ecology, schedules, events, offline tiers and durable continuity |
 | `WORLD_OBJECTS_AND_SPACES.md` | 14, 27 | Object contracts, buildings, interiors, navigation, interaction, inventory and lifecycle |
-| `CINEMATIC_EXPERIENCE_SYSTEM.md` | 15–18, 29 | Timeline, camera, actors, staging, audio, accessibility, preloading and recovery |
+| [`CINEMATIC_EXPERIENCE_BLUEPRINT.md`](CINEMATIC_EXPERIENCE_BLUEPRINT.md) | 15–18, 29 | Timeline, camera, actors, staging, audio, accessibility, preloading and recovery |
 | `TRAVEL_EXPERIENCE_SPEC.md` | 17 | Transport modes, routes, staging, journey state, arrival and handoff |
-| `ASSET_AND_CREATIVE_PIPELINE.md` | 21, 29 | Semantic asset IDs, manifests, replacement, rigs, animation, provenance and designer handoff |
-| `AUDIO_EXPERIENCE_SPEC.md` | 22, 29 | Audio identity, mixing, spatial behaviour, playback boundary and accessibility |
+| [`ASSET_AND_CINEMATIC_PIPELINE.md`](ASSET_AND_CINEMATIC_PIPELINE.md) | 21, 29 | Semantic asset IDs, manifests, replacement, rigs, animation, provenance and designer handoff |
+| [`AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md`](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) | 22, 29 | Audio identity, mixing, spatial behaviour, playback boundary and accessibility |
 | `PERSISTENCE_PRIVACY_AND_SYNC.md` | 23, 30 | Identity, storage, offline, sync, security, privacy, export, deletion and recovery |
 | `TECHNICAL_ARCHITECTURE.md` | 20 | Domain boundaries, engine evaluation, runtime, data and integration contracts |
 | `PRODUCTION_AND_QUALITY_PLAN.md` | 24–26 | Roles, pipelines, acceptance criteria, test strategy, milestones and release gates |
@@ -561,6 +563,8 @@ Supporting specifications must link back to the relevant blueprint chapters, use
 # Part XI — Current research status
 
 ## 31. Reference review coverage
+
+The GoPAL-AI product-idea recovery is consolidated in [GOPAL_IDEA_RECOVERY_AUDIT.md](GOPAL_IDEA_RECOVERY_AUDIT.md). The repository tree inventory was complete for the inspected main-branch snapshot; selected source review is broad but not line-by-line or runtime verification. The user's transfer rule is ideas only: no GoPAL-AI code, assets, media, or production pipeline are to be transferred or inspected for reuse.
 
 Additional selected-file review has expanded the product systems audit through:
 - World object archetypes, instances, buildings, interiors, object state, inventory, and crafting.
@@ -574,14 +578,15 @@ The findings and source limitations are recorded in `PRODUCT_SYSTEMS_AUDIT.md`. 
 
 ## 32. Immediate blueprint work order
 
-1. Continue reference recovery for any remaining high-value product and implementation evidence.
-2. Resolve the overall universe structure and world-authoring principles.
-3. Write the Cassidy Character Bible using canonical reference material without copying implementation.
-4. Build the complete experience catalogue and learning design.
-5. Specify world simulation, objects/spaces, narrative continuity, cinematics, and travel.
-6. Specify asset/creative production, audio, persistence/privacy/sync, and technical architecture.
-7. Cross-check dependencies, scope, contradictions, safety, accessibility, and feasibility.
-8. Present the complete blueprint package for product-owner review and explicit approval.
+1. Complete the document reconciliation and technical architecture.
+2. Specify end-to-end user journeys, navigation, accessibility, and re-entry.
+3. Define audience, age policy, first-release scope, AI/voice governance, and progression/monetization boundaries.
+4. Complete actual world canon and approve Cassidy's character canon.
+5. Define production, quality, security, privacy, operations, and release gates.
+6. Run a full contradiction/dependency/acceptance-criteria pass across the document set.
+7. Present the complete package for product-owner review and explicit approval.
+
+Further GoPAL-AI research is now question-led rather than an open-ended audit. The user has explicitly limited transfer to ideas only; old assets and pipeline are out of scope.
 
 **Implementation remains blocked until the Master Blueprint and its required supporting specifications are approved.**
  
@@ -673,3 +678,14 @@ The new [GoPAL-AI Idea Recovery and Transfer Audit](GOPAL_IDEA_RECOVERY_AUDIT.md
 The audit covers the place-worth-returning-to philosophy; distinct living worlds; contextual learning; a 60-seed mini-game catalogue; Cassidy and resident autonomy; narrative scales and mysteries; world simulation and ecology; objects and personal spaces; travel; audio; personal journey and creative experiences; experience direction; healthy return; and future optional social possibilities. It distinguishes documented ideas from implemented foundations and unverified claims, and records weaknesses that Language-world must not repeat.
 
 Language-world should adopt the underlying human value, not the old feature implementation. The transfer matrix identifies ideas to adopt, redesign, expand, defer, or reject. The audit now also consolidates the early product-specification concepts (first-open and return rituals, persistent home, ambient learning, review stories, explanation modes, real-life preparation, event scale, progression dimensions, accessibility, and progressive fidelity) and records the player-facing surface/reachability lesson. This document is a research consolidation, not approval of launch scope or implementation. Product-owner review remains required.
+
+
+## 46. Master Blueprint reconciliation and remaining product decisions
+
+The [Master Blueprint Reconciliation](BLUEPRINT_RECONCILIATION.md) compares the recovered GoPAL-AI ideas with the current Language-world specification set, identifies what is already captured, and records missing product-level definitions and cross-document inconsistencies.
+
+The central finding is that the project has broad system coverage but still needs decision closure and a coherent end-to-end product definition. Critical remaining work includes audience/age policy, first-release promise and scope, navigation and session journeys, Experience Director boundaries, actual world canon, Cassidy canon approval, AI/voice governance, and a unified technical architecture. Progression/monetization and operational/live-content policy also require explicit decisions or deferral.
+
+The reconciliation also identifies stale work-order language, supporting-document filename mismatches, ambiguity about GoPAL-AI asset inspection, and duplicate architecture-decision numbering. The supporting-document table and work order have been corrected to reflect the current document set and the user's ideas-only boundary.
+
+This reconciliation does not approve features, select an engine/backend, or authorize implementation. The product owner must review the open decisions and approve the complete blueprint explicitly.
