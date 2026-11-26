@@ -30,6 +30,7 @@
 | [Travel Experience Specification](TRAVEL_EXPERIENCE_SPEC.md) | Route graph, transport, journey state, cinematic staging, arrival and recovery | Working draft v0.1; first route remains to be authored |
 | [Audio, Voice, and Soundscape](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) | World sound identity, cue/mix contracts, character voice, learning audio, captions and accessibility | Working draft v0.1; engine, voice scope and production plan remain open |
 | [Narrative and Story Continuity](NARRATIVE_AND_STORY_CONTINUITY_SPEC.md) | Story canon, mysteries, clues, choices, resident autonomy, quests, journal and re-entry | Working draft v0.1; initial story portfolio and canon remain open |
+| [Persistence, Privacy, and Synchronization](PERSISTENCE_PRIVACY_AND_SYNC.md) | Learner identity, local-first data, sync, conflicts, memory, privacy, security, export, deletion, recovery | Working draft v0.1; identity, backend, offline promise, and policies remain open |
 | [Source Audit](SOURCE_AUDIT.md) | Reference repository inventory and audit scope | Ongoing |
 | [Foundation](FOUNDATION.md) | Initial product principles | Established foundation |
 | [Architecture Decisions](ARCHITECTURE_DECISIONS.md) | Accepted constraints and unresolved choices | Maintained |
@@ -91,7 +92,7 @@
 
 ## Current reference-audit status
 
-The Product Systems Audit currently contains 51 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
+The Product Systems Audit currently contains 52 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
 
 Remaining high-value review areas include:
 - Full source trace of transport and travel state, including interruption and re-entry.
@@ -116,7 +117,7 @@ Create and review in dependency order:
 9. [~] `ASSET_HANDOFF_STANDARD.md` and `ASSET_AND_CINEMATIC_PIPELINE.md` were reconciled at the boundary level; final importer/schema/engine-specific validation contract remains open.
 10. [x] `AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md` — working draft created; world sound identity, mix, voice, learning audio integrity, captions, accessibility, interruption, and delivery defined.
 11. [x] `NARRATIVE_AND_STORY_CONTINUITY_SPEC.md` — working draft created; canon, mysteries, choices, resident autonomy, quests, journal/re-entry and durable events defined.
-12. [ ] `PERSISTENCE_PRIVACY_AND_SYNC.md` — identity, local-first behaviour, sync, security, privacy, export, deletion and recovery.
+12. [x] `PERSISTENCE_PRIVACY_AND_SYNC.md` — working draft created; identity, local-first behaviour, sync, security, privacy, export, deletion and recovery defined.
 13. [ ] `TECHNICAL_ARCHITECTURE.md` — domain boundaries, runtime, data, engine evaluation and integration contracts.
 14. [ ] `PRODUCTION_AND_QUALITY_PLAN.md` — production roles, content workflows, acceptance criteria, testing and release gates.
 
