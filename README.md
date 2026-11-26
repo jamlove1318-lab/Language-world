@@ -62,3 +62,4 @@ The new build preserves the valuable product ideas from the original repository 
 - [World & Universe Bible](docs/WORLD_UNIVERSE_BIBLE.md) — universe structure, Emerald Valley foundation, and distinct world-authoring standard.
 - [Experience Catalogue](docs/EXPERIENCE_CATALOGUE.md) — experience families, 60 research game seeds, learning integration, authoring, persistence, accessibility, and quality gates.
 - [Learning Design](docs/LEARNING_DESIGN.md) — language capability evidence, adaptive practice, assessment limits, speech honesty, privacy, and accessibility.
+- [World Simulation Specification](docs/WORLD_SIMULATION_SPEC.md) — world time, weather, seasons, resident life, ecology, plants, events, and offline continuity.
