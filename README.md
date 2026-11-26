@@ -67,3 +67,5 @@ The new build preserves the valuable product ideas from the original repository 
 - [Travel Experience Specification](docs/TRAVEL_EXPERIENCE_SPEC.md) — inter-world routes, transport, cinematic journeys, arrival, and interruption-safe handoff.
 - [Audio, Voice, and Soundscape](docs/AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) — world sound identity, music, character voice, learning audio, captions, and accessibility.
 - [Narrative and Story Continuity](docs/NARRATIVE_AND_STORY_CONTINUITY_SPEC.md) — world canon, mysteries, clues, meaningful choices, resident stories, and long-term continuity.
+
+- [Persistence, Privacy, and Synchronization](docs/PERSISTENCE_PRIVACY_AND_SYNC.md) — learner identity, offline-first data, sync/conflicts, memory provenance, privacy, security, export, deletion, and recovery.
