@@ -1859,3 +1859,12 @@ The comparison identifies unresolved or insufficiently integrated decisions:
 These changes were verified by fetching the updated documents again. This is a document-level consistency review, not proof that all product decisions are resolved or that every system specification is implementation-ready. The Product Systems Audit remains selected-source research, not a line-by-line or runtime audit.
 
 **Next critical design artifact:** TECHNICAL_ARCHITECTURE.md, followed by UX/accessibility/navigation, product scope/age policy, and AI/voice governance. No engine, backend, or service provider is selected by this reconciliation. No implementation is authorized.
+
+
+## 56. Technical Architecture working specification
+
+Created TECHNICAL_ARCHITECTURE.md as an engine/backend-neutral architecture draft. It defines logical layers, domain state ownership, explicit command/query/event boundaries, state classes, durable cross-domain operations, idempotency/recovery, runtime lifecycle, separate time domains, offline/sync classes, content pack and semantic asset contracts, cinematic/travel integration, AI/voice boundaries, privacy/security, observability, and testing.
+
+The architecture deliberately leaves engine, backend, database, authentication, AI, speech, and content-delivery providers open. It makes no implementation authorization and requires reconciliation with UX/navigation, product scope, AI/voice governance, and production/quality specifications.
+
+**Status:** working draft created and linked from the Master Blueprint, README, and Work Register; technical and product-owner review remain open.
