@@ -63,3 +63,4 @@ The new build preserves the valuable product ideas from the original repository 
 - [Experience Catalogue](docs/EXPERIENCE_CATALOGUE.md) — experience families, 60 research game seeds, learning integration, authoring, persistence, accessibility, and quality gates.
 - [Learning Design](docs/LEARNING_DESIGN.md) — language capability evidence, adaptive practice, assessment limits, speech honesty, privacy, and accessibility.
 - [World Simulation Specification](docs/WORLD_SIMULATION_SPEC.md) — world time, weather, seasons, resident life, ecology, plants, events, and offline continuity.
+- [World Objects and Spaces](docs/WORLD_OBJECTS_AND_SPACES.md) — spatial hierarchy, buildings/interiors, object lifecycles, interactions, navigation, inventory, and replaceable assets.
