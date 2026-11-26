@@ -39,7 +39,7 @@ The following idea families are present in the Master Blueprint and/or dedicated
 | Healthy personalization and experience direction | Experience Catalogue and system specifications | Partially captured; one explicit cross-product Experience Director contract is still needed |
 | Optional future social/shared experiences | Experience Catalogue and idea recovery audit | Captured as future/deferred, not launch commitment |
 
-The 60 game ideas are research seeds, not a launch backlog. Creative/archive ideas are a family of experiences, not a requirement to ship every format. The same principle applies to social, AI, camera, real-world integrations, crafting, inventory, and world-radio concepts.
+The 60 game ideas are research seeds, not a launch backlog. The new Product Scope and Release Definition records the user's explicit home-world, learning-choice, and building/scenario-upgrade requirements; exact first-release content and economy remain open. Creative/archive ideas are a family of experiences, not a requirement to ship every format. The same principle applies to social, AI, camera, real-world integrations, crafting, inventory, and world-radio concepts.
 
 ## 3. Missing product-level definitions
 
@@ -185,7 +185,7 @@ A living universe may need content updates, events, service health, account reco
 | Document / output | Priority | Why |
 |---|---|---|
 | This reconciliation | Created | Central gap and contradiction register |
-| TECHNICAL_ARCHITECTURE.md | Created — working draft v0.1 | Consolidates domain ownership, runtime, event/data, engine adapter and failure contracts; review required |
+| PRODUCT_SCOPE_AND_RELEASE_DEFINITION.md | Created — working draft v0.1 | Consolidates domain ownership, runtime, event/data, engine adapter and failure contracts; review required |
 | UX_AND_ACCESSIBILITY_SPEC.md | Created — working draft v0.1 | End-to-end journeys, navigation, activity lifecycle, accessibility and re-entry; review required |
 | AI_AND_VOICE_GOVERNANCE.md | High | AI/service boundaries, generated content, memory, consent, provider and capability honesty |
 | PRODUCTION_AND_QUALITY_PLAN.md | High | Content production, roles, review, test strategy, device matrix, release gates |
@@ -230,13 +230,14 @@ The Experience Director may select an eligible experience and coordinate entry, 
 1. [x] Reconcile the Master Blueprint and supporting-document links.
 2. [x] Create the engine-neutral Technical Architecture working draft and ownership model.
 3. [x] Create UX/Accessibility and end-to-end navigation working specification.
-4. Define audience, age policy, first-release promise, and excluded scope.
-5. Define AI/voice governance and Experience Director boundaries.
-6. Complete actual world bibles and first experience portfolio.
-7. Create Production/Quality/Operations Plan with test gates and measurable acceptance criteria.
-8. Run a contradiction/dependency pass across every document.
-9. Present the complete package for product-owner review.
-10. Only after explicit approval begin implementation planning and Android engine evaluation/prototypes.
+4. [x] Create Product Scope and Release Definition, including Emerald Valley as home, broad learning choice, and points-funded building/scenario upgrades.
+5. Define audience, age policy, first-release scope decisions, and excluded scope.
+6. Define AI/voice governance and Experience Director boundaries.
+7. Complete actual world bibles and first experience portfolio.
+8. Create Production/Quality/Operations Plan with test gates and measurable acceptance criteria.
+9. Run a contradiction/dependency pass across every document.
+10. Present the complete package for product-owner review.
+11. Only after explicit approval begin implementation planning and Android engine evaluation/prototypes.
 
 The order can be adjusted if a decision blocks another; it is not authorization to start prototypes.
 
