@@ -1503,3 +1503,49 @@ Created `docs/WORLD_SIMULATION_SPEC.md`, a working specification covering simula
 Created `docs/WORLD_OBJECTS_AND_SPACES.md`, a working specification covering spatial hierarchy, place authoring, buildings/interiors, object lifecycle, interactions, navigation, inventory, personal spaces, semantic events, replaceable art, accessibility, and open decisions. It is linked from Master Blueprint Section 39.
 
 **Audit status remains ongoing.** This section records selected source evidence and design implications; it does not claim every legacy place/object or interior was fully audited.
+
+
+## 49. Transport, destination arrival, and travel lifecycle
+
+### GoPAL-AI references inspected
+
+- `src/features/world/data/livingWorldTransport.ts` defines railway/airport networks with track, platform, runway, taxiway, and terminal-apron geometry plus optional route points.
+- `src/features/world/data/livingWorldVehicles.ts` defines train, bus, car, bicycle, boat, and airplane actors with waypoint routes, speed, and local loop behaviour.
+- `src/engines/world/destinationArrivalSceneEngine.ts` creates destination arrival scenes with establishing, wide-environment, weather, life, and resident-reveal shots.
+- `src/engines/world/destinationArrivalTimelineEngine.ts` creates a fixed-duration sequence and encounter handoff.
+- `src/engines/world/destinationExperienceEngine.ts` and `worldDestinationExperienceEngine.ts` supply destination atmosphere, visible places, discoveries, and learning moments.
+
+### Recovered strengths
+
+- Multiple transport modes and infrastructure types are represented.
+- Vehicles can follow authored waypoints and connect to local transport networks.
+- Arrival is recognized as a cinematic moment with environmental continuity and a resident reveal.
+- Destination identity and local discovery can inform the arrival experience.
+
+### Limitations and cautions
+
+- Inspected vehicle routes are mostly looping local movement, not persistent inter-world journeys.
+- Transport networks describe visual geometry and route points, not a complete boarding/departure/arrival domain.
+- The inspected arrival timeline is a fixed short sequence, not a complete cinematic authoring or travel recovery system.
+- The inspected sources do not establish a durable journey state machine, transfers, interruption-safe handoff, or cross-world route graph.
+- A moving vehicle actor is not equivalent to a learner-controlled travel experience.
+- The first Spanish-world train journey is a product requirement to author, not a completed legacy feature.
+
+### New Language-world requirements
+
+1. Define canonical route graphs between worlds, regions, places, and spaces.
+2. Choose transport based on geography, infrastructure, distance, and authored world canon.
+3. Persist journey state independently of cinematic playback, including boarding, departure, transfers, arrival, and handoff.
+4. Make boarding/departure/arrival transitions idempotent and recoverable after app termination.
+5. Author transport-specific cinematic beats and destination reveals rather than generic vehicle animations.
+6. Keep in-transit activities optional; core arrival never depends on completing a language task.
+7. Define first-visit and return-visit journey variants and appropriate replay/skip behaviour.
+8. Coordinate travel time and timezone transitions with the canonical world clock.
+9. Provide reduced-motion, captions, audio controls, interruption handling, and accessible alternatives.
+10. Author the Emerald Valley-to-Spanish-world train journey as a product-defining reference route.
+
+### Language-world document created
+
+Created `docs/TRAVEL_EXPERIENCE_SPEC.md`, a working specification covering transport modes, route graphs, durable journey states, cinematic staging, optional travel activities, Cassidy boundaries, arrival handoff, accessibility, reliability, and open decisions. It is linked from Master Blueprint Section 40.
+
+**Audit status remains ongoing.** This section records selected transport and arrival source evidence; it does not claim all legacy travel code was exhaustively audited.
