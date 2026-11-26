@@ -1091,3 +1091,93 @@ This review strengthens several existing blueprint chapters and introduces expli
 
 **Audit status remains ongoing.** These findings are direct inspections of selected reference files. They do not prove that every referenced feature is complete, integrated, secure, or validated end-to-end. GoPAL-AI remains read-only; all new design and implementation belong in Language-world.
 
+## 40. Personal creations, memory museum, and time capsules
+
+### Source systems inspected
+
+Read-only reference review covered:
+- `src/engines/creation/creationStudio.ts`
+- `src/features/journey/screens/MemoryMuseumScreen.tsx`
+- `src/features/journey/components/TimeCapsuleModal.tsx`
+- Related creation, postcard, time-capsule, and memory methods in `src/lib/localStore.ts`
+- `src/engines/journey/journeyEngine.ts` and `src/features/journey/screens/JourneyBookScreen.tsx`
+
+### What the archive contains
+
+The Creation Studio defines templates for cultural postcards, study phrase cards, journey memory boards, and dialogue comic strips. Creating an artefact writes it to LocalStore and then separately records a journey event. The Memory Museum brings together postcards, creations, cultural artefacts, and memory records in a single exhibit-style experience. The Journey Book builds a timeline, milestones, first-day information, and a then-versus-now view from journey events and learning evidence.
+
+The Time Capsule concept lets a learner write a private message for their future self and select a target date. The inspected UI also exposes a demo unlock action that can mark a capsule unlocked before its target date.
+
+### Strengths worth carrying forward
+
+- Learning and world experiences can leave meaningful artefacts rather than only numeric progress.
+- A personal archive can make the learner's history visible through creations, discoveries, cultural objects, and milestones.
+- Then-versus-now comparisons can communicate increased capability more meaningfully than a generic level.
+- Learner-created work should be treated as owned content, not disposable UI state.
+- A future-self message or time capsule can be a reflective creative experience when privacy and unlock rules are clear.
+
+### Gaps and cautions
+
+- Creation storage and journey-event recording are sequential. A creation can succeed while its timeline event fails, or vice versa in other orchestration designs.
+- The inspected LocalStore creation APIs generate IDs from wall-clock milliseconds and use shared local keys; this is not a robust multi-account or collision-safe identity strategy.
+- The Memory Museum reads several LocalStore collections directly and does not, in the inspected screen, establish edit/reopen/delete/export, media lifecycle, account switching, or cross-device synchronization.
+- The Journey Book can build a meaningful view from events, but its local fallback uses generic storage without the requested user identity.
+- The Time Capsule demo unlock control bypasses the target-date rule. A prototype affordance must not become the final trust model.
+- Device clock changes and timezone changes can affect client-side date checks unless an authoritative policy is defined.
+- The inspected time capsule content is private by intent, but the reviewed UI alone does not establish encryption, access control, backup, retention, deletion, or export guarantees.
+
+### New Language-world requirements
+
+1. Treat personal creations as versioned, learner-owned records with edit/reopen, delete, export, and media lifecycle support.
+2. Make archive items traceable to source experiences and events without requiring the learner to understand internal IDs.
+3. Define the Journey Book as an explainable reflection of durable events and capability evidence, not a source of truth of its own.
+4. Define time-capsule unlock policy, trusted time source, offline behaviour, timezone changes, clock tampering, and any legitimate override explicitly.
+5. Never include a demo unlock or developer bypass in production user flows.
+6. Ensure private reflections remain private by default, with clear retention and deletion controls.
+7. Coordinate artefact creation and journey-event publication through a durable operation or outbox so partial success can be recovered.
+
+## 41. Discovery progression, transport infrastructure, and the difference between a route and a journey
+
+### Source systems inspected
+
+Read-only reference review covered:
+- `src/engines/world/worldDiscoveryProgressionEngine.ts`
+- `src/features/world/data/livingWorldTransport.ts`
+- `src/features/world/components/WorldObjectDiscoveryOverlay.tsx`
+- Existing journey and world-event records inspected in earlier sections.
+
+### What the archive contains
+
+The discovery progression engine models place nodes with world identity, place identity, name, city, real-world location, area, status, prerequisite, scenario links, landmark, and hidden-gem flags. It maps some legacy place IDs to canonical IDs and stores discovered/completed progress in local storage.
+
+The transport data defines railway and airport infrastructure features such as tracks, platforms, runways, taxiways, and route points. The discovery overlay presents a newly discovered place with a short description and a choice to continue exploring or enter.
+
+### Strengths worth carrying forward
+
+- Discovery should be tied to places and world identity, not only a generic checklist.
+- Hidden places, landmarks, prerequisites, and contextual experiences can support exploration.
+- Transport infrastructure can be represented as part of the geography of a world.
+- A discovery moment should create anticipation and invite the learner to choose what happens next.
+
+### Gaps and cautions
+
+- The discovery progression state is stored under one generic local key in the inspected engine, not explicitly scoped to a learner.
+- The inspected transport data describes map geometry and route points. It does not establish a full travel lifecycle: itinerary, ticket/eligibility, terminal state, boarding, departure, journey progress, arrival, disembarkation, destination reveal, interruption recovery, or persistent handoff.
+- A route drawn on a map is not itself a travel experience. The user's requested train journey requires authored scenes and durable journey state.
+- The discovery overlay is a presentation component, not a complete investigation, narrative, or persistence system.
+- Canonical ID mapping in one engine illustrates the need for a central registry and migration policy rather than scattered aliases.
+
+### New Language-world requirements
+
+1. Define a canonical world/place/region registry and stable IDs before authoring large amounts of content.
+2. Separate geographical transport networks and infrastructure from travel itineraries and travel-session state.
+3. Define the full travel state machine and interruption/relaunch recovery.
+4. Design discovery as a family of experiences: first sight, clue, landmark, hidden location, cultural discovery, and story revelation.
+5. Scope all learner-specific discovery progress correctly and preserve world-authored discovery definitions separately from learner state.
+
+## 42. Additional archive review status
+
+This review extends the selected-file evidence to personal creation, reflective archive, time capsules, discovery progression, and transport infrastructure. It reinforces that the new product needs durable personal ownership, trusted time rules, canonical place identity, and a true travel experience rather than only transport geometry.
+
+The archive review remains selective and ongoing. No claim is made that every related source file or runtime path has been inspected. GoPAL-AI remains read-only.
+
