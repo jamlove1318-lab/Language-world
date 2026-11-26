@@ -1181,3 +1181,57 @@ This review extends the selected-file evidence to personal creation, reflective 
 
 The archive review remains selective and ongoing. No claim is made that every related source file or runtime path has been inspected. GoPAL-AI remains read-only.
 
+## 43. Cassidy canonical identity, visual design, and character production references
+
+### Source documents inspected
+
+Read-only reference review covered:
+- `docs/cassidy/canonical-reference.md`
+- `docs/cassidy-master-character-bible.md`
+- `docs/cassidy-character-reference.md`
+- `docs/cassidy-visual-design.md`
+- `src/characters/cassidyCharacterDesign.ts`
+- `src/characters/cassidyVisualDesign.ts`
+- `contracts/cassidy-identity.json`
+- Selected production/renderer contract documents for understanding reference boundaries only.
+
+### What the archive records
+
+The reference archive identifies an approved Cassidy concept sheet and establishes a written source hierarchy with the approved concept first, followed by the master art bible and other supporting references. It also notes that the canonical image binary was not stored in that repository at the time of the note. The user has separately confirmed that Cassidy's established design and character details exist and that they personally have her design.
+
+Repeated visual identity elements include:
+- Human female companion character with a warm, distinctive stylized-human face.
+- Large expressive near-black eyes with warm brown undertone.
+- Dark chocolate-brown hair with warm highlights; the detailed reference specifies a side braid.
+- Emerald Valley adventurer outfit with a green vest/waistcoat, cream blouse, brown leather gear, fitted trousers, boots, and a signature necklace.
+- Gold leaf-star-compass charm with teal/emerald centre and several contextual glow states.
+- Full-body design and consistent identity across front, three-quarter, side, and rear views.
+- A semantic expression/action vocabulary including idle, walk, run, turn, sit, talk, gesture, point, celebrate, think, react, greet, listen, explain, discover, encourage, and reflect.
+
+The reference material describes personality qualities such as warmth, curiosity, intelligence, empathy, playfulness, bravery, thoughtfulness, and adventurousness. It also describes a character life with independent activities, memories, stories, dreams, and adventures.
+
+### Conflicts and limitations identified
+
+- Written outfit guidance for Japanese and French worlds differs between documents. The references include both pink/floral and restrained indigo/vermillion/cream directions for Japan, and both cream/beige/beret and restrained navy/burgundy/cream directions for France. The actual canonical artwork must resolve visual identity; world variants also need cultural review.
+- One character reference gives an age range of 18–22 (timeless), while the master art bible does not establish a definitive age. This must not be silently converted into final Language-world canon.
+- The archive contains old production pipeline instructions, technical budgets, renderer contracts, scripts, and implementation details. These are reference evidence only and are explicitly excluded from reuse in Language-world.
+- The text documents alone do not replace the user's actual canonical artwork. The inspected canonical-reference note says the binary was not stored in the old repository at the time of that note.
+- Old statements implying the learner is Cassidy's “most important person” or that she is “always by your side” must be reconsidered against Language-world's character autonomy and non-manipulative relationship principles.
+
+### New Language-world requirements
+
+1. Preserve Cassidy's existing canonical human identity; do not redesign or replace her with an invented character.
+2. Separate immutable identity anchors from permitted outfit, lighting, and world-specific adaptations.
+3. Resolve visual conflicts against the user's canonical artwork, not by selecting an arbitrary text variant.
+4. Define Cassidy as a character with agency, boundaries, motives, commitments, and a life beyond the learner.
+5. Build relationship continuity from real shared experiences and retained memories, without guilt, absence penalties, exclusivity, or fabricated memory.
+6. Keep character intelligence, memory, dialogue, physical performance, cinematics, and rendering as distinct contracts.
+7. Do not reuse any legacy Cassidy model, rig, skeleton, animation, renderer, factory, authoring script, exporter, validator, manifest, or runtime.
+8. Record unresolved age, voice, backstory, outfit, and autonomy decisions explicitly before production.
+
+### Language-world document created
+
+A new independent working draft, `docs/CASSIDY_CHARACTER_BIBLE.md`, records the recovered canon, Language-world principles, source conflicts, artist handoff requirements, and approval questions. It is a new product specification, not a copy of the old implementation or pipeline.
+
+**Audit status remains ongoing.** This review covers selected canonical and visual references, not every Cassidy source file or every runtime behaviour.
+
