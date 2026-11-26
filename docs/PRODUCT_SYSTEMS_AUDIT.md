@@ -1808,6 +1808,6 @@ The consolidated report records registry mismatch, disconnected surfaces, aspira
 
 ### Language-world decisions
 
-The report includes a transfer matrix (adopt, redesign, expand, candidate, defer, reject), new opportunities beyond GoPAL-AI, evidence labels, remaining research boundaries, and a product-owner review checklist. It does not approve implementation scope. The Master Blueprint now links this consolidation in Section 45.
+The report includes early specification ideas (first-open/return rituals, persistent home, ambient learning, review stories, explanation modes, practical mission preparation, world-event scale, progression dimensions, accessibility, progressive fidelity), later cross-industry concepts, a review of player-facing surfaces/reachability, a transfer matrix (adopt, redesign, expand, candidate, defer, reject), new opportunities beyond GoPAL-AI, evidence labels, remaining research boundaries, and a product-owner review checklist. It does not approve implementation scope. The Master Blueprint now links this consolidation in Section 45.
 
 **Status:** A substantial idea-recovery consolidation is complete. The wider GoPAL-AI source audit is still targeted rather than line-by-line, and product-owner review remains open. No GoPAL-AI implementation or asset is transferred; no Language-world implementation is authorized.
