@@ -185,7 +185,7 @@ A living universe may need content updates, events, service health, account reco
 | Document / output | Priority | Why |
 |---|---|---|
 | This reconciliation | Created | Central gap and contradiction register |
-| TECHNICAL_ARCHITECTURE.md | Critical | Consolidate domain ownership, runtime, event/data, engine adapter and failure contracts |
+| TECHNICAL_ARCHITECTURE.md | Created — working draft v0.1 | Consolidates domain ownership, runtime, event/data, engine adapter and failure contracts; review required |
 | UX_AND_ACCESSIBILITY_SPEC.md | Critical | End-to-end user journeys, navigation, interaction, accessibility and re-entry |
 | AI_AND_VOICE_GOVERNANCE.md | High | AI/service boundaries, generated content, memory, consent, provider and capability honesty |
 | PRODUCTION_AND_QUALITY_PLAN.md | High | Content production, roles, review, test strategy, device matrix, release gates |
