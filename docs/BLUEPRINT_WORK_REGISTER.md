@@ -18,8 +18,8 @@
 
 | Document | Role | Current state |
 |---|---|---|
-| [Master Blueprint](MASTER_BLUEPRINT.md) | Central product vision and system index | Working draft v0.3+; Cassidy canon added |
-| [Product Systems Audit](PRODUCT_SYSTEMS_AUDIT.md) | Evidence and limitations from selected reference files | Sections 1–50; ongoing |
+| [Master Blueprint](MASTER_BLUEPRINT.md) | Central product vision and system index | Working draft v0.3+; idea recovery and reconciliation linked; approval pending |
+| [Product Systems Audit](PRODUCT_SYSTEMS_AUDIT.md) | Evidence and limitations from selected reference files | Sections 1–54; ongoing |
 | [Archive Gap Audit](GOPAL_ARCHIVE_TO_LANGUAGE_WORLD_GAP_AUDIT.md) | Recovered product concepts and new-product gaps | Working research document |
 | [Cassidy Character Bible](CASSIDY_CHARACTER_BIBLE.md) | Independent Language-world character canon and production direction | Working draft v0.1; review required |
 | [World & Universe Bible](WORLD_UNIVERSE_BIBLE.md) | Universe hierarchy, Emerald Valley, distinct world standards and registry | Working draft v0.1; world canon incomplete |
@@ -89,7 +89,8 @@
 - [x] Strengthen artist handoff and asset/cinematic pipeline documents with validation, authoritative boundaries, versioning, and independent-production constraints.
 - [x] Inspect quest, resident story, clue investigation, story choice, event direction, and narrative trace sources.
 - [x] Create Narrative and Story Continuity working specification with canon/knowledge ownership, fair mystery, resident autonomy, durable re-entry, and ethical quest requirements.
-- [x] Create Creative Experiences and Personal Archive working specification with editable source, object lifecycle, privacy, media, AI boundaries, cultural integrity, and acceptance tests.\n- [x] Consolidate GoPAL-AI product ideas, experience patterns, selected source evidence, limitations, and transfer decisions in `GOPAL_IDEA_RECOVERY_AUDIT.md`; establish explicit ideas-only/no-assets boundary.
+- [x] Create Creative Experiences and Personal Archive working specification with editable source, object lifecycle, privacy, media, AI boundaries, cultural integrity, and acceptance tests.
+- [x] Consolidate GoPAL-AI product ideas, experience patterns, selected source evidence, limitations, and transfer decisions in `GOPAL_IDEA_RECOVERY_AUDIT.md`; establish explicit ideas-only/no-assets boundary.
 - [x] Link the Master Blueprint from README.
 - [ ] Complete product-owner review and approval.
 
@@ -177,10 +178,22 @@ These are intentionally unresolved; do not invent answers.
 
 - [x] Retrieve the GoPAL-AI main repository tree without truncation and inventory its files.
 - [x] Review the principal master vision, project overview, full feature audit, implementation tracker, world specification, game catalogue, learning-variety notes, and 173-concept product specification.
-- [x] Inspect selected high-value source domains: world/simulation, learning, Cassidy, residents, narrative, travel, objects, mini-games, audio, economy, memory, creation, journey, events, local storage, and database schema.\n- [x] Review early product-specification ideas (1–88), later cross-industry idea waves (89–173), and the current player-facing surface taxonomy/reachability lesson.
+- [x] Inspect selected high-value source domains: world/simulation, learning, Cassidy, residents, narrative, travel, objects, mini-games, audio, economy, memory, creation, journey, events, local storage, and database schema.
+- [x] Review early product-specification ideas (1–88), later cross-industry idea waves (89–173), and the current player-facing surface taxonomy/reachability lesson.
 - [x] Create the consolidated GoPAL-AI Idea Recovery and Transfer Audit.
 - [x] Record the user's explicit rule: ideas only; no GoPAL-AI assets, code, media, or production pipeline.
 - [ ] Continue targeted product-content and navigation research where it changes the Language-world blueprint.
 - [ ] Product-owner review of the recovered ideas and transfer matrix.
 
 This checkpoint is not a claim that every GoPAL-AI source line was inspected or every old feature was runtime-verified. It is a consolidated product-idea recovery with explicit evidence limits.
+
+
+## Blueprint reconciliation checkpoint
+
+- [x] Compare the recovered GoPAL-AI idea families against the current Master Blueprint and supporting specifications.
+- [x] Record product-level gaps, open decisions, cross-document contradictions, and recommended work order in BLUEPRINT_RECONCILIATION.md.
+- [x] Correct Master Blueprint supporting-document links and stale work-order text.
+- [x] Align the Roadmap with the user's ideas-only/no-legacy-assets boundary.
+- [ ] Create and review Technical Architecture.
+- [ ] Create and review UX/accessibility/navigation specification.
+- [ ] Resolve product audience, age policy, first-release promise, AI/voice governance, and commercial/progression boundaries.
