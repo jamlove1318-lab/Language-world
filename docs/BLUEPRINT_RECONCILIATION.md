@@ -276,3 +276,8 @@ The product owner has explicitly added requirements that were not sufficiently r
 Supporting documents updated: Product Scope and Release Definition, Experience Catalogue, World Objects and Spaces, UX and Accessibility, Cassidy Character Bible, and World & Universe Bible. The Master Blueprint and Product Systems Audit record the additions.
 
 Remaining decisions include the exact curriculum cycle and first learning sequence, map/camera scale, buildable plot and item rules, point costs and ownership, Cassidy's room canon and access, mobile orientation policy, and animation/performance budgets. These must be resolved during design and testing; they are not silently assumed.
+
+
+## 11. Learning-design reconciliation
+
+The fixed learning-path requirement has now also been added to `LEARNING_DESIGN.md`. The curriculum is an authored, ordered progression with varied modalities and deliberate revisits; it is not an unordered activity feed. Learners retain freedom to pause, review, retry, take breaks, and explore optional home-world activities. The exact first curriculum cycle and detailed sequence remain to be authored.
