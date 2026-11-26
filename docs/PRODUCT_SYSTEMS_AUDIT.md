@@ -1811,3 +1811,51 @@ The consolidated report records registry mismatch, disconnected surfaces, aspira
 The report includes early specification ideas (first-open/return rituals, persistent home, ambient learning, review stories, explanation modes, practical mission preparation, world-event scale, progression dimensions, accessibility, progressive fidelity), later cross-industry concepts, a review of player-facing surfaces/reachability, a transfer matrix (adopt, redesign, expand, candidate, defer, reject), new opportunities beyond GoPAL-AI, evidence labels, remaining research boundaries, and a product-owner review checklist. It does not approve implementation scope. The Master Blueprint now links this consolidation in Section 45.
 
 **Status:** A substantial idea-recovery consolidation is complete. The wider GoPAL-AI source audit is still targeted rather than line-by-line, and product-owner review remains open. No GoPAL-AI implementation or asset is transferred; no Language-world implementation is authorized.
+
+
+## 55. Master Blueprint reconciliation: missing decisions and document consistency
+
+### Scope of review
+
+Compared the current Master Blueprint, World & Universe Bible, Cassidy Character Bible, Experience Catalogue, Learning Design, World Simulation, World Objects and Spaces, Travel, Cinematics, Asset Handoff/Pipeline, Audio/Voice, Narrative, Persistence/Privacy/Sync, Creative Archive, Engine Evaluation, Roadmap, Architecture Decisions, Work Register, and the consolidated GoPAL-AI Idea Recovery Audit.
+
+### What is already captured
+
+The major idea families—place-worth-returning-to, distinct language worlds, contextual learning, broad games/activities, Cassidy/resident autonomy, stories/mysteries, simulation/ecology, objects/spaces, cinematic travel, audio identity, personal archive, and healthy personalization—are represented in the current specifications. They do not need to be repeatedly rediscovered.
+
+### Product-level gaps
+
+The comparison identifies unresolved or insufficiently integrated decisions:
+- Audience, age policy, initial learner profile, and proficiency range.
+- First-release promise, content boundary, and excluded features.
+- End-to-end user journeys, navigation, activity entry/exit/resume, and re-entry.
+- One bounded Experience Director contract across domains.
+- Complete universe premise, definitive Emerald Valley geography, first destination, and actual world bibles.
+- Cassidy canon approval, voice/performance direction, knowledge boundaries, and authored-versus-generated dialogue policy.
+- Unified AI/voice governance, provider boundaries, consent, retention, truthful capability claims, and fallback.
+- Progression/economy/monetization policy that does not default to XP or reward grinding.
+- Operations, content updates, support, diagnostics, and live-event policy.
+
+### Cross-document inconsistencies found
+
+1. The Master Blueprint work order was stale relative to the supporting documents already created.
+2. The Master Blueprint supporting-document table named three files that did not match the repository's actual canonical filenames.
+3. The Roadmap still included legacy GoPAL asset inventory/licensing inspection, conflicting with the user's ideas-only transfer boundary.
+4. Roadmap Phase 4 wording could be misread as importing GoPAL-AI Cassidy assets; it now explicitly refers only to user-approved material supplied for independent production.
+5. The Work Register contained literal escaped newline artefacts and an outdated audit section count.
+6. The World Bible correctly labels place lists as seeds, but the Master Blueprint still needs to keep recovered concepts distinct from approved world canon.
+7. Architecture decision numbering contained a duplicate ADR-010 and duplicate ADR-013 after the first correction; the final numbering is now sequential through ADR-016.
+
+### Changes made in this reconciliation pass
+
+- Created BLUEPRINT_RECONCILIATION.md.
+- Updated Master Blueprint Sections 31–32, corrected supporting-document links, and added Section 46.
+- Updated Roadmap Phase 1 to a targeted ideas-only research checkpoint and clarified Phase 4 Cassidy reference sourcing.
+- Updated the Blueprint Work Register and README.
+- Renumbered the Architecture Decisions list to remove duplicate ADR identifiers.
+
+### Status and evidence limits
+
+These changes were verified by fetching the updated documents again. This is a document-level consistency review, not proof that all product decisions are resolved or that every system specification is implementation-ready. The Product Systems Audit remains selected-source research, not a line-by-line or runtime audit.
+
+**Next critical design artifact:** TECHNICAL_ARCHITECTURE.md, followed by UX/accessibility/navigation, product scope/age policy, and AI/voice governance. No engine, backend, or service provider is selected by this reconciliation. No implementation is authorized.
