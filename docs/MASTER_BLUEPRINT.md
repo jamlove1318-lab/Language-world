@@ -634,3 +634,9 @@ The specification explicitly leaves the canonical time model, world timezone/cal
 The independent [World Objects and Spaces](WORLD_OBJECTS_AND_SPACES.md) specification defines the spatial hierarchy from universe/world through regions, places, spaces, objects, and interactions. It establishes building/interior contracts, object identity and lifecycle, contextual interactions, navigation, inventory/collections, personal spaces, semantic world events, placeholder-to-final asset replacement, accessibility, and performance requirements.
 
 It distinguishes world-authored facts, learner-owned state, shared state, and temporary session state. It also records legacy global-state and in-memory inventory risks that must not be inherited. This is a working specification; launch scope and technical contracts remain open.
+
+## 40. Travel Director and inter-world journey lifecycle
+
+The independent [Travel Experience Specification](TRAVEL_EXPERIENCE_SPEC.md) defines travel as a persistent, authored experience: route graphs, transport selection, boarding/departure/journey/transfer/arrival stages, optional in-transit activities, Cassidy's role, cinematic staging, destination handoff, accessibility, interruption recovery, and privacy.
+
+It develops the first Emerald Valley-to-Spanish-world train journey as the reference experience while distinguishing existing local vehicle loops from a complete inter-world journey. The cinematic director owns presentation; the travel domain owns durable journey state and arrival. The first route remains to be authored and approved.
