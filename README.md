@@ -30,7 +30,7 @@ Her canonical design and character details are maintained in the GoPAL-AI refere
 
 ## Reference repository boundary
 
-GoPAL-AI is a **read-only reference** for research: ideas, specifications, character canon, assets, and lessons learned. Do not modify it. Reimagine and improve selected ideas here; do not copy its implementation blindly.
+GoPAL-AI is a **read-only idea reference**. Transfer product ideas, experience patterns, and lessons only. Do not transfer its code, images, models, audio, media, other assets, or production pipeline. Do not modify GoPAL-AI. Reimagine and improve selected ideas here; do not copy its implementation.
 
 ## Project status
 
@@ -40,7 +40,7 @@ See [Foundation](docs/FOUNDATION.md), [Architecture Decisions](docs/ARCHITECTURE
 
 ## Audit documents
 
-- [Source repository audit](docs/SOURCE_AUDIT.md)
+- [Source repository audit](docs/SOURCE_AUDIT.md)\n- [GoPAL-AI Idea Recovery and Transfer Audit](docs/GOPAL_IDEA_RECOVERY_AUDIT.md) — recovered product ideas, experience patterns, evidence limits, failure lessons, and explicit no-assets transfer decisions.
 - [Product systems audit — Cassidy, living world, relationships, and learning](docs/PRODUCT_SYSTEMS_AUDIT.md)
 - [Architecture decisions](docs/ARCHITECTURE_DECISIONS.md)
 - [Project roadmap](docs/ROADMAP.md)
