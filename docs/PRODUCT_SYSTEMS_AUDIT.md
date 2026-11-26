@@ -1452,3 +1452,54 @@ Created `docs/LEARNING_DESIGN.md`, a working specification covering learning phi
 Created `docs/WORLD_SIMULATION_SPEC.md`, a working specification covering simulation ownership, canonical clock options, offline progression, day/night, climate/weather, residents, creatures/ecology, plants/gardens, world events, environmental storytelling, performance tiers, persistence, authoring validation, and open decisions. It is linked from Master Blueprint Section 38.
 
 **Audit status remains ongoing.** This section records selected source evidence and design implications; it does not claim all old simulation systems were exhaustively audited or that the reference simulation works end-to-end.
+
+
+## 48. World objects, buildings, interiors, and interactions
+
+### GoPAL-AI references inspected
+
+- `src/features/world/data/livingWorldObjects.ts` defines a common object instance with identity/category/type, transform, visual, collision, interaction, behaviour, state, tags, and metadata.
+- `livingWorldObjectCatalog.ts` and `livingWorldObjectRegistry.ts` enumerate broad archetypes for buildings, interiors, terrain, decoration, infrastructure, transport, characters, gameplay, fantasy, and sci-fi.
+- `livingWorldObjectFactory.ts` adapts multiple earlier catalogs into a shared object stream.
+- `livingWorldInteraction.ts` derives available actions and nearest interaction targets from object properties and proximity.
+- `livingWorldEntrancesObjects.ts` adapts entrance definitions into object instances.
+- `src/engines/world/livingWorldObjectsStore.ts` stores learner-keyed plant/companion/artifact-like objects with growth and memory; it also contains prefilled sample memories and a special legacy migration path.
+- `src/engines/world/worldInventoryEngine.ts` provides in-memory add/remove/combine helpers.
+- `src/engines/world/worldStateEngine.ts` persists flags/history under a global AsyncStorage key in the inspected implementation, not explicitly learner-scoped.
+- `livingWorldLocationSchema.ts` and `livingWorldLocationFactory.ts` define location object collections, environment/rule flags, and template-based construction.
+
+### Recovered strengths
+
+- A shared object-instance concept can connect buildings, props, infrastructure, transport, characters, and gameplay.
+- Archetypes cover a broad range of physical and fictional world content.
+- Interactions can be derived from semantic object properties and proximity.
+- Entrances can be represented as world objects.
+- Personal living objects and inventory concepts provide useful product seeds.
+
+### Limitations and cautions
+
+- The object factory adapts multiple catalogs; a single authoritative content-authoring source is not established by the inspected code.
+- Generic extensible object state does not itself establish domain-specific ownership and lifecycle contracts.
+- The inspected world state store uses a global key and risks cross-learner leakage.
+- The personal object store is learner-keyed but includes prefilled demo memory and a special migration path that must not be copied.
+- Inventory helpers are in-memory; durable inventory, conflict handling, and cross-device recovery are not established.
+- The inspected files do not establish a complete building/interior lifecycle, robust multi-floor navigation, or designer-grade asset replacement workflow.
+
+### New Language-world requirements
+
+1. Define a stable spatial hierarchy and semantic IDs independent of display names, filenames, renderer nodes, and storage keys.
+2. Author each place with geography, routes, entrances, buildings, interiors, environment, actors, interactions, accessibility, and performance metadata.
+3. Treat buildings as spatial containers with connected interiors, entry/exit anchors, navigation, schedules, and persistent context.
+4. Separate object identity, authored definition, instance placement, presentation, collision, interaction, durable state, ownership, and provenance.
+5. Define object lifecycle transitions and make durable changes idempotent.
+6. Use contextual interactions with clear prerequisites, feedback, accessibility, cancellation, and recovery.
+7. Distinguish inventory, collections, story evidence, user creations, consumables, and world-placed objects; do not add an economy without a product reason.
+8. Scope personal spaces and all learner-specific object/world state to the correct account.
+9. Use semantic asset bindings so placeholder-to-final replacement does not break gameplay, navigation, narrative, or saved data.
+10. Validate spatial reachability, entrances, object state, asset fallback, offline recovery, and Android performance.
+
+### Language-world document created
+
+Created `docs/WORLD_OBJECTS_AND_SPACES.md`, a working specification covering spatial hierarchy, place authoring, buildings/interiors, object lifecycle, interactions, navigation, inventory, personal spaces, semantic events, replaceable art, accessibility, and open decisions. It is linked from Master Blueprint Section 39.
+
+**Audit status remains ongoing.** This section records selected source evidence and design implications; it does not claim every legacy place/object or interior was fully audited.
