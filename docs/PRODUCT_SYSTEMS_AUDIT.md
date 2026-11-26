@@ -1235,3 +1235,63 @@ A new independent working draft, `docs/CASSIDY_CHARACTER_BIBLE.md`, records the 
 
 **Audit status remains ongoing.** This review covers selected canonical and visual references, not every Cassidy source file or every runtime behaviour.
 
+## 44. Emerald Valley world specification and language-world geography references
+
+### Source documents inspected
+
+Read-only review covered:
+- `docs/EMERALD_VALLEY_WORLD_MASTER_SPEC.md`
+- `src/features/world/data/livingLanguageWorlds.ts`
+- `src/features/world/data/livingLanguageWorldLocations.ts`
+- `src/features/world/data/livingLanguageWorldPhysical.ts`
+- `src/features/world/data/livingWorldCharacters.ts`
+- `src/engines/world/npcCharacterRegistry.ts`
+- `src/features/world/data/livingWorldActivities.ts`
+- `src/features/world/data/livingWorldBehavior.ts`
+- `src/features/world/data/livingWorldTerrain.ts`
+- `src/features/world/data/livingWorldNavigation.ts`
+
+### What the archive describes
+
+The Emerald Valley master specification is unusually detailed as a spatial and sensory reference. It describes a mountain valley with west/south arrival approaches, a central settlement and stream, eastern railway/tunnel continuation, and northern mountain/sanctuary/garden areas. It gives distinct identity to the café, market, library, station, sanctuary, bamboo garden, campfire clearing, stream, lanterns, paths, and environmental transitions. It also includes time/weather, sound design, discovery principles, camera language, visual composition, and return-visit acceptance ideas.
+
+The location catalogue contains five Japanese real-place examples paired with fictional places, and four French real-place examples paired with fictional places. The top-level registry in the inspected file lists Emerald Valley, Japanese World, and French World. It does not list a Spanish world.
+
+The inspected physical layer uses broad tag-derived themes and similar default road, sidewalk, crossing, lighting, and transit patterns for many language-world locations. The resident registry contains role templates and location-specific spawn examples; activity and schedule rules are primarily role-based and generic.
+
+### Strengths worth carrying forward
+
+- Emerald Valley has a strong emotional identity, readable geography, a memorable set of connected landmarks, and detailed sensory direction.
+- The stream, railway, mountain tunnel, sanctuary, café, market, library, and garden create a coherent spatial vocabulary rather than isolated destinations.
+- Weather, time, lighting, audio, and spatial transitions are treated as parts of place identity.
+- Acceptance tests consider the first 30 seconds, a five-minute visit, and a return visit.
+- Real and fictional locations can coexist when the distinction is clear.
+- World bibles can connect geography, resident roles, activities, culture, and sensory identity.
+
+### Gaps and cautions
+
+- The Emerald Valley master specification is still a GoPAL-AI document and may contain legacy implementation assumptions, coordinates, asset references, and performance constraints. Its creative direction is research material; its coordinates, models, scene, renderer, and pipeline are not to be copied.
+- The world registry inspected contains only Emerald Valley, Japanese World, and French World. This does not satisfy the user's established Spanish-world travel example or establish the full intended universe.
+- The physical presentation layer applies shared generic infrastructure and tag-based themes to many locations. It does not demonstrate truly distinct geography, architecture, ecology, settlement patterns, or cultural life for each language world.
+- The location catalogue is a small seed list, not a complete geography or researched cultural representation.
+- Role templates and spawn points do not constitute a full authored society. Resident schedules are generic and do not establish detailed biographies, relationships, commitments, or community histories.
+- The reviewed terrain/navigation helpers are implementation-level geometry abstractions, not a world-authoring and validation standard.
+- Some old specification content includes technical renderer and asset-performance assumptions that must be re-evaluated against the new engine and target devices.
+
+### New Language-world requirements
+
+1. Author Emerald Valley as a complete home-world bible, retaining its emotional and spatial strengths while independently deciding its final geography, history, residents, ecology, and experiences.
+2. Define each language world through a complete world bible, not a palette/theme parameter.
+3. Add Spanish as a first-class world if it remains the first destination in the user's travel vision; its geography and identity must be authored rather than inferred.
+4. Establish a canonical world/region/place registry with stable IDs, real/fictional provenance, content versions, and learner-state separation.
+5. Require cultural and language review for all real-world references and world-specific variants.
+6. Define world-specific architecture, infrastructure, transport, ecology, sound, weather, resident societies, and everyday activities.
+7. Use reusable technical systems without making the worlds themselves generic.
+8. Create first-visit, short-visit, and return-visit acceptance criteria for every world.
+
+### Language-world document created
+
+A new independent working draft, `docs/WORLD_UNIVERSE_BIBLE.md`, records the universe structure, recovered Emerald Valley foundation, Japanese/French location seeds, world identity standard, canonical registry requirements, travel principles, and open decisions.
+
+**Audit status remains ongoing.** This review inspects selected world documents and source files. It does not establish complete world implementation, cultural accuracy, or end-to-end simulation.
+
