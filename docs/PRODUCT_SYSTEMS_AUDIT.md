@@ -1601,3 +1601,59 @@ Created `docs/AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md`, a working specification for w
 The existing `CINEMATIC_EXPERIENCE_BLUEPRINT.md` was strengthened with sequence lifecycle, beat/track ownership, interruption/version migration, and quality gates. Existing `ASSET_HANDOFF_STANDARD.md` and `ASSET_AND_CINEMATIC_PIPELINE.md` were strengthened with authoritative document boundaries, validation, versioning, and the explicit no-legacy-pipeline rule. These documents remain working specifications, not approved final production contracts.
 
 **Audit status remains ongoing.** This section records selected-source observations and does not claim an exhaustive audit of all audio, animation, or cinematic content.
+
+
+## 51. Stories, quests, investigations, and narrative continuity
+
+### GoPAL-AI references inspected
+
+- `src/engines/quest/questEngine.ts` defines quest categories and seeded quests; inspected seed data includes pre-completed sample progress. Completion updates quest state, claims an economy reward, and writes a journey event in sequential side effects.
+- `src/engines/world/residentStoryEngine.ts` defines three fixed resident story-thread templates with seeded/waiting/ready/resolved stages; waiting-to-ready uses a five-minute elapsed-time threshold.
+- `src/engines/world/residentStoryOpportunityEngine.ts` derives story opportunity tone from a broad resident relationship tier and adds fixed text.
+- `src/engines/world/worldInvestigationEngine.ts` implements clue prerequisites, collection, reveal, and completion as pure state transitions.
+- `src/engines/world/worldStoryChoiceEngine.ts` provides a small story-node/choice model with history and numeric flags.
+- `src/engines/world/worldEventDirectorEngine.ts` combines contextual ambient events and opportunities while leaving quests, festivals, inventory, and rewards to other owners.
+- `src/features/world/data/livingWorldQuestEngine.ts` holds quest state in an in-memory map, updates objectives from events, and timestamps start/completion.
+- `src/features/learning/components/WorldInvestigationBoard.tsx` holds investigation progress in component state; remounting loses progress unless a caller persists it.
+- `src/features/learning/components/WorldStoryChoiceBoard.tsx` holds story node/history/flags in component state.
+- `src/features/world/components/WorldStoryTraceLayer.tsx` polls resident threads and renders fixed-position traces for a small set of known thread IDs.
+
+### Recovered strengths
+
+- Resident story threads and contextual opportunities are represented.
+- Clues can have prerequisites and reveal other clues.
+- Story choices can preserve a basic choice history.
+- One event director separates ambient opportunity selection from quest/reward ownership.
+- Narrative traces can be represented spatially in the world.
+
+### Limitations and cautions
+
+- The inspected resident story engine has only a few fixed templates and a fixed five-minute waiting threshold, not a rich authored narrative scheduler.
+- Story-choice and investigation components hold state locally; durable re-entry is not established by those components.
+- Generic quest seed data includes pre-completed sample progress.
+- Quest completion performs sequential persistence, reward, and journey-event side effects; the inspected code does not prove a transactional outbox or crash-safe cross-domain completion.
+- The in-memory world quest engine does not by itself establish durable progress or account scoping.
+- Relationship-tier-derived story text does not replace authored character knowledge, motives, or nuanced memory.
+- These selected files do not prove a complete world/universe mystery, long-running story arc, fair clue graph, or coherent narrative canon system.
+
+### New Language-world requirements
+
+1. Author multiple narrative scales, from short moments and local stories to world and universe arcs.
+2. Separate world canon, learner knowledge, learner choices, character knowledge, and cinematic/UI presentation.
+3. Give every fact and clue provenance, reliability, scope, and version.
+4. Design fair mysteries with alternative discovery routes, evidence connections, hint levels, and recoverable critical clues.
+5. Make choices meaningful and traceable without reducing characters to hidden numeric relationship meters.
+6. Give residents their own motives, commitments, knowledge, and stories that do not all depend on the learner.
+7. Preserve Cassidy's agency and boundaries; she is not a universal quest giver or narrator.
+8. Use quests only where objectives clarify meaningful intent; do not turn every activity into a checklist or daily chore.
+9. Persist story progress, clues, choices, and consequences outside UI component state.
+10. Make journal/recap support gentle re-entry without guilt or expiring essential content.
+11. Use stable idempotent narrative events and domain-owned consequences.
+12. Integrate language practice without making narrative outcomes depend on unvalidated pronunciation or one exact phrase.
+13. Review canon, culture, accessibility, localization, audience suitability, and content-version migration.
+
+### Language-world document created
+
+Created `docs/NARRATIVE_AND_STORY_CONTINUITY_SPEC.md`, a working specification for narrative scales, canon/knowledge, story authoring, fair mysteries, choices, resident autonomy, Cassidy boundaries, quests, journals, durable events, learning integration, and cultural/quality review. It is linked from Master Blueprint Section 42.
+
+**Audit status remains ongoing.** This section records selected-source observations and does not claim an exhaustive review of all story content or narrative assets.
