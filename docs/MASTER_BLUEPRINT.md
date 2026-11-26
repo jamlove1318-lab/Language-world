@@ -646,3 +646,9 @@ It develops the first Emerald Valley-to-Spanish-world train journey as the refer
 The independent [Audio, Voice, and Soundscape Specification](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) defines authored sound bibles per world, semantic cue contracts, runtime mix ownership, adaptive ambience, original music, character voice, language-learning audio integrity, captions, accessibility, interruption handling, content delivery, and production review.
 
 The specification distinguishes playback, shadowing, microphone capture, speech recognition, pronunciation assessment, and conversation. It explicitly rejects claiming pronunciation assessment from playback or recording alone, and excludes the legacy Expo Audio playback adapter. Runtime technology, voice services, and launch language scope remain open.
+
+## 42. Narrative, story, mystery, and continuity systems
+
+The independent [Narrative, Stories, Mysteries, and Continuity Specification](NARRATIVE_AND_STORY_CONTINUITY_SPEC.md) defines story scales, canon and knowledge ownership, story authoring, fair mysteries and clue provenance, meaningful choices and consequences, resident autonomy, Cassidy's independent narrative role, ethical quest use, journals and re-entry, durable narrative events, learning integration, and cultural/quality review.
+
+It distinguishes world canon, learner knowledge, learner choices, character knowledge, and presentation. The specification explicitly rejects local UI state as authoritative story progress, pre-completed seed quests, and inactivity-driven story urgency. The first story portfolio and long-running universe mystery remain to be authored and approved.
