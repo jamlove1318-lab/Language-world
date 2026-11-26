@@ -706,3 +706,14 @@ This is a working architecture draft. It must be reconciled with UX/accessibilit
 The working [UX, Navigation, and Accessibility Specification](UX_AND_ACCESSIBILITY_SPEC.md) defines the world-first experience promise, information architecture principles, candidate destination taxonomy, core learner journeys, activity lifecycle, minimal HUD, touch/spatial interaction, accessibility across vision/hearing/motion/motor/cognitive/sensory needs, localization, notification boundaries, and loading/error/recovery UX.
 
 It explicitly does not copy the GoPAL-AI tab layout or lock the final navigation model. Audience, age policy, input support, accessibility conformance target, and first-release journeys remain open. The specification must be reviewed alongside the Technical Architecture and Product Scope before approval.
+
+
+## 49. Product scope, home-world identity, and progression
+
+The working [Product Scope and Release Definition](PRODUCT_SCOPE_AND_RELEASE_DEFINITION.md) makes an explicit distinction between Emerald Valley as the learner's home and the wider universe as the place for language learning. Emerald Valley supports everyday life, conversations with Cassidy and residents, exploration, local stories, games, optional learning, and a familiar place to return to; it is not a course or the learner's singular learning goal.
+
+The specification establishes a broad choice of learning formats across the universe: conversations, focused practice, listening, reading, writing, quizzes, puzzles, mini-games, stories, investigations, cultural activities, and location-based scenarios. Different locations can provide different contexts without every building becoming a classroom.
+
+It also records the product owner's requirement that buildings and scenarios be upgradeable. Learners earn points through meaningful learning and participation and can invest them in visible building, interior, facility, location, and scenario improvements. Scenario upgrades may add richer staging, new variants, dialogue branches, roles, challenges, clues, and replay options. Building progress, scenario availability, learning evidence, story state, and point transactions remain distinct durable records.
+
+The document proposes a first-release framework and quality gates while leaving exact audience, languages, launch portfolio, point economy, upgrade trees, costs, and release scope open. It is a working proposal, not implementation approval.
