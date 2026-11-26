@@ -72,9 +72,9 @@ These are examples, not a final approved location list. Every location should ha
 
 ### 3.3 Learning choice and recommendation
 
-Learners should be able to choose an activity or follow a suggestion. The Experience Director may recommend a suitable next experience based on permitted context, but it must not force a single path.
+The core curriculum path is intentionally fixed and sequenced: the next core learning experience is authored according to the learning progression, rather than being randomly selected from an unordered catalogue. The Experience Director may recommend the next step and explain why it follows. This structure must not become coercive: learners can pause, leave, review, retry, take a break, or explore optional activities in the wider world. Optional side activities do not silently reorder or replace the core curriculum sequence. Any skip/placement policy must be explicit and pedagogically designed, not an arbitrary shuffle.
 
-Provide variety and learner controls: choose another activity, continue, practise a skill, explore freely, save for later, or take a break. Recommendations should explain their relevance where useful and must not create guilt, artificial urgency, or hidden pressure.
+Provide clear progress and learner controls: continue along the core path, review a previous experience, practise a skill, explore freely, save for later, or take a break. Recommendations should explain their relevance where useful and must not create guilt, artificial urgency, or hidden pressure.
 
 ## 4. Building and location upgrades
 
