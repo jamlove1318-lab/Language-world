@@ -26,6 +26,7 @@
 | [Experience Catalogue](EXPERIENCE_CATALOGUE.md) | Experience taxonomy, 60 research seeds, learning integration, authoring and quality gates | Working draft v0.1; portfolio and scope require review |
 | [Learning Design](LEARNING_DESIGN.md) | Capability/evidence model, adaptive support, evaluation, speech honesty, privacy and accessibility | Working draft v0.1; language scope and validation remain open |
 | [World Simulation Specification](WORLD_SIMULATION_SPEC.md) | Canonical time, climate/weather, residents, ecology, plants, events, offline and performance | Working draft v0.1; clock model and world profiles remain open |
+| [World Objects and Spaces](WORLD_OBJECTS_AND_SPACES.md) | Spatial hierarchy, buildings/interiors, objects, interactions, navigation, inventory and personal spaces | Working draft v0.1; launch scope and technical contracts remain open |
 | [Source Audit](SOURCE_AUDIT.md) | Reference repository inventory and audit scope | Ongoing |
 | [Foundation](FOUNDATION.md) | Initial product principles | Established foundation |
 | [Architecture Decisions](ARCHITECTURE_DECISIONS.md) | Accepted constraints and unresolved choices | Maintained |
@@ -69,12 +70,14 @@
 - [x] Create Learning Design working specification with separate evidence dimensions and explicit limits on speech/pronunciation claims.
 - [x] Inspect legacy time, weather, resident routine, ambient event, NPC runtime, and actor simulation sources.
 - [x] Create World Simulation working specification covering clock policy, climate, residents, ecology, plants, events, offline recovery, and performance tiers.
+- [x] Inspect object schemas/catalogues/factories, entrances, interactions, personal-object storage, inventory helpers, and location contracts.
+- [x] Create World Objects and Spaces working specification with explicit object lifecycle, state ownership, interior, and asset-replacement requirements.
 - [x] Link the Master Blueprint from README.
 - [ ] Complete product-owner review and approval.
 
 ## Current reference-audit status
 
-The Product Systems Audit currently contains 47 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
+The Product Systems Audit currently contains 48 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
 
 Remaining high-value review areas include:
 - Full source trace of transport and travel state, including interruption and re-entry.
@@ -93,7 +96,7 @@ Create and review in dependency order:
 3. [x] `EXPERIENCE_CATALOGUE.md` — working draft created; taxonomy and quality gates are defined, launch portfolio remains unapproved.
 4. [x] `LEARNING_DESIGN.md` — working draft created; capability/evidence, adaptive support, assessment limits, speech honesty, privacy and accessibility defined.
 5. [x] `WORLD_SIMULATION_SPEC.md` — working draft created; simulation domains and clock/offline decisions documented, world-specific profiles remain open.
-6. [ ] `WORLD_OBJECTS_AND_SPACES.md` — object contracts, buildings, interiors, navigation, interaction, inventory and lifecycle.
+6. [x] `WORLD_OBJECTS_AND_SPACES.md` — working draft created; spatial hierarchy, object lifecycle, interaction, interiors, inventory, and replaceable assets defined.
 7. [ ] `CINEMATIC_EXPERIENCE_SYSTEM.md` — timelines, camera, actor direction, voice, sound, accessibility, preload and recovery.
 8. [ ] `TRAVEL_EXPERIENCE_SPEC.md` — routes, transport modes, staging, boarding, journeys, arrival, handoff and interruption.
 9. [ ] `ASSET_AND_CREATIVE_PIPELINE.md` — semantic IDs, manifests, versioning, replacement, rigs, animation, provenance and designer handoff.
