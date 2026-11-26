@@ -57,3 +57,4 @@ The new build preserves the valuable product ideas from the original repository 
 ## Project documentation
 
 - [Master Blueprint](docs/MASTER_BLUEPRINT.md) — central product specification (working draft; not approved for implementation).
+- [Blueprint Work Register](docs/BLUEPRINT_WORK_REGISTER.md) — tracks research, supporting specifications, open decisions, and approval gates.
