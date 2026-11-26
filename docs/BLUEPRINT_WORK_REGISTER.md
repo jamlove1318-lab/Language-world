@@ -31,6 +31,7 @@
 | [Audio, Voice, and Soundscape](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) | World sound identity, cue/mix contracts, character voice, learning audio, captions and accessibility | Working draft v0.1; engine, voice scope and production plan remain open |
 | [Narrative and Story Continuity](NARRATIVE_AND_STORY_CONTINUITY_SPEC.md) | Story canon, mysteries, clues, choices, resident autonomy, quests, journal and re-entry | Working draft v0.1; initial story portfolio and canon remain open |
 | [Persistence, Privacy, and Synchronization](PERSISTENCE_PRIVACY_AND_SYNC.md) | Learner identity, local-first data, sync, conflicts, memory, privacy, security, export, deletion, recovery | Working draft v0.1; identity, backend, offline promise, and policies remain open |
+| [Creative Experiences and Personal Archive](CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md) | Journal, phrasebook, postcards, comics, boards, museum, capsules, conversation archive, editable source and media lifecycle | Working draft v0.1; launch scope, sharing, and creative workflow decisions remain open |
 | [Source Audit](SOURCE_AUDIT.md) | Reference repository inventory and audit scope | Ongoing |
 | [Foundation](FOUNDATION.md) | Initial product principles | Established foundation |
 | [Architecture Decisions](ARCHITECTURE_DECISIONS.md) | Accepted constraints and unresolved choices | Maintained |
@@ -65,6 +66,7 @@
 - [x] Inspect audio cue/mix contracts, profiles, playback adapter, semantic animation vocabulary, departure and first-meeting cinematic sources; record Expo and ownership limitations.
 - [x] Record local persistence, account scoping, fallback, and cross-domain reliability findings.
 - [x] Record creation studio, Memory Museum, Journey Book, time capsules, discovery progression, and transport infrastructure findings.
+- [x] Inspect creation templates, archive screens, time capsule unlock flow, transcript archive truthfulness, and LocalStore object methods.
 
 ### Blueprint
 
@@ -87,12 +89,13 @@
 - [x] Strengthen artist handoff and asset/cinematic pipeline documents with validation, authoritative boundaries, versioning, and independent-production constraints.
 - [x] Inspect quest, resident story, clue investigation, story choice, event direction, and narrative trace sources.
 - [x] Create Narrative and Story Continuity working specification with canon/knowledge ownership, fair mystery, resident autonomy, durable re-entry, and ethical quest requirements.
+- [x] Create Creative Experiences and Personal Archive working specification with editable source, object lifecycle, privacy, media, AI boundaries, cultural integrity, and acceptance tests.
 - [x] Link the Master Blueprint from README.
 - [ ] Complete product-owner review and approval.
 
 ## Current reference-audit status
 
-The Product Systems Audit currently contains 52 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
+The Product Systems Audit currently contains 53 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
 
 Remaining high-value review areas include:
 - Full source trace of transport and travel state, including interruption and re-entry.
@@ -118,8 +121,9 @@ Create and review in dependency order:
 10. [x] `AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md` — working draft created; world sound identity, mix, voice, learning audio integrity, captions, accessibility, interruption, and delivery defined.
 11. [x] `NARRATIVE_AND_STORY_CONTINUITY_SPEC.md` — working draft created; canon, mysteries, choices, resident autonomy, quests, journal/re-entry and durable events defined.
 12. [x] `PERSISTENCE_PRIVACY_AND_SYNC.md` — working draft created; identity, local-first behaviour, sync, security, privacy, export, deletion and recovery defined.
-13. [ ] `TECHNICAL_ARCHITECTURE.md` — domain boundaries, runtime, data, engine evaluation and integration contracts.
-14. [ ] `PRODUCTION_AND_QUALITY_PLAN.md` — production roles, content workflows, acceptance criteria, testing and release gates.
+13. [x] `CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md` — working draft created; archive families, editable source, media lifecycle, ownership, privacy, cultural review and acceptance tests defined.
+14. [ ] `TECHNICAL_ARCHITECTURE.md` — domain boundaries, runtime, data, engine evaluation and integration contracts.
+15. [ ] `PRODUCTION_AND_QUALITY_PLAN.md` — production roles, content workflows, acceptance criteria, testing and release gates.
 
 ## Open decisions register
 
