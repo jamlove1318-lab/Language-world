@@ -170,3 +170,77 @@ Only the welcome and one travel sequence need to be wired into the first vertica
 ## 8. Success criteria
 
 A learner can understand who Cassidy is, why Emerald Valley is home, and that the universe is larger than one location. The welcome feels personal rather than like a tutorial video. The train journey has a clear beginning, middle, and arrival. The learner can skip or interrupt without losing state. The same cinematic structure works with proxy and production assets. The designer can improve the visual quality without rewriting sequence logic.
+
+
+## 9. Runtime contract and sequence lifecycle
+
+The sequence is authored data interpreted by a cinematic director. It is not a component containing all dialogue, animation, timing, and persistence logic.
+
+A sequence package must declare:
+- Stable sequence ID, content version, supported schema version, purpose, audience/context, prerequisites, and completion policy.
+- Required scene/place/actor/asset dependencies and preload groups.
+- A beat graph with ordered beats, optional branches, choice windows, skip targets, and checkpoint IDs.
+- Track references for camera, actor performance, dialogue/captions, audio, environment, transport presentation, and learner interaction.
+- Expected domain state before start and the domain events that may be requested at named checkpoints.
+- Replay policy, first-visit/return-visit variant, localization, accessibility, and fallback presentation.
+- Estimated duration range, not just a single hard-coded runtime.
+
+### Beat and track rules
+
+- Tracks use a shared sequence timebase and stable beat/event IDs.
+- Tracks may overlap, but conflicts must be resolved by explicit priority and ownership.
+- Dialogue and captions share timing metadata; localization changes must not silently desynchronize captions.
+- Actor performance expresses semantic intent (walk, greet, listen, look-at, gesture, expression) and maps to the current asset's animation capabilities.
+- Camera tracks declare target, framing, transition, motion intensity, and safe composition bounds.
+- Audio cues use semantic IDs from the Audio, Voice, and Soundscape Specification.
+- Environment tracks request presentation changes; canonical weather/time/world state remains owned by world simulation.
+- Transport tracks visualize travel state; they do not create or complete journeys.
+- Learner interaction windows are explicit. A sequence must never imply that the learner has control when input is being ignored.
+
+### Lifecycle
+
+1. **Resolve:** validate prerequisites, content version, localization, accessibility preferences, and required assets.
+2. **Preload:** load essential scene, actor, voice, caption, and transition assets; optional assets may be omitted with declared fallbacks.
+3. **Prepare:** obtain a durable start/checkpoint record from the owning domain.
+4. **Present:** run authored tracks and emit presentation events.
+5. **Checkpoint:** request domain-owned commits only at named, validated checkpoints.
+6. **Complete/skip:** settle the sequence outcome and return control or hand off to the next experience.
+7. **Release:** dispose transient players, camera overrides, actors, and scene resources.
+8. **Recover:** reconcile persisted sequence/domain state after pause, process death, asset failure, or version change.
+
+A presentation event is not proof of a domain transaction. For example, a train-door animation reaching its final frame does not prove that the learner boarded; the travel domain must commit boarding and the sequence must reconcile with that result.
+
+## 10. Interruption, failure, and migration matrix
+
+Every sequence must define behaviour for:
+- App backgrounding and foreground return.
+- Process termination at each durable checkpoint.
+- Missing or corrupt asset, voice line, or localization.
+- Audio focus loss and device route changes.
+- Learner skip, pause, replay, or exit.
+- Reduced-motion preference changed before or during playback.
+- Content update while a sequence is in progress.
+- Destination/domain state committed but presentation not yet played.
+- Presentation completed but domain commit failed.
+
+Recovery must prefer a coherent world state over replaying a broken timeline. A sequence can resume, restart its current beat, switch to a simplified presentation, or conclude with a recap. It must not duplicate rewards, travel, story outcomes, or onboarding completion.
+
+Sequence versions need migration rules. If a new version removes a beat that an existing learner checkpoint references, provide a stable migration target or safe completion path.
+
+## 11. Cinematic quality and approval gates
+
+Before a sequence is approved:
+- Its emotional purpose and learner takeaway are clear.
+- Story, character, and world canon are respected.
+- The sequence works with proxy assets and final assets.
+- Camera and actor staging communicate the action without relying on spoken explanation.
+- Dialogue, captions, localization, and voice timing have been reviewed.
+- Audio can be muted or reduced without losing essential information.
+- Skip, pause, replay, reduced motion, interruption, and recovery are tested.
+- Domain state transitions are owned by the correct systems and are idempotent.
+- No learner is trapped in a forced wait or repeated unskippable content.
+- Performance and memory budgets are measured on target Android devices.
+
+Related audio, travel, and asset requirements are specified in [Audio, Voice, and Soundscape](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md), [Travel Experience](TRAVEL_EXPERIENCE_SPEC.md), and [Asset and Cinematic Pipeline](ASSET_AND_CINEMATIC_PIPELINE.md).
+
+**Status note:** This document defines the cinematic experience and production direction. The exact engine/runtime implementation remains open. It complements, rather than replaces, the durable travel and world-state contracts.
