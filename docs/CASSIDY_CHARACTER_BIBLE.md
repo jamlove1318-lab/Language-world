@@ -303,3 +303,14 @@ This is a new asset workflow. Do not reuse the GoPAL-AI 3D factory, authoring sc
 - [ ] Independent asset contract and artist handoff are reviewed.
 
 **Current status:** useful recovered draft; not final canon approval and not implementation authorization.
+
+
+## 17. Cassidy's home and personal spaces
+
+Cassidy has her own home in Emerald Valley, distinct from learner-owned plots/houses and shared public buildings. The home is part of her independent character life, not a purchase, reward, unlock tied to relationship points, or permanently staged meeting room.
+
+The requested home includes spaces such as her bedroom, library/study, and kitchen, with other rooms to be authored consistently with the approved character canon. The rooms should carry personal meaning through objects, routines, ongoing interests, and environmental storytelling. Cassidy may be found in different rooms or elsewhere in the valley according to her authored life and current story context.
+
+Access should respect character boundaries and narrative context. Cassidy may invite the learner into appropriate spaces; the learner should not assume unrestricted access to every private room or every moment. Her home can host conversations, quiet scenes, personal stories, cooking or reading moments, and other experiences where appropriate, but it must not become the only place where Cassidy exists.
+
+Her actual canonical design and user-owned design references take precedence. This specification does not authorize copying GoPAL-AI assets, models, rigs, animations, or production tools.
