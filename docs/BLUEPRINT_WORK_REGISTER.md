@@ -32,6 +32,8 @@
 | [Narrative and Story Continuity](NARRATIVE_AND_STORY_CONTINUITY_SPEC.md) | Story canon, mysteries, clues, choices, resident autonomy, quests, journal and re-entry | Working draft v0.1; initial story portfolio and canon remain open |
 | [Persistence, Privacy, and Synchronization](PERSISTENCE_PRIVACY_AND_SYNC.md) | Learner identity, local-first data, sync, conflicts, memory, privacy, security, export, deletion, recovery | Working draft v0.1; identity, backend, offline promise, and policies remain open |
 | [Creative Experiences and Personal Archive](CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md) | Journal, phrasebook, postcards, comics, boards, museum, capsules, conversation archive, editable source and media lifecycle | Working draft v0.1; launch scope, sharing, and creative workflow decisions remain open |
+| [Technical Architecture](TECHNICAL_ARCHITECTURE.md) | Domain ownership, runtime, data/event contracts, offline, content, security and testing | Working draft v0.1; engine/backend-neutral; review pending |
+| [UX and Accessibility](UX_AND_ACCESSIBILITY_SPEC.md) | User journeys, navigation, activity lifecycle, accessibility, localization and recovery UX | Working draft v0.1; journey maps and review pending |
 | [Source Audit](SOURCE_AUDIT.md) | Reference repository inventory and audit scope | Ongoing |
 | [Foundation](FOUNDATION.md) | Initial product principles | Established foundation |
 | [Architecture Decisions](ARCHITECTURE_DECISIONS.md) | Accepted constraints and unresolved choices | Maintained |
@@ -195,8 +197,8 @@ This checkpoint is not a claim that every GoPAL-AI source line was inspected or 
 - [x] Record product-level gaps, open decisions, cross-document contradictions, and recommended work order in BLUEPRINT_RECONCILIATION.md.
 - [x] Correct Master Blueprint supporting-document links and stale work-order text.
 - [x] Align the Roadmap with the user's ideas-only/no-legacy-assets boundary.
-- [ ] Create and review Technical Architecture.
-- [ ] Create and review UX/accessibility/navigation specification.
+- [x] Create Technical Architecture working draft; review and cross-document reconciliation pending.
+- [x] Create UX/accessibility/navigation working draft; journey maps and product-owner review pending.
 - [ ] Resolve product audience, age policy, first-release promise, AI/voice governance, and commercial/progression boundaries.
 
 
