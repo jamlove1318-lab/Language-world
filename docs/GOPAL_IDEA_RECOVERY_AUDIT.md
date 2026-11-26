@@ -655,3 +655,39 @@ The research may be considered complete for a specific product domain when its i
 - [ ] Only after the complete blueprint is reviewed and explicitly approved may implementation planning begin.
 
 **Current decision:** research and blueprint work only. No Language-world implementation is authorized by this audit. GoPAL-AI remains untouched.
+
+
+## 21. Additional ideas recovered from the earlier product specification
+
+The earlier numbered sections (1–88) add several distinct ideas worth retaining in the research catalogue:
+
+- **First-open and return rituals:** a welcoming first moment, world-state recap, and "what changed?" return experience.
+- **A personal home environment:** a room/study space with persistent object placement and visible learner history, not a regenerated approximation.
+- **World state separate from rendering:** the world remains authoritative while different visual representations present it.
+- **Ambient learning:** objects, signs, and environmental details can expose target-language names, pronunciation, phrases, and context without forcing a formal lesson.
+- **Personalized review stories:** weak or recently practiced concepts can reappear in a believable scenario.
+- **Multi-signal adaptation:** accuracy, response time, repetition, confidence, and hint use can inform support—but should be interpreted carefully and transparently.
+- **Learning replay and positive difficulty history:** revisit early attempts and compare them with current evidence without shaming the learner.
+- **Explanation choice:** academic, simple, story-based, or visual explanations; a "I'm stuck" path can offer another example or breakdown.
+- **Practical mission preparation:** optional preparation for a real-life situation such as ordering food or using transport.
+- **World news and event scale:** small ambient changes, medium local events, and large festivals or world events.
+- **Progression across different dimensions:** learner capability, world familiarity, character history, and story/collection growth should be distinguished. XP/levels are not mandatory.
+- **Accessibility and performance as product requirements:** readable type, screen-reader semantics, contrast, reduced motion, lazy loading, caching, selective simulation/rendering, and device-aware quality.
+- **Progressive fidelity:** begin with a functional experience, prove the interaction and world logic, then improve presentation. This does not authorize reuse of GoPAL-AI's visual pipeline.
+- **Architecture discipline:** one owner per responsibility, typed events, clear engine/UI boundaries, fact/interpretation separation, trustworthy persistence, inspect-root-cause-verify workflows, and validation before release.
+
+These ideas strengthen the existing Language-world requirements for onboarding, learning design, simulation, personal archive, UX/accessibility, and technical architecture. They do not create new implementation commitments by themselves.
+
+## 22. Player-facing surface and reachability lesson
+
+The current GoPAL-AI application shell exposes four primary tabs: Explore, Travel, Cassidy, and Study Room, with Memory Museum, People, and Settings in an overflow surface. The inspected screen sources include a living valley, destination journey, study room, Journey Book/archive surfaces, discovery constellation/modal, character home, world map, and world-learning overlays.
+
+This is useful as a surface taxonomy, but it must not be mistaken for a coherent or complete product journey. The app shell still has to be traced against actual route and feature behavior; the presence of a screen file does not prove every concept is connected, durable, or production-ready.
+
+**Language-world transfer:** design the complete user journey and navigation from the product's world/travel/story/learning/creation goals. Do not copy the old tab layout or assume one screen per engine. Experiences should emerge naturally from the universe and remain discoverable without turning the world into a dashboard.
+
+## 23. Clarified recovery status
+
+The broad idea catalogue now covers the major themes from both the early product specification (1–88) and the later cross-industry waves (89–173), the principal master documents, and selected implementation evidence. This is a substantial product-idea recovery suitable for blueprint synthesis.
+
+It is not a claim that all 608 source files have been read line by line or that all GoPAL-AI behaviors have been run and verified. Further research should be driven by a specific unresolved Language-world product question—not by copying or exhaustively mining implementation files that have no conceptual value.
