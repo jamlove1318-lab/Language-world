@@ -170,3 +170,45 @@ The pipeline is ready for scale when:
 - Travel can be skipped or interrupted without corrupting world state.
 - Sequences support captions, reduced motion, pause/skip, and replay policy.
 - Android budgets are measured and enforceable.
+
+
+## 13. Ownership boundaries and technical neutrality
+
+This document is the engine-neutral architecture contract for replaceable assets and cinematic presentation. It is complemented by:
+- [Asset Handoff Standard](ASSET_HANDOFF_STANDARD.md) for the graphics designer's delivery package and checklist.
+- [Cinematic Experience Blueprint](CINEMATIC_EXPERIENCE_BLUEPRINT.md) for the authored experience, sequence lifecycle, and quality gates.
+- [World Objects and Spaces](WORLD_OBJECTS_AND_SPACES.md) for semantic world entities, placement, interactions, and spatial ownership.
+- [Travel Experience](TRAVEL_EXPERIENCE_SPEC.md) for durable journey state and route semantics.
+- [Audio, Voice, and Soundscape](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) for cue IDs, sound bibles, mix, voice, and audio lifecycle.
+
+Keep the following owners separate:
+- World/character/story domains own canonical identity, facts, and persistent state.
+- Asset registry resolves semantic asset IDs to compatible platform variants.
+- Import/validation tooling verifies packages and generates runtime-ready content.
+- Character presentation maps semantic action intent to available rig/animation capabilities.
+- Cinematic Director orchestrates camera, actor, dialogue, environment, and audio tracks.
+- Audio Director and playback adapter resolve and play audio without owning narrative outcomes.
+- Travel Director owns journey state; cinematic tracks only present it.
+- UI/accessibility layer owns learner controls, captions presentation, and user preferences.
+
+A renderer, animation clip, audio callback, or timeline completion must never become the authoritative source of story, learner, inventory, character, or travel truth.
+
+### Independent production boundary
+
+The new pipeline must be designed and implemented from first principles. It must not import, adapt, wrap, copy, or depend on the GoPAL-AI renderer, asset registry, model/rig/animation assets, Blender scripts, asset factory, import/export/validation/conversion tools, generated outputs, or pipeline-specific contracts. The only permitted relationship is research documentation about lessons learned and requirements.
+
+## 14. Import, versioning, and content safety
+
+- Every manifest has a schema version and every package has an immutable package version.
+- Content references semantic IDs and declared capabilities, not physical filenames.
+- A compatible replacement may be promoted without changing gameplay/story code.
+- An incompatible change requires a new capability profile or explicit migration.
+- Import validation runs before content is available to a scene or sequence.
+- Runtime loading must verify package compatibility and fallback availability.
+- Content rollback must restore the last known-good package without changing learner-owned state.
+- Asset packages must be signed or integrity-checked where the distribution architecture supports it.
+- Third-party packages must be reviewed for malicious files, licence restrictions, and unsafe embedded content.
+- Source projects and runtime exports have separate retention and access rules.
+- No pipeline step may overwrite the only editable source copy.
+
+These requirements remain engine-neutral until the engine and importer are selected.
