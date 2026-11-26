@@ -664,3 +664,12 @@ The specification records concrete GoPAL-AI reference limitations: shared unscop
 The independent [Creative Experiences and Personal Archive Specification](CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md) defines the learner's creative ecosystem: Journey Book and journal, postcards, phrasebook, comics/storyboards, memory boards, cultural discoveries and museum exhibits, time capsules, and selected conversation archives.
 
 It establishes editable structured source as authoritative, with rendering and media as versioned derivatives; learner ownership and privacy; explicit sharing; AI-assistance provenance; cultural/rights review; accessibility; durable object identity and lifecycle; and export/deletion integration. It proposes a staged first-release sequence without approving scope. The GoPAL-AI research found useful seeds but also sample-only transcripts, demo unlock bypass, timestamp IDs, limited text-only creation records, and no demonstrated full edit/media/export lifecycle. No legacy implementation is reused.
+
+
+## 45. GoPAL-AI idea recovery and transfer audit
+
+The new [GoPAL-AI Idea Recovery and Transfer Audit](GOPAL_IDEA_RECOVERY_AUDIT.md) consolidates the transferable product ideas, experience patterns, design lessons, and failure lessons recovered from GoPAL-AI. Its boundary is explicit: ideas only. No source code, media, 3D models, images, animation, audio, assets, production pipeline, scripts, or implementation contracts are to be transferred.
+
+The audit covers the place-worth-returning-to philosophy; distinct living worlds; contextual learning; a 60-seed mini-game catalogue; Cassidy and resident autonomy; narrative scales and mysteries; world simulation and ecology; objects and personal spaces; travel; audio; personal journey and creative experiences; experience direction; healthy return; and future optional social possibilities. It distinguishes documented ideas from implemented foundations and unverified claims, and records weaknesses that Language-world must not repeat.
+
+Language-world should adopt the underlying human value, not the old feature implementation. The transfer matrix identifies ideas to adopt, redesign, expand, defer, or reject. This document is a research consolidation, not approval of launch scope or implementation. Product-owner review remains required.
