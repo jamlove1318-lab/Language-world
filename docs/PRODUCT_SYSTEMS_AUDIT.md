@@ -873,3 +873,221 @@ This section records static source findings only. The new project's world regist
 - Make time-based content rules explicit and testable; production users cannot bypass an unlock policy through a demo handler.
 
 This is static source inspection. No production-quality learning assessment, account isolation, export/delete, or interrupted-flow recovery has been proven by this review.
+
+## 35. World objects, buildings, interiors, and interaction contracts
+
+### Source systems inspected
+
+Read-only reference review covered:
+- `src/features/world/data/livingWorldObjectCatalog.ts`
+- `src/features/world/data/livingWorldObjectRegistry.ts`
+- `src/features/world/data/livingWorldObjectFactory.ts`
+- `src/features/world/data/livingWorldObjects.ts`
+- `src/engines/world/livingWorldObjectsStore.ts`
+- `src/engines/world/worldInventoryEngine.ts`
+- `src/engines/world/worldCraftingEngine.ts`
+
+### What the archive contains
+
+The reference includes a broad reusable object vocabulary: buildings, interiors, terrain, decoration, infrastructure, transportation, characters, gameplay objects, fantasy objects, science-fiction objects, and nature. The registry derives archetypes from a catalog and also adds more specific building, prop, infrastructure, vehicle, character, and gameplay definitions.
+
+A location factory combines several location data sources into a common object stream. Its object contract can express identity, category, type, transform, visual theme/variant, collision, interaction, behaviour, state, tags, and metadata. Buildings, props, infrastructure, transport features, vehicles, gameplay objects, and entrances can be assembled into a location.
+
+The object store has user-keyed local records for a small set of persistent objects, with a simple growth counter and short memory list. Inventory and crafting are represented as pure state transformations: add/remove/check/combine items and consume recipe quantities to produce outputs.
+
+### Strengths worth carrying forward as product requirements
+
+- A common semantic object model can connect world-building, interaction, collision, behaviour, state, and metadata.
+- Buildings and interiors should be first-class place concepts, not only decorative meshes.
+- A reusable archetype vocabulary can speed up authoring while retaining bespoke authored places.
+- Objects can carry meaningful histories, discoveries, growth, or state changes.
+- Inventory and crafting can be useful where they support exploration, creation, restoration, puzzles, or cultural activities.
+- Object and asset identity should be stable and separate from visual implementation.
+
+### Gaps and cautions
+
+- The universal catalog is a generic vocabulary, not a complete world-authoring standard. Its themes are broadly assigned, so it does not prove that each language world has culturally and geographically specific object sets.
+- The factory combines multiple catalogs, but the inspected files do not establish a complete authoring validation workflow, versioned content packages, robust placement constraints, navigation integration, streaming, or a production-grade interior portal model.
+- The persistent object store covers only a small sample and simple growth/memory fields. It does not establish a general object lifecycle, ownership policy, event history, provenance, conflict resolution, or cross-device durability.
+- Inventory and crafting helpers are in-memory transformations. They do not provide persistence, transaction boundaries, unique-instance identity, provenance, rollback, or a complete user experience.
+- The object catalog's breadth should not become pressure to include every category. Each object family must justify its role in the world and experience design.
+
+### New Language-world requirements
+
+1. Define semantic object identity, archetype, instance state, ownership, provenance, lifecycle, and interaction separately.
+2. Specify building shells, entrances, interiors, portals, room transitions, occlusion, navigation, accessibility, and persistence.
+3. Define a world-authoring standard with coordinate units, transforms, bounds, collision, interaction anchors, navigation data, streaming zones, and validation.
+4. Make object state changes durable, learner-scoped where personal, and safe to replay after interruption.
+5. Treat inventory/crafting as optional experience systems with explicit purpose, not assumed core mechanics.
+6. Ensure every world has authored local object families and materials; reusable technical contracts must not homogenize visual identity.
+7. Keep gameplay references semantic and independent of asset filenames, renderer nodes, and engine prefab paths.
+
+## 36. Environment, clock, world events, festivals, and offline simulation
+
+### Source systems inspected
+
+Read-only reference review covered:
+- `src/engines/world/environmentEngine.ts`
+- `src/engines/world/livingWorldClock.ts`
+- `src/engines/world/worldSimulationSnapshot.ts`
+- `src/engines/world/persistentWorldStateEngine.ts`
+- `src/engines/world/contextualWorldEventEngine.ts`
+- `src/engines/world/worldEventDirectorEngine.ts`
+- `src/features/world/data/livingWorldEvents.ts`
+- `src/features/world/components/SeasonalFestivalModal.tsx`
+- `src/features/world/data/livingWorldEvents.ts`
+
+### What the archive contains
+
+The reference has several overlapping environment/time concepts:
+- A lightweight environment resolver maps a supplied JavaScript date to time of day, season, and deterministic weather selection.
+- A separate living-world clock maps local device time to periods such as dawn, morning, afternoon, dusk, and night, with ambience and greeting text.
+- A simulation snapshot contains world/place identity, local time, day phase, weather, ambient life values, atmosphere, resident motion, and update time.
+- A persistent world-state record tracks place visits, discovered event IDs, resident relationship state, a simulation snapshot, and seen event IDs.
+- A contextual event selector can choose weather details, ambient life, resident moments, encouragement/kindness, and rare surprises based on a snapshot and scene context.
+- A world event director combines an ambient event with available opportunities while declaring that quests, festivals, inventory, and rewards belong to other systems.
+- The event vocabulary includes entry/exit, discovery, collection, learning, dialogue, quests, travel, vehicles, object activation, world-state changes, actors, activities, games, and learning outcomes.
+- Seasonal festival concepts include Japanese-language seasonal traditions, cultural vocabulary, a learner activity, a creation/postcard, a memory, and a reward claim.
+
+### Strengths worth carrying forward as requirements
+
+- The environment should influence visuals, sound, resident activity, and the feeling of a place rather than being a decorative weather icon.
+- A coherent clock and environment context can coordinate multiple presentation systems.
+- Ambient events should be sparse, contextual, and subordinate to player agency.
+- Places can remember visits and discoveries.
+- Seasonal events can connect culture, language, community, creative artefacts, and the changing environment.
+- A world-event director can coordinate opportunities without owning the state of every domain.
+- Offline behaviour needs an explicit bounded model.
+
+### Gaps and cautions
+
+- The inspected clock and environment use local device time. The snapshot's initial weather is a fixed clear default and its advance operation recreates a snapshot from the current date; this is not a complete meteorological or ecological simulation.
+- Multiple overlapping time/environment models create potential disagreement unless a single canonical simulation-time contract is designed.
+- The persistent world-state engine writes through a generic LocalStore memory collection and hardcodes `local-explorer-user`; it is not a reliable multi-account persistence design.
+- World event IDs generated by the event helper combine wall-clock time and randomness. The event bus is synchronous and in-memory; neither alone guarantees durable, idempotent event processing.
+- The inspected festival modal owns selected/celebrated UI state, directly calls an economy reward claim, then writes a creation and memory. This is a fragile cross-system workflow if any later side effect fails; it also illustrates why festival participation, rewards, and archive creation need a durable coordinated transaction.
+- Festival examples are currently Japanese-specific and attached to Emerald Valley. They do not establish culturally accurate, independently authored festivals for every world.
+- A rare event selector is not a complete ecology, resident simulation, or narrative system. Event frequency, cooldown persistence, fairness, accessibility, and replay need design.
+
+### New Language-world requirements
+
+1. Define one canonical simulation clock, with explicit world timezone policy, device-time trust, pause/background behaviour, and offline advancement.
+2. Separate real-world time, authored world time, simulation time, and presentation time.
+3. Define weather and seasonal systems per world, with authored climate rules and deterministic/reproducible state where appropriate.
+4. Specify bounded simulation tiers: active scene, nearby region, distant world, and offline/hibernating state.
+5. Define event identity, causality, persistence, deduplication, idempotency, cooldowns, expiry, replay, and interruption recovery.
+6. Use domain-owned state: the event director may orchestrate but must not silently own quest, festival, inventory, learning, or relationship records.
+7. Treat festivals as authored cultural experiences with research/review, activities, accessibility, optional learning, and persistent consequences—not merely reward modals.
+8. Avoid time-limited pressure or penalties for absence. Seasonal experiences should be discoverable and revisitable under explicit design rules.
+
+## 37. Audio, animation semantics, cinematic presentation, and accessibility
+
+### Source systems inspected
+
+Read-only reference review covered:
+- `docs/world-audio-system.md`
+- `src/engines/world/worldAudioContract.ts`
+- `src/engines/world/worldAudioProfiles.ts`
+- `src/engines/world/worldAudioEngine.ts`
+- `src/engines/world/worldAudioRuntime.ts`
+- `src/engines/world/worldAnimationContract.ts`
+- `src/engines/world/worldAssetAnimationRouter.ts`
+- `src/engines/world/residentAnimationDirector.ts`
+- `src/features/cassidy/components/CassidyFirstMeetingCinematic.tsx`
+
+### What the archive contains
+
+The audio concept separates semantic audio decisions from playback. It defines categories for music, ambience, location, activity, interaction, transport, voice, and events; location profiles; mix levels; priority; spatial position; quiet mode; distance attenuation; cooldowns; and a maximum active one-shot budget. The audio design notes describe crossfading music, soft density, licensing/provenance, and future weather and acoustic-zone extensions.
+
+The world animation contract describes semantic actions such as idle, walk, greet, listen, talk, discover, celebrate, inspect, sit, and stand. It also separates animation layers, target kinds, priority, and asset bindings. A clip router maps semantic actions to authored clip aliases. A resident animation director contains short trigger-based sequences.
+
+The first-meeting cinematic is a screen-level staged introduction with character presentation, animated atmosphere, dialogue lines, progress, continue, skip, and a completion callback.
+
+### Strengths worth carrying forward as requirements
+
+- World audio should have one decision-making authority and a replaceable platform playback adapter.
+- Locations need acoustic identity; sound should react to place, weather, time, movement, events, and transport.
+- Mix headroom, density limits, cooldowns, quiet mode, and spatial attenuation protect the experience from audio fatigue.
+- Semantic animation intent allows new art assets and animation sources to replace old ones without changing gameplay intent.
+- Animation should support layered posture, gaze, face, gesture, locomotion, and environment behaviour.
+- Important introductions deserve authored staging, pacing, character performance, and player-controlled progression.
+
+### Gaps and cautions
+
+- The reference playback adapter imports `expo-audio`. This is explicitly incompatible with the new project's no-Expo decision and must not be reused.
+- The semantic audio contract is a useful design reference, not a commitment to the same implementation or exact gain values.
+- The animation contract lists tool-specific source names and clip aliases. Language-world must define its own neutral asset/action vocabulary and runtime adapter boundary; it must not reuse the legacy pipeline or scripts.
+- The first-meeting cinematic is implemented as a UI component with locally timed animation and dialogue progression. It does not establish a reusable cinematic timeline, camera director, actor blocking system, streaming/preload strategy, durable travel state, checkpoint/recovery, localization timing, or a full accessibility model.
+- The inspected cinematic has a skip/continue interaction, but this alone does not prove reduced-motion alternatives, complete keyboard/controller access, screen-reader semantics, subtitle controls, or replay policy.
+- Audio documentation mentions future accessibility controls and acoustic features; their end-to-end implementation is not established by these files.
+
+### New Language-world requirements
+
+1. Define semantic audio cue identities, per-world/location acoustic profiles, mix priorities, ducking, transitions, concurrency limits, spatial behaviour, quiet mode, and user controls.
+2. Keep audio decision logic engine-neutral and playback behind a replaceable, engine-specific adapter.
+3. Define semantic animation actions and layered performance requirements without binding gameplay to a specific DCC tool, renderer, or file naming convention.
+4. Design a full Cinematic Experience System with timelines, beats, cameras, actors, dialogue, voice, subtitles, music, ambience, lighting, preloading, checkpoints, skip/replay, interruption, recovery, and playable handoff.
+5. Make reduced-motion, caption/transcript, volume, quiet-mode, and other accessibility behaviour part of the original system contracts.
+6. Validate audio and animation on target Android hardware, including thermal/load, memory, latency, interruption, and fallback behaviour.
+7. Treat all third-party or recorded assets with explicit licensing, provenance, and human review.
+
+## 38. Persistence, local fallback, account scope, and cross-system reliability
+
+### Source systems inspected
+
+Read-only reference review covered:
+- `src/engines/world/persistentWorldStateEngine.ts`
+- `src/engines/memory/memoryEngine.ts`
+- `src/lib/localStore.ts`
+- `src/lib/storage.ts`
+- `src/engines/world/livingWorldObjectsStore.ts`
+- `supabase/schema.sql`
+- Relevant festival and event workflows.
+
+### What the archive contains
+
+The reference has a Supabase schema with profiles, learner preferences, worlds, locations, world state, characters, relationships, memories, learning records, conversations, stories, quests, collections, postcards, progression, currency, inventory, discoveries, journey events, plant state, and other user-scoped records. Row-level security is enabled on many tables, and inspected policies use the authenticated user ID for owner checks.
+
+There are also local AsyncStorage stores and fallback paths. Some stores use per-user key prefixes, while the generic LocalStore uses shared keys and seed records containing the literal `local-explorer-user`. The memory engine writes to Supabase when configured but falls back to generic local memory methods in several failure paths. The persistent world-state engine stores a serialized snapshot inside the generic memories collection.
+
+### Strengths worth carrying forward as requirements
+
+- Personal data needs explicit learner/account ownership.
+- A local-first or offline-capable experience can be valuable, but it needs a deliberate synchronization model.
+- Different domain records should be represented explicitly rather than hidden inside a generic catch-all field.
+- Server-side row-level security and owner checks are important layers of protection.
+- Memory records benefit from provenance such as source event IDs.
+- A learner's creations, learning evidence, world state, and preferences deserve separate lifecycle and retention policies.
+
+### Gaps and cautions
+
+- The generic LocalStore methods shown use shared keys and hardcoded local learner IDs, so they do not establish safe multi-account local isolation.
+- MemoryEngine's local fallback calls generic methods without passing the requested user ID. In a local-only or network-failure path, this can lose account scoping.
+- The persistent world-state implementation also hardcodes a local learner ID and stores structured state as a serialized memory fact, which makes schema validation, migration, indexing, and atomic updates difficult.
+- Some local object stores are user-keyed, showing a better direction, but this pattern is not consistently applied across the archive.
+- Sequential side effects such as reward claim, creation, memory, relationship, and event updates can partially succeed. The inspected examples do not establish an atomic outbox/transaction workflow across these domains.
+- The schema enables row-level security, but the presence of RLS declarations alone does not prove every table has correct policies for every operation. Policy completeness, grants, foreign-key behaviour, and adversarial tests require a dedicated security review.
+- A local fallback must not silently return another learner's data, seed data masquerading as personal data, or success after a failed write.
+
+### New Language-world requirements
+
+1. Every personal record and local cache must be explicitly scoped to a stable learner/account identity.
+2. Define anonymous-to-account migration, sign-out, account switching, multi-device conflict resolution, deletion, export, and recovery.
+3. Design domain-specific schemas and versioned migrations; avoid using a generic memory table as the authoritative storage for unrelated state.
+4. Define local-first writes, sync queues, conflict policies, idempotency keys, retry/backoff, dead-letter handling, and reconciliation.
+5. Use durable events/outbox patterns for cross-domain consequences. A reward, creation, relationship update, and memory record must not become an untraceable partial sequence.
+6. Define privacy and retention by data category, with clear user controls and minimal collection.
+7. Test isolation between two accounts on one device, offline-to-online transitions, interrupted writes, duplicate events, corrupt local records, migration, backup/restore, and deletion.
+8. Review every RLS policy and local access path with security tests before real user data is stored.
+
+## 39. Consolidated implications for the Master Blueprint
+
+This review strengthens several existing blueprint chapters and introduces explicit supporting specifications:
+- **World Objects and Spaces:** archetypes, instances, interiors, collision/navigation, interactions, object lifecycle, provenance, inventory, and crafting.
+- **World Simulation and Events:** canonical clock, time layers, weather, seasons, festivals, bounded offline simulation, event durability, and domain ownership.
+- **Audio and Performance:** semantic cues, acoustic identity, mix/density rules, audio adapter, licensing, and accessibility.
+- **Animation and Cinematics:** semantic performance contracts, reusable cinematic timelines, camera/actor direction, preloading, checkpoints, interruption, and accessible alternatives.
+- **Persistence and Trust:** learner-scoped data, local-first policy, sync/outbox, account migration, RLS review, privacy, deletion, and recovery.
+
+**Audit status remains ongoing.** These findings are direct inspections of selected reference files. They do not prove that every referenced feature is complete, integrated, secure, or validated end-to-end. GoPAL-AI remains read-only; all new design and implementation belong in Language-world.
+
