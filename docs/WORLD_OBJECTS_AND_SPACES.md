@@ -349,3 +349,27 @@ Upgrade definitions and scenario variants are versioned authored content. When a
 - Upgrade paths do not gate essential accessibility or core learning access.
 
 **Status:** Required product/system direction; detailed trees, costs, transaction model, launch locations, and variants remain open. No implementation is authorized.
+
+
+## 16. Emerald Valley map, empty plots, and learner-owned building
+
+Emerald Valley's main world map is intended to be a large mobile exploration surface that pans/scrolls horizontally and vertically. Locations are spatially arranged in the valley and connected by readable routes and geography; the map should not behave like a stack of unrelated menu cards.
+
+Individual location experiences are designed with a horizontal, landscape-oriented composition on mobile. Long interiors or scenes may scroll horizontally to reveal additional space. The distinction between the two-axis valley map and the horizontal presentation/scrolling within a location must remain explicit. Device orientation/rotation behaviour is an open UX decision pending testing.
+
+The valley includes intentional empty plots and available spaces for learner ownership. Depending on plot rules, learners may acquire houses, buildings, gardens, decorations, furniture, functional objects, and other items, then place, arrange, enter, improve, or relocate them. The system must define plot boundaries, object footprints, placement validity, path/access preservation, inventory/storage, ownership, catalogue, costs, limits, persistence, and content-version migration. Empty plots should be visibly intentional and inviting, not look like missing content.
+
+Keep three concepts separate:
+- Shared/public building upgrades (for example, improving a common café or library).
+- Learner-owned plots, houses, and placed objects.
+- Cassidy's own canonical home and personal spaces.
+
+They may share compatible building/placement technology, but their ownership, access, narrative meaning, and upgrade rules differ. Personal construction must not obstruct essential paths or remove shared access.
+
+## 17. Cassidy's own home and rooms
+
+Cassidy has her own home in Emerald Valley, separate from learner-owned houses and public buildings. Her home is a meaningful personal place and part of her independent life. It should include authored rooms such as a bedroom, library/study, kitchen, and other rooms established by the approved character/world canon. These are examples of the requested home spaces; final layout and room details require canon review.
+
+The home should support believable daily routines, objects with personal meaning, quiet activities, visitors and story moments. Cassidy should not be permanently staged in one room waiting for the learner. Her location and activity may change according to authored life rules, and access to private spaces should follow her character boundaries and the story context. The learner may be invited into appropriate spaces; not every room or moment must be available at all times.
+
+Cassidy's house is not a learner purchase, upgrade reward, or relationship-score prize. It is part of her established character/world identity. Her canonical design takes precedence over new interpretations; no GoPAL-AI assets or production pipeline are transferred.
