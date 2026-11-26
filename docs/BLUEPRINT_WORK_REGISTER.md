@@ -242,6 +242,8 @@ This checkpoint is not a claim that every GoPAL-AI source line was inspected or 
 - [x] Distinguish learner property, shared/public upgrades, and Cassidy's own residence.
 - [x] Record Cassidy's home and personal rooms (bedroom, library/study, kitchen) with canon/access review pending.
 - [x] Record product-wide animation expectations with reduced-motion, performance, and interruption safeguards.
-- [ ] Reconcile learning sequence with Learning Design and define the first curriculum cycle.
+- [x] Reconcile the fixed varied learning sequence with Learning Design; the first curriculum cycle remains to be authored.
 - [ ] Define map scale, plot rules, build catalogue/economy, Cassidy room access, mobile orientation, and animation budgets.
 - [ ] Product-owner review and approval; implementation remains blocked.
+
+- [x] Update Learning Design to specify a fixed, varied curriculum sequence while preserving optional home-world exploration, review, pause, and retry.
