@@ -77,9 +77,8 @@ Earlier static analysis identified potential duplication across AI, XP, streak, 
 - Identify authoritative owners for world, Cassidy, learning, progress, memory, and settings.
 - Map all event types to producers, subscribers, side effects, and persistence.
 - Inspect all language-world location data and world-specific content.
-- Review all 65 GLB files, manifests, Blender archives, source provenance, licences, and runtime references.
-- Visually inspect canonical Cassidy references and compare every candidate runtime asset.
-- Verify whether reported Cassidy model/rig/animation exports are actually tracked and integrated.
+- Do not inspect or transfer GoPAL-AI visual/audio binaries for Language-world idea recovery; asset forensics and production-pipeline reconstruction are explicitly out of scope under the user's ideas-only instruction.
+- Do not import GoPAL-AI Cassidy artwork or production outputs. Preserve Cassidy through the user's own approved canonical design material when designated for new production.
 - Inspect Supabase schema, migrations, row-level security, authentication, and offline behavior.
 - Review all docs for superseded, contradictory, incomplete, or aspirational claims.
 - Inspect CI, tests, asset validation, build scripts, and reproducibility.
@@ -104,3 +103,14 @@ Cassidy's approved design and character identity information may still be used a
 
 This decision supersedes any earlier audit note that described the old Cassidy/world 3D pipeline as a possible production foundation. Further audit work may identify product ideas worth rethinking, but must not turn the rejected 3D implementation into a reuse candidate.
 
+
+
+## Consolidated idea recovery and ideas-only transfer boundary
+
+The user explicitly confirmed that GoPAL-AI should contribute **ideas only**, not assets. The new `docs/GOPAL_IDEA_RECOVERY_AUDIT.md` consolidates the product vision, world, learning, games, Cassidy/resident autonomy, stories, simulation, objects, travel, audio, archive, orchestration, healthy-return, and future-expansion ideas, together with limitations and transfer decisions.
+
+The repository tree inventory was retrieved without truncation (709 entries, 608 files). Selected high-value source files were inspected across world, learning, Cassidy, narrative, travel, audio, economy, memory, creation, and persistence domains. This is a broad idea recovery and targeted source review—not a line-by-line technical audit or end-to-end verification of every feature.
+
+**Explicit no-assets rule:** Do not transfer any GoPAL-AI source code, images, models, GLB/GLTF files, Blender projects, rigs, skeletons, animation clips, audio, media, asset packages, production factories, registries, manifests, import/export scripts, validators, or existing pipeline implementation. These are not required to reuse the product ideas. Cassidy's design is owned by the user; the new project must use the user's approved design material rather than importing repository artwork.
+
+Remaining research should focus only on product ideas and evidence that can materially improve Language-world. Asset and old-pipeline inspection is not a prerequisite and should not be performed unless the user later gives a separate, explicit instruction that changes this boundary.
