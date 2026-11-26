@@ -44,6 +44,7 @@ See [Foundation](docs/FOUNDATION.md), [Architecture Decisions](docs/ARCHITECTURE
 - [GoPAL-AI Idea Recovery and Transfer Audit](docs/GOPAL_IDEA_RECOVERY_AUDIT.md) — recovered product ideas, experience patterns, evidence limits, failure lessons, and explicit no-assets transfer decisions.
 - [Blueprint Reconciliation](docs/BLUEPRINT_RECONCILIATION.md) — missing product decisions, document inconsistencies, and the remaining approval path.
 - [Technical Architecture](docs/TECHNICAL_ARCHITECTURE.md) — engine-neutral domain, runtime, data, event, content, privacy, and testing architecture.
+- [UX and Accessibility](docs/UX_AND_ACCESSIBILITY_SPEC.md) — user journeys, navigation principles, accessibility, localization, and recovery UX.
 - [Product systems audit — Cassidy, living world, relationships, and learning](docs/PRODUCT_SYSTEMS_AUDIT.md)
 - [Architecture decisions](docs/ARCHITECTURE_DECISIONS.md)
 - [Project roadmap](docs/ROADMAP.md)
