@@ -82,7 +82,7 @@ Prove the engine, asset pipeline, camera, interaction, character animation, scen
 
 The primary navigation experience should be an explorable world. Conventional interface patterns remain appropriate for settings, account, accessibility, forms, and focused utility screens, but not as the main world presentation.
 
-## ADR-010: Reject the Existing GoPAL-AI 3D Production Pipeline
+## ADR-013 — Reject the Existing GoPAL-AI 3D Production Pipeline
 
 **Status:** Accepted
 
