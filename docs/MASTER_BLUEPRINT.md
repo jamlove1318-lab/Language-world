@@ -596,3 +596,11 @@ The additional archive review makes four requirements explicit:
 
 Detailed source observations and limitations are recorded in Sections 40–42 of `PRODUCT_SYSTEMS_AUDIT.md`. These findings remain evidence from selected reference files, not proof of complete legacy behaviour.
 
+## 34. Cassidy canon and character bible
+
+The independent [Cassidy Character Bible](CASSIDY_CHARACTER_BIBLE.md) is the working character specification for Language-world. It preserves the established human character identity while separating immutable visual canon, permitted world adaptation, personality, agency, memory, dialogue, physical performance, cinematics, and asset production.
+
+The actual canonical artwork remains authoritative over conflicting written outfit descriptions. The age presentation, voice identity, backstory, world outfit variants, and detailed autonomy/memory rules remain open until reviewed. The new project must independently produce its character model, rig, animation, and runtime; no legacy Cassidy production artifact or pipeline is reusable.
+
+The Cassidy Character Bible is a supporting draft and does not become final canon until reviewed and approved by the product owner.
+
