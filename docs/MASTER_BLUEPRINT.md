@@ -622,3 +622,9 @@ The catalogue establishes learning-integration categories, Cassidy's non-compuls
 The independent [Learning Design](LEARNING_DESIGN.md) specification defines contextual learning across the universe, a multidimensional capability/evidence model, adaptive support, feedback and evaluation limits, listening/speaking/reading/writing requirements, vocabulary and grammar practice, cultural/pragmatic competence, progress, learner control, privacy, persistence, and accessibility.
 
 It explicitly separates microphone capture, shadowing, transcription, semantic response evaluation, and measured pronunciation. The product must not claim to assess a capability without appropriate evidence. Learning remains integrated into the world rather than forcing every experience into a lesson. This is a working specification; language scope, assessment validation, and implementation remain open.
+
+## 38. Living-world simulation
+
+The independent [World Simulation Specification](WORLD_SIMULATION_SPEC.md) defines canonical time, day/night, authored climate and weather, seasons/calendars, resident schedules and autonomy, creature ecology, plant/garden lifecycles, festivals and world events, environmental storytelling, offline catch-up, performance tiers, and durable event/recovery requirements.
+
+The specification explicitly leaves the canonical time model, world timezone/calendar policy, offline catch-up limits, and first-release ecology open for product decisions. It rejects treating device wall time, random ambient effects, or presentation state as the source of persistent world truth. This is a working specification; no implementation is authorized.
