@@ -33,7 +33,7 @@
 | [Persistence, Privacy, and Synchronization](PERSISTENCE_PRIVACY_AND_SYNC.md) | Learner identity, local-first data, sync, conflicts, memory, privacy, security, export, deletion, recovery | Working draft v0.1; identity, backend, offline promise, and policies remain open |
 | [Creative Experiences and Personal Archive](CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md) | Journal, phrasebook, postcards, comics, boards, museum, capsules, conversation archive, editable source and media lifecycle | Working draft v0.1; launch scope, sharing, and creative workflow decisions remain open |
 | [Technical Architecture](TECHNICAL_ARCHITECTURE.md) | Domain ownership, runtime, data/event contracts, offline, content, security and testing | Working draft v0.1; engine/backend-neutral; review pending |
-| [UX and Accessibility](UX_AND_ACCESSIBILITY_SPEC.md) | User journeys, navigation, activity lifecycle, accessibility, localization and recovery UX | Working draft v0.1; journey maps and review pending |
+| [UX and Accessibility](UX_AND_ACCESSIBILITY_SPEC.md) | User journeys, navigation, activity lifecycle, accessibility, localization and recovery UX | Working draft v0.1; journey maps and review pending |\n| [Product Scope and Release Definition](PRODUCT_SCOPE_AND_RELEASE_DEFINITION.md) | Product promise, Emerald Valley as home, learning choice, points, building/scenario upgrades, first-release framework and exclusions | Working draft v0.1; audience, economy, launch portfolio and approval remain open |
 | [Source Audit](SOURCE_AUDIT.md) | Reference repository inventory and audit scope | Ongoing |
 | [Foundation](FOUNDATION.md) | Initial product principles | Established foundation |
 | [Architecture Decisions](ARCHITECTURE_DECISIONS.md) | Accepted constraints and unresolved choices | Maintained |
@@ -216,3 +216,16 @@ This checkpoint is not a claim that every GoPAL-AI source line was inspected or 
 - [x] Define activity entry/exit/resume, touch/spatial interaction, accessible alternatives, localization, notifications, and recovery UX.
 - [ ] Confirm audience/age policy and accessibility conformance target.
 - [ ] Complete concrete first-release journey maps and product-owner review.
+
+
+## Product scope and progression checkpoint
+
+- [x] Record Emerald Valley as home and everyday-life space, not the singular learning goal.
+- [x] Specify a broad universe-wide choice of learning formats, including conversations, games, quizzes, puzzles, stories, investigations, and focused practice.
+- [x] Record upgradeable buildings, interiors, facilities, locations, and scenarios.
+- [x] Define the proposed points-to-upgrades relationship and healthy progression safeguards.
+- [x] Define candidate home-life, learning-choice, building-development, story/discovery, and travel loops.
+- [x] Create PRODUCT_SCOPE_AND_RELEASE_DEFINITION.md and link it from the Master Blueprint and README.
+- [ ] Review the candidate first-release slice and decide audience, language scope, points economy, upgrade trees, and launch portfolio.
+- [ ] Reconcile product scope with Experience Catalogue, Learning Design, World Objects and Spaces, UX, Technical Architecture, and roadmap.
+- [ ] Product-owner approval; implementation remains blocked.
