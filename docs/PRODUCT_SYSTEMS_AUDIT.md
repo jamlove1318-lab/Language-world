@@ -1714,3 +1714,59 @@ Created `docs/NARRATIVE_AND_STORY_CONTINUITY_SPEC.md`, a working specification f
 Created `docs/PERSISTENCE_PRIVACY_AND_SYNC.md`, a working specification for identity, local-first operation, sync/conflicts, durable events, memory, privacy, security, creation/media lifecycle, export/deletion, backup, recovery, and acceptance tests. It is linked from Master Blueprint Section 43.
 
 **Audit status remains ongoing.** These findings are limited to selected files and are not a complete security review or proof of end-to-end behavior.
+
+
+## 53. Creative experiences, Journey Book, and personal archive audit
+
+### Selected GoPAL-AI sources inspected
+
+- `src/engines/creation/creationStudio.ts` — four creation templates and create/list operations.
+- `src/features/journey/screens/JourneyBookScreen.tsx` — timeline, milestones, then-versus-now, artifact shelf, transcript entry point.
+- `src/features/journey/screens/MemoryMuseumScreen.tsx` — postcards, creations, artifacts, and memory views.
+- `src/features/journey/components/TimeCapsuleModal.tsx` — future-self message and unlock flow.
+- `src/features/journey/components/ConversationArchiveModal.tsx` — transcript archive UI.
+- Selected types and methods in `src/lib/localStore.ts`.
+
+### Recovered ideas
+
+- Four initial creative forms: postcards, phrase cards, memory boards, and dialogue comics.
+- A personal Journey Book with chronology, milestones, artifacts, and learning reflections.
+- A Memory Museum grouping several types of keepsakes.
+- Future-self time capsules.
+- Conversation excerpts as material for later language practice.
+- Journey events linked to creation.
+
+### Limitations observed
+
+- CreationStudio stores a small text-oriented record (type, title, subtitle, content, theme, tags, timestamp); no full editor, revision, or deletion lifecycle was observed in that engine.
+- Creation and journey-event writes are sequential, not one atomic operation.
+- Creation, postcard, and capsule IDs use timestamp-derived values.
+- Postcards store location and image-theme metadata, not a demonstrated editable composition or media ownership lifecycle.
+- Journey Book displays a timeline and learning reflections but does not demonstrate a full learner-authored journal editor.
+- Memory Museum combines distinct object types in one view; the inspected screen loads local records without visibly passing a learner scope.
+- ConversationArchiveModal contains hard-coded sample sessions; its Listen action shows a text toast rather than actual audio playback.
+- Transcript examples include scores and feedback but do not establish authentic stored transcripts or validated speech assessment.
+- TimeCapsuleModal exposes an early-unlock demo action, bypassing the intended date.
+- Capsule records do not encode explicit owner scope, privacy controls, revision policy, milestone conditions, or trusted clock behavior.
+- Related LocalStore getters use seeded examples, so an empty first-run archive is not assured.
+- The selected models do not establish consistent structured source documents, versioning, media lifecycle, sharing permissions, export, or deletion.
+
+### Requirements carried into Language-world
+
+1. Treat journal, phrasebook, postcards, comics, boards, museum, capsules, and transcript archive as distinct experiences sharing robust archive infrastructure.
+2. Preserve editable structured source; treat previews and exports as derivatives.
+3. Require stable learner-owned IDs, schema versions, timestamps, revisions, source provenance, media references, privacy state, and lifecycle state.
+4. Keep default visibility private; sharing is a deliberate, reviewable action.
+5. Clearly label AI-generated suggestions and preserve learner authorship.
+6. Do not auto-archive every conversation, mistake, or action as personal memory.
+7. Preserve transcript truthfulness and audio provenance; never fake playback or assessment.
+8. Make time capsules respect declared unlock rules, time zones, offline behavior, and deletion.
+9. Ensure cultural artifacts have provenance and appropriate expert review; do not gamify sacred or sensitive objects.
+10. Support accessible editing, multilingual scripts, export, conflict recovery, and deletion propagation.
+11. Sequence a small set of useful experiences before expanding the creative catalogue.
+
+### New Language-world document
+
+Created `docs/CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md`, a working specification for experience families, archive architecture, structured creative objects, revisions, media lifecycle, discovery events, privacy/sharing, AI boundaries, cultural integrity, accessibility, sequencing, and acceptance tests. It is linked from Master Blueprint Section 44.
+
+**Audit status remains ongoing.** Findings are limited to selected source files and do not prove full end-to-end behavior.
