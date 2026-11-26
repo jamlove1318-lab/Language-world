@@ -1770,3 +1770,44 @@ Created `docs/PERSISTENCE_PRIVACY_AND_SYNC.md`, a working specification for iden
 Created `docs/CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md`, a working specification for experience families, archive architecture, structured creative objects, revisions, media lifecycle, discovery events, privacy/sharing, AI boundaries, cultural integrity, accessibility, sequencing, and acceptance tests. It is linked from Master Blueprint Section 44.
 
 **Audit status remains ongoing.** Findings are limited to selected source files and do not prove full end-to-end behavior.
+
+
+## 54. Consolidated GoPAL-AI idea recovery and transfer audit
+
+### Research consolidation
+
+Created `docs/GOPAL_IDEA_RECOVERY_AUDIT.md` as the consolidated product-idea recovery record. It draws on the GoPAL-AI master blueprint, project overview, large product specification and its 173 numbered concepts, feature audit, completion tracker, Emerald Valley world specification, learning/game catalogues, audio design notes, and selected source across world, learning, Cassidy, narrative, travel, audio, journey, memory, creation, economy, and persistence domains.
+
+### Repository inventory and scope
+
+The GoPAL-AI main tree was retrieved without truncation: 709 entries (608 files). The audit distinguishes inventory from content inspection and does not claim every source line or runtime behavior was verified.
+
+### Transfer boundary
+
+The user explicitly clarified that Language-world should take **ideas only**. No GoPAL-AI code, images, models, GLB/GLTF, Blender projects, rigs, skeletons, animation clips, audio, media, asset packages, manifests, registries, importers/exporters, validators, production scripts, factories, or existing pipeline implementation may be transferred. Cassidy's design is owned by the user and will be preserved through the user's approved design material, not by importing repository artwork.
+
+### Main recovered idea families
+
+- A place worth returning to; gentle re-entry and meaningful continuity.
+- A multi-world universe with distinct geography, culture, ecology, stories, and sound.
+- Contextual language learning and learner-selected experience intentions.
+- A 60-seed game catalogue across discovery, puzzle, arcade, social, listening, adventure, and creative families.
+- Cassidy and resident autonomy, routines, relationships, boundaries, and evidence-based character observations.
+- Micro-stories, mysteries, clues, environmental evidence, and story arcs at multiple scales.
+- Time, weather, seasons, plants, ecology, festivals, and bounded offline continuity.
+- Interactive objects, collections, inventory, crafting, personal spaces, and object provenance.
+- Passport, travel, destination discovery, and journey identity.
+- Context-aware audio, world radio, quiet moments, and learning-audio integrity.
+- Journey Book, Memory Museum, postcards, phrasebooks, comics, personal notes, time capsules, and learning recaps.
+- Experience Director, World DJ, Surprise Me, explainable recommendations, session sizing, and return-friendly design.
+- Optional future shared presence and community experiences.
+
+### Main failure lessons
+
+The consolidated report records registry mismatch, disconnected surfaces, aspirational-vs-implemented confusion, duplicate ownership, in-memory authority, UI-local progress, non-atomic side effects, weak event identity, unscoped personal storage, seeded demo data, overclaimed learning evidence, template-heavy character behavior, wall-clock shortcuts, fake/incomplete media actions, demo bypasses, catalogue inflation, and technical spectacle preceding product proof.
+
+### Language-world decisions
+
+The report includes a transfer matrix (adopt, redesign, expand, candidate, defer, reject), new opportunities beyond GoPAL-AI, evidence labels, remaining research boundaries, and a product-owner review checklist. It does not approve implementation scope. The Master Blueprint now links this consolidation in Section 45.
+
+**Status:** A substantial idea-recovery consolidation is complete. The wider GoPAL-AI source audit is still targeted rather than line-by-line, and product-owner review remains open. No GoPAL-AI implementation or asset is transferred; no Language-world implementation is authorized.
