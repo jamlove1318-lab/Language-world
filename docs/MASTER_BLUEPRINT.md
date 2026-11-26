@@ -610,3 +610,9 @@ The independent [World & Universe Bible](WORLD_UNIVERSE_BIBLE.md) defines the un
 
 No language world is approved as complete merely because it has a list of places or a visual theme. Each launch world requires a researched world bible covering geography, culture, society, ecology, stories, language experiences, sensory identity, transport, and production requirements.
 
+
+## 36. Experience catalogue and quality standard
+
+The independent [Experience Catalogue](EXPERIENCE_CATALOGUE.md) defines the universe-wide experience taxonomy: exploration, mysteries, stories, games, language-in-the-world, culture, creativity, optional social play, world-life, travel, events, and personal archive. It recovers the 60 mini-game ideas from the GoPAL-AI research archive while explicitly distinguishing design seeds from playable, validated content.
+
+The catalogue establishes learning-integration categories, Cassidy's non-compulsory role, experience authoring requirements, recommendation and variety principles, persistence boundaries, accessibility and safety requirements, quality gates, and a candidate first-release portfolio. It is a working specification, not an approved content commitment. No implementation is authorized until the complete blueprint is reviewed and approved.
