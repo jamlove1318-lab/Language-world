@@ -60,3 +60,4 @@ The new build preserves the valuable product ideas from the original repository 
 - [Blueprint Work Register](docs/BLUEPRINT_WORK_REGISTER.md) — tracks research, supporting specifications, open decisions, and approval gates.
 - [Cassidy Character Bible](docs/CASSIDY_CHARACTER_BIBLE.md) — independent working character specification, pending review.
 - [World & Universe Bible](docs/WORLD_UNIVERSE_BIBLE.md) — universe structure, Emerald Valley foundation, and distinct world-authoring standard.
+- [Experience Catalogue](docs/EXPERIENCE_CATALOGUE.md) — experience families, 60 research game seeds, learning integration, authoring, persistence, accessibility, and quality gates.
