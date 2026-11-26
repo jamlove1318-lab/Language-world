@@ -640,3 +640,9 @@ It distinguishes world-authored facts, learner-owned state, shared state, and te
 The independent [Travel Experience Specification](TRAVEL_EXPERIENCE_SPEC.md) defines travel as a persistent, authored experience: route graphs, transport selection, boarding/departure/journey/transfer/arrival stages, optional in-transit activities, Cassidy's role, cinematic staging, destination handoff, accessibility, interruption recovery, and privacy.
 
 It develops the first Emerald Valley-to-Spanish-world train journey as the reference experience while distinguishing existing local vehicle loops from a complete inter-world journey. The cinematic director owns presentation; the travel domain owns durable journey state and arrival. The first route remains to be authored and approved.
+
+## 41. Audio, voice, and world sound identity
+
+The independent [Audio, Voice, and Soundscape Specification](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) defines authored sound bibles per world, semantic cue contracts, runtime mix ownership, adaptive ambience, original music, character voice, language-learning audio integrity, captions, accessibility, interruption handling, content delivery, and production review.
+
+The specification distinguishes playback, shadowing, microphone capture, speech recognition, pronunciation assessment, and conversation. It explicitly rejects claiming pronunciation assessment from playback or recording alone, and excludes the legacy Expo Audio playback adapter. Runtime technology, voice services, and launch language scope remain open.
