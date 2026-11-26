@@ -77,3 +77,6 @@ The new build preserves the valuable product ideas from the original repository 
 - [Creative Experiences and Personal Archive](docs/CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md) — journal, phrasebook, postcards, comics, collections, museum, time capsules, transcript archive, editable source, media lifecycle, privacy, and cultural integrity.
 
 - [Product Scope and Release Definition](docs/PRODUCT_SCOPE_AND_RELEASE_DEFINITION.md) — Emerald Valley as home, broad learning choices, points, upgradeable buildings/scenarios, and the first-release framework.
+
+
+The product direction also includes a fixed but varied learning progression (character meetings, stories, audio, quizzes, puzzles, games, and renewed resident interactions), a two-axis scrollable Emerald Valley map, learner-buildable plots and houses/items, Cassidy's own home, and animated experiences throughout. See the Product Scope, Experience Catalogue, World Objects and Spaces, UX, Cassidy, and World Universe specifications for details.
