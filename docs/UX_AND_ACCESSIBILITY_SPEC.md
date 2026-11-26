@@ -345,3 +345,28 @@ Record observed task completion, confusion, recovery success, accessibility barr
 - [ ] Usability/accessibility test plan and target devices are approved.
 
 **Current decision:** design only. This specification does not authorize implementation, UI prototyping, or a fixed navigation layout.
+
+
+## 16. Emerald Valley navigation and mobile spatial layout
+
+The home world is a large spatial map, not a static hub. The main Emerald Valley map should pan/scroll in both horizontal and vertical directions on mobile, revealing districts, paths, landmarks, public buildings, natural areas, and intentional empty plots. Navigation should preserve spatial orientation, show where the learner is, and provide accessible alternatives to fine camera gestures.
+
+Each individual location should use a horizontal, landscape-oriented mobile scene composition. Where a location extends beyond the viewport, it should support horizontal exploration/scrolling with clear camera bounds and interaction focus. Do not confuse this with the two-axis world map. Whether the app rotates/locks the device to landscape or presents a landscape scene within another device orientation is still an open decision and must be tested on target devices before commitment.
+
+Map and location controls must support touch, keyboard/controller if applicable, screen-reader semantics, zoom/scale alternatives, recentering, and reduced-motion camera movement. Scrolling must not make important actions unreachable or hide save/exit controls. Provide minimap/overview or location navigation where scale requires it, without turning the world into a dense dashboard.
+
+## 17. Learner plots, personal homes, and build mode
+
+Empty plots are intentional build opportunities in Emerald Valley. The learner can discover available spaces and, subject to clear rules, acquire houses, buildings, decorations, furniture, gardens, and other items. Build mode should make plot boundaries, footprint, placement, rotation, cost, ownership, accessibility, and confirmation clear. Provide undo/cancel or safe recovery before committing irreversible placement or spending.
+
+Personal construction must preserve public routes, shared locations, readable navigation, and accessibility. The UX should distinguish learner-owned property from shared/public building upgrades and Cassidy's own home. Build mode must not be mandatory for learning progression, and essential learning access must not depend on owning a house or decorative items.
+
+## 18. Animation and motion UX
+
+Animation is a product-wide presentation requirement: characters, residents, world ambience, transitions, travel, building upgrades/construction, object interactions, stories, games, puzzles, learning feedback, and interface state changes should have intentional motion design. Animation must communicate rather than decorate every idle moment.
+
+All important state changes need a non-motion cue. Support reduced motion, pause/skip for nonessential cinematics, predictable timing, no motion-only instructions, and stable interaction targets. Avoid forced camera movement, flashing, excessive parallax, or transitions that delay access. Gameplay and learning state must survive interruption even when an animation is skipped or cancelled.
+
+## 19. Orientation and location behaviour — open decision
+
+The required design direction is horizontal/landscape-oriented mobile locations with horizontal scrolling where needed, while Emerald Valley's map scrolls in both axes. Final device-orientation behaviour (orientation lock, rotation on entering a location, or landscape scene viewport) remains open until target-device usability, accessibility, and performance testing. Do not infer a final orientation lock from the visual design requirement alone.
