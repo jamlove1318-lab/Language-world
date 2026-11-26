@@ -1892,3 +1892,19 @@ Key product rules:
 The specification includes home-life, learning-choice, building-development, story/discovery, and travel loops; a candidate first-release slice; open decisions; and acceptance gates. Exact upgrade trees, currency design, point awards/costs, audience, language scope, and first-release content remain unapproved.
 
 **Status:** working product-scope draft created and linked; product-owner review and cross-document reconciliation remain open. No implementation or economy experiment is authorized.
+
+
+## 59. Additional product-owner requirements: fixed learning rhythm, buildable plots, mobile spatial navigation, and Cassidy's residence
+
+Recorded and cross-linked the following explicit requirements:
+- The structured learning path is fixed and deliberately sequenced, with varied activity rhythm: new-character interaction, stories, audio lessons, quizzes, puzzles, games, and renewed resident interactions, repeating with fresh content. Open-world exploration/home life remains available separately; Emerald Valley is not the course itself.
+- Emerald Valley has intentional empty plots/spaces for learner-owned houses, buildings, decorations, furniture, gardens, and items. Separate personal property from shared/public building upgrades and Cassidy's residence.
+- The Emerald Valley mobile map pans in both axes. Individual location scenes use horizontal/landscape-oriented composition and can scroll horizontally. Device orientation lock/rotation remains undecided pending tests.
+- Cassidy has her own home with personal spaces such as bedroom, library/study, and kitchen; it supports independent life and is not a purchase or relationship reward.
+- Animation is expected throughout the experience, including characters, environments, travel, upgrades, objects, learning activities, games, puzzles, stories, and transitions. Require purposeful motion, performance budgets, interruption safety, reduced-motion support, and non-motion communication.
+
+Updated supporting drafts: Product Scope and Release Definition; Experience Catalogue; World Objects and Spaces; UX and Accessibility; Cassidy Character Bible; World & Universe Bible.
+
+**Open:** exact curriculum cadence and release content; map scale/camera; plot counts, item catalogue, ownership and economy; Cassidy room canon/access; orientation policy; animation coverage and Android performance budgets.
+
+**Status:** requirements documented; design/reconciliation only. No implementation authorized.
