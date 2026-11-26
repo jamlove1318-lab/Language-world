@@ -181,3 +181,16 @@ These are selected source inspections, not a complete runtime audit. They do not
 ---
 
 **Current status:** Taxonomy, research seeds, authoring contract, learning relationship, persistence requirements, quality gates, and candidate portfolio documented as a working specification. Subject to product-owner review. No implementation is authorized.
+
+
+## 15. Home-world identity and broad learning choice
+
+Emerald Valley is the learner's home, not the singular learning destination or a course to complete. It should support everyday conversations with Cassidy and residents, local life, exploration, casual encounters, stories, games, puzzles, optional learning, and a familiar place to return to.
+
+Learning is available across the wider universe and through many formats. The catalogue should offer a meaningful mix of conversations, guided scenarios, listening, reading, vocabulary and grammar in context, speaking and writing practice, quizzes, puzzles, mini-games, interactive stories, mysteries, cultural activities, and focused learning spaces. The learner can choose among these formats rather than being forced through one linear curriculum route.
+
+Locations provide distinct contexts rather than all becoming classrooms. A market, café, library, workshop, station, port, museum, garden, trail, theatre, or dedicated challenge venue may each support different experiences. Their exact launch inclusion is a scope decision.
+
+The learner's home can also develop. Buildings and scenarios may be upgraded through the points progression system, with visible improvements and new optional variants. The Experience Catalogue defines the activities and scenario content; the World Objects and Spaces specification defines building/upgrade state and spatial contracts; the points domain owns earn/spend transactions. These responsibilities must remain separate.
+
+This is a product requirement and working direction. The first-release portfolio, language scope, exact location list, point economy, and upgrade trees remain open.
