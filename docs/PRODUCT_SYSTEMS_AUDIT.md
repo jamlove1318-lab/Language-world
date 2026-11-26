@@ -1875,3 +1875,20 @@ The architecture deliberately leaves engine, backend, database, authentication, 
 Created UX_AND_ACCESSIBILITY_SPEC.md to address a product-level gap identified in the reconciliation. It defines a world-first information architecture without copying GoPAL-AI's tabs; first-launch and return journeys; exploration, learning, story, creative, travel, and settings journeys; activity lifecycle and recovery; minimal HUD; touch/spatial interaction; vision, hearing, motion, motor, cognitive and sensory accessibility; localization; notification boundaries; and save/sync/loading/error UX.
 
 Audience, age policy, final navigation, input modes, accessibility conformance target, and first-release journey maps remain open. This is a working specification, not an approved UI design or implementation authorization.
+
+
+## 58. Product scope: Emerald Valley home identity, learning choice, and upgrade progression
+
+Created `PRODUCT_SCOPE_AND_RELEASE_DEFINITION.md` to formalize the product owner's additional requirements.
+
+Key product rules:
+- Emerald Valley is the learner's home world, not the singular learning goal or a course to complete. It supports everyday conversations with Cassidy and residents, ordinary life, exploration, local stories, games, optional learning, and return visits.
+- Learning is universe-wide and offers multiple formats: conversations, focused practice, listening, reading, writing, quizzes, puzzles, mini-games, stories, investigations, cultural activities, and location-based scenarios.
+- Buildings and locations in Emerald Valley should be upgradeable. Upgrades can visibly change exteriors, interiors, facilities, equipment, atmosphere, and available activities.
+- Scenarios should also evolve: location upgrades may add new variants, roles, dialogue branches, props, challenges, clues, or richer situations while preserving accessible/replayable earlier options.
+- Learners earn points through meaningful learning and participation and can spend them on building/scenario upgrades. Point balance is not a proxy for language mastery; progress domains remain separate.
+- Progression must avoid grind, absence penalties, manipulative streaks, pay-to-progress assumptions, and rewards for trivial farming.
+
+The specification includes home-life, learning-choice, building-development, story/discovery, and travel loops; a candidate first-release slice; open decisions; and acceptance gates. Exact upgrade trees, currency design, point awards/costs, audience, language scope, and first-release content remain unapproved.
+
+**Status:** working product-scope draft created and linked; product-owner review and cross-document reconciliation remain open. No implementation or economy experiment is authorized.
