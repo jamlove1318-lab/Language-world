@@ -124,7 +124,8 @@ Create and review in dependency order:
 12. [x] `PERSISTENCE_PRIVACY_AND_SYNC.md` — working draft created; identity, local-first behaviour, sync, security, privacy, export, deletion and recovery defined.
 13. [x] `CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md` — working draft created; archive families, editable source, media lifecycle, ownership, privacy, cultural review and acceptance tests defined.
 14. [x] `TECHNICAL_ARCHITECTURE.md` — working engine-neutral draft created; domain boundaries, runtime, data, event, privacy, content and test contracts defined; review pending.
-15. [ ] `PRODUCTION_AND_QUALITY_PLAN.md` — production roles, content workflows, acceptance criteria, testing and release gates.
+15. [x] `UX_AND_ACCESSIBILITY_SPEC.md` — working draft created; user journeys, navigation principles, activity lifecycle, accessibility, localization and recovery UX defined; final journey mapping and review pending.
+16. [ ] `PRODUCTION_AND_QUALITY_PLAN.md` — production roles, content workflows, acceptance criteria, testing and release gates.
 
 ## Open decisions register
 
@@ -205,3 +206,11 @@ This checkpoint is not a claim that every GoPAL-AI source line was inspected or 
 - [x] Define domain ownership, state classes, command/event contracts, durable operations, runtime lifecycle, clocks, offline/sync, content/asset boundaries, AI/voice boundaries, security, observability, and test strategy.
 - [ ] Reconcile architecture against UX/navigation, product scope, AI/voice governance, and production/quality specifications.
 - [ ] Product-owner review and approval.
+
+
+## UX and accessibility checkpoint
+
+- [x] Create UX_AND_ACCESSIBILITY_SPEC.md with world-first information architecture principles and end-to-end journey requirements.
+- [x] Define activity entry/exit/resume, touch/spatial interaction, accessible alternatives, localization, notifications, and recovery UX.
+- [ ] Confirm audience/age policy and accessibility conformance target.
+- [ ] Complete concrete first-release journey maps and product-owner review.
