@@ -1,6 +1,6 @@
 # Language-world — Master Blueprint
 
-**Document status:** Working draft v0.1 — research and design in progress; not approved for implementation  
+**Document status:** Working draft v0.2 — expanded after additional reference review; research and design in progress; not approved for implementation  
 **Project:** Language-world  
 **Reference archive:** `jamlove1318-lab/GoPAL-AI` (read-only)  
 **Destination:** `jamlove1318-lab/Language-world`  
@@ -427,3 +427,159 @@ Changes that affect canon, user experience, architecture, privacy, or scope must
 7. Review the complete blueprint with the product owner and record explicit approval.
 
 **Current approval state: NOT APPROVED FOR IMPLEMENTATION.** This is the foundation draft. Its purpose is to make the next design work structured and traceable, not to pretend the universe is already fully specified.
+
+---
+
+# Part IX — Newly recovered design requirements
+
+## 27. Objects, buildings, interiors, and the physical world
+
+The reference review identifies a useful distinction between an object archetype and a placed object instance. Language-world must make this distinction explicit.
+
+### 27.1 Object identity and lifecycle
+
+Every authored object should be defined through:
+- A stable semantic identity and object family.
+- An archetype describing capabilities and constraints.
+- A world instance with placement, transform, and contextual overrides.
+- Optional visual, audio, collision, navigation, and interaction bindings.
+- State, ownership, provenance, and lifecycle rules.
+- Version compatibility and migration behaviour.
+
+A visual asset is not the object identity. A door remains the same semantic door even if its model, material, animation, or engine implementation changes.
+
+### 27.2 Buildings and interiors
+
+Buildings must be treated as functional places. Their design needs to cover entrances, exits, interior topology, room-to-room navigation, occlusion, lighting, acoustic identity, interaction anchors, accessibility, loading/streaming, and save/re-entry behaviour.
+
+The design should distinguish:
+- A building's exterior identity and world placement.
+- Its interior layout and room identities.
+- Portals and transitions between exterior and interior spaces.
+- Persistent state of doors, furniture, objects, and activities.
+- Instanced or private spaces versus shared world spaces, if both are required.
+
+### 27.3 Inventory, collections, and crafting
+
+These are optional product systems, not automatic requirements. Each must have a clear experience purpose. Where included, define unique item identity, stackability, quantity, ownership, provenance, discovery context, durability, transfer rules, recipe requirements, consumption, output, rollback, and persistence.
+
+Avoid adding inventory friction to experiences that are better served by direct interaction or a personal archive.
+
+## 28. Canonical world simulation and event continuity
+
+### 28.1 Separate kinds of time
+
+The design must not treat all clocks as interchangeable. Specify:
+- Real-world UTC time for durable timestamps and cross-device ordering.
+- Learner-local time for local routines and presentation, with explicit timezone-change policy.
+- Authored world time for fictional calendars, festivals, and story chronology.
+- Simulation time for bounded world advancement.
+- Cinematic/presentation time for authored pacing and playback.
+
+The authoritative clock for each domain must be named. Device wall-clock changes must not corrupt durable ordering or unlock rules.
+
+### 28.2 Simulation tiers
+
+Use bounded simulation rather than continuously simulating every entity:
+- **Active scene:** detailed interaction, movement, animation, and local events.
+- **Nearby region:** simplified movement, schedules, and local state changes.
+- **Distant world:** coarse schedules, event outcomes, and authored state transitions.
+- **Offline/hibernating:** bounded, deterministic or reproducible advancement only where required.
+
+Every tier needs a defined update budget, transition rule, persistence policy, and resume behaviour.
+
+### 28.3 Durable world events
+
+Events that affect persistent state require stable identity, source/causal references, timestamps, schema version, idempotency, deduplication, and replay/recovery rules. In-memory event delivery may support immediate presentation, but cannot be the sole record of a consequential event.
+
+An orchestration director may select and coordinate opportunities; authoritative ownership remains with the domain that owns the quest, festival, learning evidence, inventory, relationship, or world object.
+
+## 29. Audio, animation, and cinematic production requirements
+
+### 29.1 Audio
+
+The product requires semantic audio categories, location/world acoustic profiles, adaptive mixing, priority and ducking, concurrency limits, cooldowns, spatial attenuation, transitions, quiet mode, user controls, and an engine-specific playback adapter. Exact mix values are tuning data, not product canon.
+
+Every audio asset requires provenance, licensing, technical metadata, optimization, device validation, and human listening approval.
+
+### 29.2 Animation and character performance
+
+Character behaviour should issue semantic performance intent—such as locomotion, posture, gaze, expression, gesture, listening, speaking, and interaction. Art assets and animation clips implement those intents through replaceable bindings.
+
+Define rig/skeleton compatibility, retargeting, blend rules, layered performance, locomotion integration, fallback actions, and performance tiers. Gameplay must not depend on clip filenames or a specific authoring tool.
+
+### 29.3 Cinematic system requirements
+
+The Cinematic Experience System must be reusable across first introductions, resident reveals, stories, discoveries, festivals, and travel. A cinematic specification includes timeline beats, camera direction, actor blocking, semantic animation, dialogue, localization, voice, subtitles, music, ambience, lighting, asset preloading, checkpoints, skip/replay, interruption, recovery, and handoff to interactive control.
+
+Cinematic playback is presentation. Persistent world, story, and travel state belongs to their respective domains.
+
+## 30. Persistence, identity, privacy, and reliable side effects
+
+### 30.1 Learner-scoped data
+
+Every personal record, cache, offline queue, creation, learning result, relationship record, and world-state record must be scoped to a stable learner/account identity. Anonymous mode and later account linking require an explicit migration policy.
+
+### 30.2 Local-first and synchronization policy
+
+Specify which domains can operate offline, which actions require a server, how writes are queued, how conflicts are resolved, how retries are performed, and how duplicate operations are prevented. Account switching must never expose one learner's local records to another.
+
+### 30.3 Cross-domain consistency
+
+When one experience affects several domains—for example, a festival creating a memory, a personal artefact, a learning outcome, and a world-state change—define the durable operation and recovery behaviour. Partial failure must be visible and recoverable, not silently treated as full success.
+
+### 30.4 Trust and privacy
+
+Define data minimization, purpose, consent, retention, export, deletion, backup, security boundaries, and auditability. Row-level security is one layer, not proof of end-to-end security. Local storage, offline fallback, sync, logs, analytics, and deletion paths require the same scrutiny.
+
+---
+
+# Part X — Supporting specification set
+
+The Master Blueprint remains the central index. These supporting documents will carry the detail needed for implementation and production. They should be created and reviewed in dependency order, not all at once.
+
+| Supporting specification | Primary blueprint chapters | Required outcome |
+|---|---|---|
+| `WORLD_UNIVERSE_BIBLE.md` | 4–6 | Canon, world registry, Emerald Valley, distinct world bibles and travel geography |
+| `CASSIDY_CHARACTER_BIBLE.md` | 7 | Canonical identity, personality, boundaries, voice, life, memory and relationship |
+| `EXPERIENCE_CATALOGUE.md` | 9–12 | Complete experience inventory, loops, dependencies, accessibility and content costs |
+| `LEARNING_DESIGN.md` | 10 | Capability model, skill evidence, practice, feedback, assessment and honest speech claims |
+| `WORLD_SIMULATION_SPEC.md` | 13–14, 28 | Clock, weather, ecology, schedules, events, offline tiers and durable continuity |
+| `WORLD_OBJECTS_AND_SPACES.md` | 14, 27 | Object contracts, buildings, interiors, navigation, interaction, inventory and lifecycle |
+| `CINEMATIC_EXPERIENCE_SYSTEM.md` | 15–18, 29 | Timeline, camera, actors, staging, audio, accessibility, preloading and recovery |
+| `TRAVEL_EXPERIENCE_SPEC.md` | 17 | Transport modes, routes, staging, journey state, arrival and handoff |
+| `ASSET_AND_CREATIVE_PIPELINE.md` | 21, 29 | Semantic asset IDs, manifests, replacement, rigs, animation, provenance and designer handoff |
+| `AUDIO_EXPERIENCE_SPEC.md` | 22, 29 | Audio identity, mixing, spatial behaviour, playback boundary and accessibility |
+| `PERSISTENCE_PRIVACY_AND_SYNC.md` | 23, 30 | Identity, storage, offline, sync, security, privacy, export, deletion and recovery |
+| `TECHNICAL_ARCHITECTURE.md` | 20 | Domain boundaries, engine evaluation, runtime, data and integration contracts |
+| `PRODUCTION_AND_QUALITY_PLAN.md` | 24–26 | Roles, pipelines, acceptance criteria, test strategy, milestones and release gates |
+
+Supporting specifications must link back to the relevant blueprint chapters, use the evidence labels defined in Section 0, and record open decisions. They must not silently turn a proposal into an accepted product decision.
+
+---
+
+# Part XI — Current research status
+
+## 31. Reference review coverage
+
+Additional selected-file review has expanded the product systems audit through:
+- World object archetypes, instances, buildings, interiors, object state, inventory, and crafting.
+- Environment/time models, simulation snapshots, events, festivals, and offline behaviour.
+- Semantic audio, location profiles, animation intent, resident performance sequences, and a first-meeting cinematic.
+- Supabase schema/RLS declarations, local storage, memory fallback, account scoping, and multi-domain side effects.
+
+The findings and source limitations are recorded in `PRODUCT_SYSTEMS_AUDIT.md`. The audit is still ongoing: selected source inspection does not prove full integration, correctness, security, or end-to-end behaviour.
+
+## 32. Immediate blueprint work order
+
+1. Continue reference recovery for any remaining high-value product and implementation evidence.
+2. Resolve the overall universe structure and world-authoring principles.
+3. Write the Cassidy Character Bible using canonical reference material without copying implementation.
+4. Build the complete experience catalogue and learning design.
+5. Specify world simulation, objects/spaces, narrative continuity, cinematics, and travel.
+6. Specify asset/creative production, audio, persistence/privacy/sync, and technical architecture.
+7. Cross-check dependencies, scope, contradictions, safety, accessibility, and feasibility.
+8. Present the complete blueprint package for product-owner review and explicit approval.
+
+**Implementation remains blocked until the Master Blueprint and its required supporting specifications are approved.**
+
