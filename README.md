@@ -66,3 +66,4 @@ The new build preserves the valuable product ideas from the original repository 
 - [World Objects and Spaces](docs/WORLD_OBJECTS_AND_SPACES.md) — spatial hierarchy, buildings/interiors, object lifecycles, interactions, navigation, inventory, and replaceable assets.
 - [Travel Experience Specification](docs/TRAVEL_EXPERIENCE_SPEC.md) — inter-world routes, transport, cinematic journeys, arrival, and interruption-safe handoff.
 - [Audio, Voice, and Soundscape](docs/AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md) — world sound identity, music, character voice, learning audio, captions, and accessibility.
+- [Narrative and Story Continuity](docs/NARRATIVE_AND_STORY_CONTINUITY_SPEC.md) — world canon, mysteries, clues, meaningful choices, resident stories, and long-term continuity.
