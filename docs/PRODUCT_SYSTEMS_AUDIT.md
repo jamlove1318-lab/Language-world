@@ -1295,3 +1295,53 @@ A new independent working draft, `docs/WORLD_UNIVERSE_BIBLE.md`, records the uni
 
 **Audit status remains ongoing.** This review inspects selected world documents and source files. It does not establish complete world implementation, cultural accuracy, or end-to-end simulation.
 
+
+
+## 45. Experience catalogue, games, stories, and activity quality
+
+### GoPAL-AI references inspected
+
+- `docs/world-mini-games-50-plus-catalog.md` documents 60 mini-game concepts across discovery, puzzles, arcade/reflex, social/communication, listening/audio, story/adventure, and creative/construction. Its own status section says the catalogue is documented while playable implementations, variety selection, world-reactive outcomes, and cross-language reuse remain future work.
+- `src/engines/world/worldMiniGameCatalog.ts` and `worldMiniGameEngine.ts` contain typed definitions for the game family and a session-oriented engine foundation. This does not establish that every listed game has a complete playable implementation.
+- `worldMiniGameSelectionEngine.ts` uses recent-play history and selection scoring. The inspected history key is not explicitly learner-scoped, so it is not an acceptable persistence model for the new product.
+- `residentStoryEngine.ts` contains a small fixed set of resident story threads and stage transitions. This is a seed for multi-visit story thinking, not evidence of a deep narrative system.
+- `worldStoryChoiceEngine.ts` is a small in-memory choice-state helper. Durable branching, consequence management, migration, recovery, and content validation are not established by this helper.
+- `questEngine.ts` provides quest seed data and completion/reward side effects; inspected seed data includes pre-completed examples. A clean new learner experience must never inherit pre-completed state.
+- `worldEventDirectorEngine.ts` coordinates ambient events and opportunities but explicitly leaves quests, festivals, inventory, and rewards to other authorities.
+- `worldActivityPrimitives.ts` and `worldActivityMechanics.ts` provide small reusable geometry/selection/sequence helpers, not a universal interaction or game runtime.
+
+### Recovered strengths
+
+- Broad activity imagination beyond resident dialogue and conventional lessons.
+- Reusable game-mechanic concepts and a separation between mechanics and location/content.
+- Recognition that variety, recent history, skill needs, session length, and location context can influence discovery.
+- Story threads and choice-state concepts that can support continuity.
+- Ambient events and opportunities as separate from quest/reward ownership.
+
+### Limitations and risks
+
+- The 60-item catalogue is a concept library, not proof of 60 complete games.
+- Some game descriptions are timed/reflex-oriented; overuse would make the universe feel like a quiz arcade.
+- The old selection history key is not explicitly learner-scoped in the inspected code.
+- Story thread coverage is small and fixed; the inspected choice helper is in-memory.
+- Quest seeds include completed examples and reward-centric fields; this must not define the new product's motivation model.
+- The inspected files do not prove end-to-end save/restart recovery, account isolation, localization quality, accessibility, or device performance.
+
+### New Language-world requirements
+
+1. Provide a universe-wide taxonomy covering exploration, mysteries, stories, games, language-in-the-world, culture, creative work, optional social experiences, world-life, travel, events, and personal archive.
+2. Preserve the 60 game ideas only as research seeds until each is independently designed, tested, and approved.
+3. Make non-learning experiences first-class; language learning may be core, embedded, incidental, contextual, or absent.
+4. Define an experience authoring contract with identity, player fantasy, rules, outcomes, learning evidence, world consequences, assets, persistence, accessibility, safety, and QA.
+5. Keep Cassidy's participation optional and consistent with her independent agency and boundaries.
+6. Make stories, clues, learner evidence, world changes, and user-created artefacts recoverable across interruptions and restarts.
+7. Scope all personal history and learner evidence to the correct learner/account; never inherit unscoped legacy storage assumptions.
+8. Require quality gates for concept value, playability, learning integrity, narrative/world integrity, production readiness, and live quality.
+9. Avoid manipulative streaks, artificial urgency, punitive lives, expiring story access, and reward-first design.
+10. Build a small balanced first-release portfolio rather than attempting to ship all catalogue concepts.
+
+### Language-world document created
+
+Created `docs/EXPERIENCE_CATALOGUE.md`, a working specification containing the taxonomy, all 60 research seeds, authoring contract, learning integration model, variety principles, persistence boundaries, accessibility/safety standards, quality gates, and candidate portfolio. It is linked from Master Blueprint Section 36.
+
+**Audit status remains ongoing.** This section records selected source evidence and design implications; it does not claim complete verification of every old experience or runtime behaviour.
