@@ -82,7 +82,7 @@ Prove the engine, asset pipeline, camera, interaction, character animation, scen
 
 The primary navigation experience should be an explorable world. Conventional interface patterns remain appropriate for settings, account, accessibility, forms, and focused utility screens, but not as the main world presentation.
 
-## ADR-013 — Reject the Existing GoPAL-AI 3D Production Pipeline
+## ADR-014 — Reject the Existing GoPAL-AI 3D Production Pipeline
 
 **Status:** Accepted
 
@@ -104,13 +104,13 @@ The new project must not reuse, port, adapt, or depend on any part of that pipel
 
 
 
-## ADR-014 — Lightweight assets first; production assets replace them
+## ADR-015 — Lightweight assets first; production assets replace them
 
 **Status:** Accepted
 
 Start with the best suitable lightweight prototype assets available, including original proxies and properly licensed third-party assets. High-quality final assets will be produced by the project's graphics designer later. Stable semantic asset IDs, versioned manifests, rig/animation contracts, import validation, platform variants, and replacement tests must be designed before asset volume grows. Compatible production assets must replace prototypes without gameplay/story rewrites. No old GoPAL-AI 3D pipeline or generated outputs may be reused.
 
-## ADR-015 — Cinematics and directed travel are first-class systems
+## ADR-016 — Cinematics and directed travel are first-class systems
 
 **Status:** Accepted
 
