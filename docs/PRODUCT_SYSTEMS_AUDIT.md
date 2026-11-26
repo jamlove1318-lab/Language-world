@@ -1868,3 +1868,10 @@ Created TECHNICAL_ARCHITECTURE.md as an engine/backend-neutral architecture draf
 The architecture deliberately leaves engine, backend, database, authentication, AI, speech, and content-delivery providers open. It makes no implementation authorization and requires reconciliation with UX/navigation, product scope, AI/voice governance, and production/quality specifications.
 
 **Status:** working draft created and linked from the Master Blueprint, README, and Work Register; technical and product-owner review remain open.
+
+
+## 57. UX, navigation, and accessibility working specification
+
+Created UX_AND_ACCESSIBILITY_SPEC.md to address a product-level gap identified in the reconciliation. It defines a world-first information architecture without copying GoPAL-AI's tabs; first-launch and return journeys; exploration, learning, story, creative, travel, and settings journeys; activity lifecycle and recovery; minimal HUD; touch/spatial interaction; vision, hearing, motion, motor, cognitive and sensory accessibility; localization; notification boundaries; and save/sync/loading/error UX.
+
+Audience, age policy, final navigation, input modes, accessibility conformance target, and first-release journey maps remain open. This is a working specification, not an approved UI design or implementation authorization.
