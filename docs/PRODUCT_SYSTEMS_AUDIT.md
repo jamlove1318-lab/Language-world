@@ -1549,3 +1549,55 @@ Created `docs/WORLD_OBJECTS_AND_SPACES.md`, a working specification covering spa
 Created `docs/TRAVEL_EXPERIENCE_SPEC.md`, a working specification covering transport modes, route graphs, durable journey states, cinematic staging, optional travel activities, Cassidy boundaries, arrival handoff, accessibility, reliability, and open decisions. It is linked from Master Blueprint Section 40.
 
 **Audit status remains ongoing.** This section records selected transport and arrival source evidence; it does not claim all legacy travel code was exhaustively audited.
+
+
+## 50. Audio, voice, soundscapes, and cinematic performance
+
+### GoPAL-AI references inspected
+
+- `src/engines/audio/audioEngine.ts` contains a small ambient-track catalogue and mute preference; the inspected sound-effect method logs playback rather than producing an audible effect.
+- `src/engines/world/worldAudioContract.ts` defines music, ambience, location, activity, interaction, transport, voice, and event categories; location profiles, priority, mix values, and distance attenuation.
+- `src/engines/world/worldAudioEngine.ts` resolves gain, priority, distance attenuation, cooldown, and concurrency decisions in a lightweight in-memory resolver.
+- `src/engines/world/worldAudioProfiles.ts` provides example profiles for Emerald Valley, station, café, library, forest, airport, study room, and night street.
+- `src/engines/world/worldAudioRuntime.ts` is a thin player adapter that imports `expo-audio`; it is excluded from Language-world because Expo is explicitly rejected.
+- `src/engines/world/worldAnimationContract.ts` and `worldAssetAnimationRouter.ts` show a semantic action vocabulary and clip alias resolution; useful as conceptual separation, not as reusable code.
+- `src/features/cassidy/components/CassidyFirstMeetingCinematic.tsx` combines animated UI, character rendering, dialogue, and completion side effects in one component.
+
+### Recovered strengths
+
+- Audio is treated as more than music: ambience, location, activity, interaction, transport, voice, and events are represented.
+- Location-specific profiles, priorities, distance attenuation, and cooldowns are recognised.
+- A semantic animation vocabulary illustrates the separation between action intent and art clip names.
+- The first-meeting and destination-arrival concepts support the intended emotional and environmental role of audio and performance.
+
+### Limitations and cautions
+
+- The basic audio engine has a small fixed ambient catalogue; the inspected SFX method is a logging placeholder, not audible playback.
+- The inspected resolver tracks active cues in memory and uses runtime wall-clock time for cooldowns; it is not a durable content or simulation authority.
+- The inspected playback adapter depends on Expo Audio and cannot be reused.
+- Audio cue/profile coverage, final asset provenance, and voice production are not proven complete.
+- The reviewed first-meeting component combines presentation, UI, and completion side effects; new cinematic playback must be separate from durable onboarding state.
+- The inspected audio sources do not establish microphone consent, speech recognition, validated pronunciation assessment, retention, or voice-data deletion policy.
+
+### New Language-world requirements
+
+1. Author a sound identity bible for every world and major location; avoid generic ambience packs with superficial cultural overlays.
+2. Use stable semantic cue IDs and versioned audio manifests, not filenames or middleware IDs in gameplay.
+3. Separate Audio Director, Mix Director, and platform playback adapter.
+4. Define priorities, ducking, concurrency, fades, cooldowns, spatialization, and quiet-zone rules.
+5. Commission or license original music and record source, performer, rights, and permitted use.
+6. Define consistent character voice identities, pronunciation guides, localized performance, and performer rights.
+7. Distinguish playback, shadowing, capture, speech recognition, pronunciation assessment, and conversation; never overclaim what is measured.
+8. Require explicit microphone consent, visible recording state, stoppability, purpose limitation, retention/deletion policy, and vendor transparency.
+9. Provide captions/transcripts, speaker labels, sound alternatives, adjustable category levels, quiet mode, and no-music support.
+10. Handle audio focus, calls, headphone changes, app lifecycle, offline assets, missing files, and native resource disposal.
+11. Keep audio and animation presentation signals separate from durable world/story/travel state.
+12. Validate sound quality, accessibility, localization, and performance on target Android devices.
+
+### Language-world document and consolidation updates
+
+Created `docs/AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md`, a working specification for world sound bibles, cue contracts, mix architecture, adaptive soundscapes, music, voice, language-learning audio integrity, accessibility, interruptions, delivery, and open decisions. It is linked from Master Blueprint Section 41.
+
+The existing `CINEMATIC_EXPERIENCE_BLUEPRINT.md` was strengthened with sequence lifecycle, beat/track ownership, interruption/version migration, and quality gates. Existing `ASSET_HANDOFF_STANDARD.md` and `ASSET_AND_CINEMATIC_PIPELINE.md` were strengthened with authoritative document boundaries, validation, versioning, and the explicit no-legacy-pipeline rule. These documents remain working specifications, not approved final production contracts.
+
+**Audit status remains ongoing.** This section records selected-source observations and does not claim an exhaustive audit of all audio, animation, or cinematic content.
