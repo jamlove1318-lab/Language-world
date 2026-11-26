@@ -230,3 +230,18 @@ This checkpoint is not a claim that every GoPAL-AI source line was inspected or 
 - [ ] Review the candidate first-release slice and decide audience, language scope, points economy, upgrade trees, and launch portfolio.
 - [ ] Reconcile product scope with Experience Catalogue, Learning Design, World Objects and Spaces, UX, Technical Architecture, and roadmap.
 - [ ] Product-owner approval; implementation remains blocked.
+
+
+## Additional product-owner requirements checkpoint
+
+- [x] Record the fixed, intentionally varied learning progression (character interaction → stories/audio → quizzes/puzzles/games → renewed resident interaction; repeat with fresh content).
+- [x] Keep structured curriculum progression distinct from open-ended Emerald Valley home life.
+- [x] Specify two-axis scroll/pan for the Emerald Valley mobile map.
+- [x] Specify horizontal/landscape-oriented mobile composition and horizontal scrolling within individual locations; leave device-orientation policy open pending testing.
+- [x] Record intentional empty/buildable plots and learner-owned houses, buildings, decorations, furniture, gardens, and items.
+- [x] Distinguish learner property, shared/public upgrades, and Cassidy's own residence.
+- [x] Record Cassidy's home and personal rooms (bedroom, library/study, kitchen) with canon/access review pending.
+- [x] Record product-wide animation expectations with reduced-motion, performance, and interruption safeguards.
+- [ ] Reconcile learning sequence with Learning Design and define the first curriculum cycle.
+- [ ] Define map scale, plot rules, build catalogue/economy, Cassidy room access, mobile orientation, and animation budgets.
+- [ ] Product-owner review and approval; implementation remains blocked.
