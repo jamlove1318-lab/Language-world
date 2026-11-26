@@ -717,3 +717,17 @@ The specification establishes a broad choice of learning formats across the univ
 It also records the product owner's requirement that buildings and scenarios be upgradeable. Learners earn points through meaningful learning and participation and can invest them in visible building, interior, facility, location, and scenario improvements. Scenario upgrades may add richer staging, new variants, dialogue branches, roles, challenges, clues, and replay options. Building progress, scenario availability, learning evidence, story state, and point transactions remain distinct durable records.
 
 The document proposes a first-release framework and quality gates while leaving exact audience, languages, launch portfolio, point economy, upgrade trees, costs, and release scope open. It is a working proposal, not implementation approval.
+
+
+## 50. Structured learning path, buildable home plots, mobile map, and Cassidy's house
+
+The product owner has clarified four connected requirements:
+
+1. **Fixed, varied learning progression:** the core curriculum follows a deliberate sequence that alternates new-character meetings, stories, audio lessons, quizzes, puzzles, games, and renewed resident interactions. The cadence repeats with new content and skills, rather than repeating one lesson format. This structured path coexists with optional open-world home life and exploration.
+2. **Learner-owned spaces:** Emerald Valley includes intentional empty plots where learners can acquire and place houses, buildings, decorations, furniture, gardens, and other items. Shared/public building upgrades, learner-owned property, and Cassidy's own home are separate ownership concepts.
+3. **Spatial mobile navigation:** the Emerald Valley map pans in both horizontal and vertical directions. Individual locations use a horizontal, landscape-oriented mobile composition and may scroll horizontally. Device orientation/rotation policy remains open for usability and device testing.
+4. **Cassidy's own home:** Cassidy has a distinct residence with personal rooms such as a bedroom, library/study, and kitchen. It supports her independent life and environmental storytelling; it is not a learner purchase or relationship reward.
+
+Animation is a product-wide presentation requirement across characters, environments, travel, building upgrades, objects, stories, games, puzzles, learning feedback, and transitions. Motion must remain purposeful, replaceable, performant, interruptible, and accessible, with reduced-motion alternatives and non-motion cues.
+
+Supporting drafts updated: Product Scope and Release Definition, Experience Catalogue, World Objects and Spaces, UX and Accessibility, Cassidy Character Bible, and World & Universe Bible. Exact learning cadence, plot count, item catalogue/economy, Cassidy room access, map scale, and device-orientation policy remain open. No implementation is authorized.
