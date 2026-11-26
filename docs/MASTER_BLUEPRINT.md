@@ -1,6 +1,6 @@
 # Language-world — Master Blueprint
 
-**Document status:** Working draft v0.2 — expanded after additional reference review; research and design in progress; not approved for implementation  
+**Document status:** Working draft v0.3 — expanded after further reference review; research and design in progress; not approved for implementation  
 **Project:** Language-world  
 **Reference archive:** `jamlove1318-lab/GoPAL-AI` (read-only)  
 **Destination:** `jamlove1318-lab/Language-world`  
@@ -567,6 +567,8 @@ Additional selected-file review has expanded the product systems audit through:
 - Environment/time models, simulation snapshots, events, festivals, and offline behaviour.
 - Semantic audio, location profiles, animation intent, resident performance sequences, and a first-meeting cinematic.
 - Supabase schema/RLS declarations, local storage, memory fallback, account scoping, and multi-domain side effects.
+- Personal creations, Memory Museum, Journey Book, time capsules, unlock policy, and archive ownership.
+- Discovery progression, canonical place IDs, transport infrastructure, and the distinction between map routes and durable travel journeys.
 
 The findings and source limitations are recorded in `PRODUCT_SYSTEMS_AUDIT.md`. The audit is still ongoing: selected source inspection does not prove full integration, correctness, security, or end-to-end behaviour.
 
@@ -582,4 +584,15 @@ The findings and source limitations are recorded in `PRODUCT_SYSTEMS_AUDIT.md`. 
 8. Present the complete blueprint package for product-owner review and explicit approval.
 
 **Implementation remains blocked until the Master Blueprint and its required supporting specifications are approved.**
+ 
+## 33. Additional personal-history and travel design implications
+
+The additional archive review makes four requirements explicit:
+
+1. **Personal archive as an owned product capability.** Postcards, phrase cards, comics, memory boards, cultural artefacts, discoveries, and reflective records need a shared ownership/lifecycle policy. The archive must support appropriate edit, reopen, delete, export, and media handling rather than being a read-only aggregation of demo records.
+2. **Time capsules require trustworthy unlock rules.** Define trusted time, timezone changes, offline operation, clock manipulation, privacy, and deletion. Demo/developer unlock affordances must never silently become production rules.
+3. **Discovery requires canonical identity.** World, region, place, landmark, and hidden-location IDs must be centrally defined and migrated deliberately. Learner discovery progress is separate from authored discovery content.
+4. **Travel is not map geometry.** Infrastructure and route data describe where transport can move; a travel experience additionally needs itinerary/session state, staging, boarding, departure, journey, arrival, reveal, handoff, and interruption recovery.
+
+Detailed source observations and limitations are recorded in Sections 40–42 of `PRODUCT_SYSTEMS_AUDIT.md`. These findings remain evidence from selected reference files, not proof of complete legacy behaviour.
 
