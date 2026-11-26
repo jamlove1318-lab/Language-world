@@ -279,3 +279,73 @@ These are selected-source observations, not a full audit of every object, locati
 ---
 
 **Current status:** Spatial hierarchy, place/building/interior, object identity/lifecycle, interaction, navigation, inventory, personal-space, event, asset replacement, accessibility, and validation requirements documented as a working specification. Launch content and technical contracts remain open. No implementation is authorized.
+
+
+## 15. Upgradeable buildings, locations, and scenarios
+
+**Product requirement:** Buildings and locations in Emerald Valley can be upgraded over time, and scenarios associated with those places can also gain richer forms and additional options. The learner earns points through meaningful learning and participation and may spend them on these upgrades. See `PRODUCT_SCOPE_AND_RELEASE_DEFINITION.md` for the product-level progression rules and open economy decisions.
+
+### 15.1 Separate authored upgrade definitions from learner state
+
+Model the system as distinct records:
+- **Building definition:** stable building identity, function, permitted upgrade branches, prerequisites, and compatible variants.
+- **Building instance:** placed world identity and learner/world ownership scope.
+- **Upgrade definition:** stable upgrade ID, tier/branch, cost rule, prerequisite, effects, content dependencies, and compatibility/version.
+- **Upgrade ownership/state:** learner's acquired upgrades, selected variants, transaction reference, and current effective configuration.
+- **Scenario definition:** authored situation, location/context, roles, learning opportunities, objectives, support, difficulty, and outcome contract.
+- **Scenario variant:** versioned alternative staging, dialogue, role, prop, clue, task, challenge, or interaction set.
+- **Scenario availability/progress:** which variants are available or discovered and the learner's own completion/evidence state.
+- **Presentation binding:** replaceable geometry, materials, props, animation, audio, lighting, and scene composition.
+
+A visual model or scene node must never be the identity of a building, upgrade, or scenario.
+
+### 15.2 Upgrade effects
+
+Upgrade effects may include:
+- Visible exterior and interior changes.
+- New rooms, furniture, equipment, facilities, exhibits, or activity stations.
+- New services or interaction affordances.
+- New scenario variants, dialogue branches, roles, props, puzzles, clues, or challenge types.
+- New replay options or optional complexity.
+- Environmental and acoustic changes that make the improvement perceptible.
+
+An upgrade should communicate what changes before the learner spends points. It should not silently remove access to existing activities or make accessibility options conditional on progression.
+
+### 15.3 Scenario progression without forced difficulty
+
+A more developed location may support more varied or richer scenarios, but the learner must retain choice:
+- Earlier and familiar variants remain available where appropriate.
+- Added complexity is optional or clearly selected.
+- Difficulty and language support are independent of building prestige.
+- A location upgrade does not imply the learner has mastered the language associated with its scenarios.
+- Scenario rewards depend on meaningful participation and evidence, not simply selecting the hardest variant.
+
+### 15.4 Point transactions and domain ownership
+
+The points/economy domain owns the authoritative balance and immutable earn/spend transaction history. The learning domain owns capability evidence; the experience/story domains own their completion outcomes; the world/building domain owns upgrade definitions and applied building state.
+
+An upgrade purchase should be one durable, idempotent operation linking:
+1. The learner's explicit upgrade choice.
+2. A validated current price and prerequisite check.
+3. A points debit transaction.
+4. The acquired upgrade record.
+5. The resulting building/scenario configuration event.
+
+If any step fails, recovery must not duplicate a debit or grant an upgrade without its corresponding transaction. UI/cinematic presentation must not own the durable purchase state.
+
+### 15.5 Content updates and migration
+
+Upgrade definitions and scenario variants are versioned authored content. When a content update changes an upgrade tree, existing ownership must remain valid or be migrated through an explicit, testable rule. Removed content must not silently erase learner investments. If an upgrade becomes unavailable, provide a clear replacement, preservation, or compensation policy for product-owner approval.
+
+### 15.6 Acceptance checks
+
+- A learner can understand the upgrade's cost and visible/functional effect before confirming.
+- Earned points, spending, and upgrade ownership remain consistent after interruption and relaunch.
+- Repeated requests cannot debit points twice.
+- The world visibly reflects the acquired upgrade.
+- Scenario variants become available according to authored rules and persist correctly.
+- Existing scenarios remain accessible and replayable where intended.
+- Upgrade content works with placeholder assets and later designer replacement.
+- Upgrade paths do not gate essential accessibility or core learning access.
+
+**Status:** Required product/system direction; detailed trees, costs, transaction model, launch locations, and variants remain open. No implementation is authorized.
