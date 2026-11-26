@@ -18,7 +18,7 @@
 
 | Document | Role | Current state |
 |---|---|---|
-| [Master Blueprint](MASTER_BLUEPRINT.md) | Central product vision and system index | Working draft v0.3+; idea recovery and reconciliation linked; approval pending |
+| [Master Blueprint](MASTER_BLUEPRINT.md) | Central product vision and system index | Working draft v0.3+; idea recovery, reconciliation and technical architecture linked; approval pending |
 | [Product Systems Audit](PRODUCT_SYSTEMS_AUDIT.md) | Evidence and limitations from selected reference files | Sections 1–54; ongoing |
 | [Archive Gap Audit](GOPAL_ARCHIVE_TO_LANGUAGE_WORLD_GAP_AUDIT.md) | Recovered product concepts and new-product gaps | Working research document |
 | [Cassidy Character Bible](CASSIDY_CHARACTER_BIBLE.md) | Independent Language-world character canon and production direction | Working draft v0.1; review required |
@@ -123,7 +123,7 @@ Create and review in dependency order:
 11. [x] `NARRATIVE_AND_STORY_CONTINUITY_SPEC.md` — working draft created; canon, mysteries, choices, resident autonomy, quests, journal/re-entry and durable events defined.
 12. [x] `PERSISTENCE_PRIVACY_AND_SYNC.md` — working draft created; identity, local-first behaviour, sync, security, privacy, export, deletion and recovery defined.
 13. [x] `CREATIVE_EXPERIENCES_AND_PERSONAL_ARCHIVE.md` — working draft created; archive families, editable source, media lifecycle, ownership, privacy, cultural review and acceptance tests defined.
-14. [ ] `TECHNICAL_ARCHITECTURE.md` — domain boundaries, runtime, data, engine evaluation and integration contracts.
+14. [x] `TECHNICAL_ARCHITECTURE.md` — working engine-neutral draft created; domain boundaries, runtime, data, event, privacy, content and test contracts defined; review pending.
 15. [ ] `PRODUCTION_AND_QUALITY_PLAN.md` — production roles, content workflows, acceptance criteria, testing and release gates.
 
 ## Open decisions register
@@ -197,3 +197,11 @@ This checkpoint is not a claim that every GoPAL-AI source line was inspected or 
 - [ ] Create and review Technical Architecture.
 - [ ] Create and review UX/accessibility/navigation specification.
 - [ ] Resolve product audience, age policy, first-release promise, AI/voice governance, and commercial/progression boundaries.
+
+
+## Technical architecture checkpoint
+
+- [x] Create TECHNICAL_ARCHITECTURE.md as an engine/backend-neutral working specification.
+- [x] Define domain ownership, state classes, command/event contracts, durable operations, runtime lifecycle, clocks, offline/sync, content/asset boundaries, AI/voice boundaries, security, observability, and test strategy.
+- [ ] Reconcile architecture against UX/navigation, product scope, AI/voice governance, and production/quality specifications.
+- [ ] Product-owner review and approval.
