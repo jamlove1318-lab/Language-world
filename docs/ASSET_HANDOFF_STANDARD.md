@@ -196,3 +196,33 @@ Before commissioning a large asset library, run a small shared test with the des
 4. Replace the proxy references without modifying gameplay or story logic.
 5. Verify anchors, collision, animation events, camera framing, and Android performance.
 6. Record friction and revise the contract before scaling production.
+
+
+## 11. Authoritative contract boundaries and validation
+
+This document is the artist-facing delivery checklist. The engine-neutral asset/runtime boundary and cinematic integration are described in [Asset and Cinematic Pipeline](ASSET_AND_CINEMATIC_PIPELINE.md). The world-object semantic identity and placement contract is described in [World Objects and Spaces](WORLD_OBJECTS_AND_SPACES.md). Audio cue identity and delivery are described in [Audio, Voice, and Soundscape](AUDIO_VOICE_AND_SOUNDSCAPE_SPEC.md).
+
+The following rules are mandatory:
+- A semantic ID identifies meaning, not a file, export, artist, engine, or quality tier.
+- A package manifest must declare schema version, package version, asset IDs, dependencies, provenance, licence/rights, compatibility, and validation status.
+- Runtime exports must be reproducible from retained editable source files and documented export settings.
+- A replacement may change visual implementation, but must preserve declared capabilities and compatibility or supply a deliberate migration.
+- Animation clips and events are presentation signals. They cannot directly commit inventory, story, learning, relationship, or travel state.
+- Every delivery must include a known-good fallback and rollback path for the supported target tier.
+- No GoPAL-AI model, rig, animation, generated export, importer, exporter, validator, conversion script, manifest contract, or asset-factory code may enter the new production pipeline.
+
+### Minimum automated validation
+
+The future independent importer/validator must check:
+- Manifest/schema validity and unique semantic IDs.
+- Required source files, runtime exports, hashes, and package dependencies.
+- Licence/provenance completeness and rights metadata.
+- Units, axis, pivot/origin, bounds, and scale tolerance.
+- Rig/skeleton compatibility and required semantic animation capabilities.
+- Clip naming, duration, loop, root-motion policy, and event declarations.
+- Collision, navigation, interaction, attachment, and entrance anchors.
+- Texture dimensions, material/shader requirements, LODs, memory estimate, and platform variants.
+- Audio format/loudness/loop/caption metadata where relevant.
+- Missing dependencies, fallback availability, and package version compatibility.
+
+These are validation requirements, not a claim that an importer or pipeline has already been built.
