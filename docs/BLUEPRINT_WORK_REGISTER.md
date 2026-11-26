@@ -24,6 +24,7 @@
 | [Cassidy Character Bible](CASSIDY_CHARACTER_BIBLE.md) | Independent Language-world character canon and production direction | Working draft v0.1; review required |
 | [World & Universe Bible](WORLD_UNIVERSE_BIBLE.md) | Universe hierarchy, Emerald Valley, distinct world standards and registry | Working draft v0.1; world canon incomplete |
 | [Experience Catalogue](EXPERIENCE_CATALOGUE.md) | Experience taxonomy, 60 research seeds, learning integration, authoring and quality gates | Working draft v0.1; portfolio and scope require review |
+| [Learning Design](LEARNING_DESIGN.md) | Capability/evidence model, adaptive support, evaluation, speech honesty, privacy and accessibility | Working draft v0.1; language scope and validation remain open |
 | [Source Audit](SOURCE_AUDIT.md) | Reference repository inventory and audit scope | Ongoing |
 | [Foundation](FOUNDATION.md) | Initial product principles | Established foundation |
 | [Architecture Decisions](ARCHITECTURE_DECISIONS.md) | Accepted constraints and unresolved choices | Maintained |
@@ -63,12 +64,14 @@
 - [x] Add World & Universe Bible as the universe/world authoring foundation.
 - [x] Create Experience Catalogue working specification with all 60 ideas clearly marked as research seeds, not completed games.
 - [x] Define experience families, learning relationship types, Cassidy participation boundaries, authoring contract, persistence classes, accessibility/safety, and quality gates.
+- [x] Inspect contextual learning, capability tracking, adaptive conversation, response evaluation, scenario content, and multi-domain learning flow.
+- [x] Create Learning Design working specification with separate evidence dimensions and explicit limits on speech/pronunciation claims.
 - [x] Link the Master Blueprint from README.
 - [ ] Complete product-owner review and approval.
 
 ## Current reference-audit status
 
-The Product Systems Audit currently contains 45 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
+The Product Systems Audit currently contains 46 numbered sections. It is substantial but not complete. The current review is based on selected files from a complete repository tree inventory; it must not be described as a line-by-line audit of all source files or as proof that features work end-to-end.
 
 Remaining high-value review areas include:
 - Full source trace of transport and travel state, including interruption and re-entry.
@@ -85,7 +88,7 @@ Create and review in dependency order:
 1. [x] `WORLD_UNIVERSE_BIBLE.md` — first working draft created; Emerald Valley/world canon still needs product-owner review and completion.
 2. [x] `CASSIDY_CHARACTER_BIBLE.md` — first working draft created; canonical artwork and open questions require review.
 3. [x] `EXPERIENCE_CATALOGUE.md` — working draft created; taxonomy and quality gates are defined, launch portfolio remains unapproved.
-4. [ ] `LEARNING_DESIGN.md` — skills, evidence, practice, adaptive support, assessment, speech capability claims.
+4. [x] `LEARNING_DESIGN.md` — working draft created; capability/evidence, adaptive support, assessment limits, speech honesty, privacy and accessibility defined.
 5. [ ] `WORLD_SIMULATION_SPEC.md` — canonical clock, weather, seasons, ecology, schedules, events, offline tiers.
 6. [ ] `WORLD_OBJECTS_AND_SPACES.md` — object contracts, buildings, interiors, navigation, interaction, inventory and lifecycle.
 7. [ ] `CINEMATIC_EXPERIENCE_SYSTEM.md` — timelines, camera, actor direction, voice, sound, accessibility, preload and recovery.
