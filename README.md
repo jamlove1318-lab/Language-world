@@ -53,3 +53,7 @@ See [Foundation](docs/FOUNDATION.md), [Architecture Decisions](docs/ARCHITECTURE
 ## GoPAL-AI source archive review
 
 The new build preserves the valuable product ideas from the original repository while rejecting its old implementation and 3D production pipeline. See the [GoPAL-AI Archive → Language-world Product Gap Audit](docs/GOPAL_ARCHIVE_TO_LANGUAGE_WORLD_GAP_AUDIT.md) for recovered requirements, evidence boundaries, missing systems, cinematic travel, and the placeholder-to-final asset strategy.
+
+## Project documentation
+
+- [Master Blueprint](docs/MASTER_BLUEPRINT.md) — central product specification (working draft; not approved for implementation).
