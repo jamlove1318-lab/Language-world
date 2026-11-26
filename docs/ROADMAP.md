@@ -17,16 +17,13 @@ This roadmap is evidence-led. Each phase has an exit gate; do not skip the engin
 
 ## Phase 1 — Complete reference audit
 
-- [ ] Inventory all source files and trace entry points/imports/reachability.
-- [ ] Map world systems, location content, environment, travel, activities, quests, and interactions.
-- [ ] Map Cassidy identity, personality, autonomy, conversation, memory, relationship, animation, and presentation.
-- [ ] Map learning systems and contextual learning loops.
-- [ ] Map persistence, auth, synchronization, schemas, and privacy.
-- [ ] Inventory assets, manifests, provenance, licensing, and integration status.
-- [ ] Review docs, tests, scripts, CI, and known defects.
-- [ ] Produce a feature disposition register: reuse idea, redesign, defer, or do not adopt—with rationale.
+- [x] Retrieve the complete repository tree and inventory the reference archive.
+- [x] Review principal product specifications and the early/later idea catalogues.
+- [x] Inspect selected high-value source domains and record evidence limits.
+- [x] Consolidate the ideas-only transfer matrix and failure lessons in GOPAL_IDEA_RECOVERY_AUDIT.md.
+- [ ] Perform only targeted follow-up research where a concrete Language-world product question requires it.
 
-**Exit gate:** no major product subsystem is dismissed without evidence and a recorded decision.
+**Exit gate:** major product idea families have a documented adopt/redesign/defer/reject decision. This is not a line-by-line source audit or runtime validation; legacy assets and pipeline inspection are out of scope.
 
 ## Phase 2 — Engine/runtime evaluation
 
@@ -62,8 +59,8 @@ This roadmap is evidence-led. Each phase has an exit gate; do not skip the engin
 
 ## Phase 4 — Cassidy foundation
 
-- [ ] Transfer/locate canonical references in the project asset pipeline without changing their identity.
-- [ ] Verify source files, provenance, licence, and production status.
+- [ ] When the user is ready, receive or locate the user's own approved canonical Cassidy design material for the independent Language-world production process.
+- [ ] Verify provenance and usage permission for user-designated material. Do not copy GoPAL-AI repository artwork, models, rigs, animation, or other assets.
 - [ ] Define engine-neutral character identity and state contracts.
 - [ ] Prototype the human model/rig/animation pipeline using canonical design.
 - [ ] Implement movement, attention, expressions, and world interaction.
